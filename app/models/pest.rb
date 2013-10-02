@@ -1,7 +1,7 @@
 class Pest < ActiveRecord::Base
-  has_many :source
+  has_many :sources
   has_one :tracker_type
-  has_many :marking
+  has_many :markings
   has_one :colour
-  belongs_to :sighting
+  has_many :sighting
 end

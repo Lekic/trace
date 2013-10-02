@@ -1,5 +1,6 @@
 class Sighting < ActiveRecord::Base
-  belongs_to :pest
-  belongs_to :park
-  belongs_to :reporter
+  has_one :pest
+  has_one :park
+  has_one :reporter
+  belongs_to :report
 end
