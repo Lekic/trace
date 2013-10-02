@@ -1,7 +1,7 @@
 class CreateSources < ActiveRecord::Migration
   def change
     create_table :sources do |t|
-      t.string :type
+      t.string :tracker_type
       t.references :pest, index: true
 
       t.timestamps

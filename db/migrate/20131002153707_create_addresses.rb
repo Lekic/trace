@@ -6,7 +6,7 @@ class CreateAddresses < ActiveRecord::Migration
       t.string :suburb
       t.string :state
       t.integer :postcode
-      t.references :addressType, index: true
+      t.references :address_type, index: true
 
       t.timestamps
     end

@@ -1,3 +1,3 @@
 class Phone < ActiveRecord::Base
-  has_one :phoneType
+  has_one :phone_type
 end
