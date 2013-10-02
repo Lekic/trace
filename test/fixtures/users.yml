@@ -1,0 +1,21 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  name: MyString
+  email: MyString
+  dateOfBirth: 2013-10-03
+  username: MyString
+  password: MyString
+  dateJoined: 2013-10-03 01:21:23
+  personType_id: 
+  park_id: 
+
+two:
+  name: MyString
+  email: MyString
+  dateOfBirth: 2013-10-03
+  username: MyString
+  password: MyString
+  dateJoined: 2013-10-03 01:21:23
+  personType_id: 
+  park_id: 
