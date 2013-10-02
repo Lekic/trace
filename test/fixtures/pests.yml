@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  source_id: 
+  name: MyString
+  type_id: 
+  marking_id: 
+  colour_id: 
+  size: 1
+
+two:
+  source_id: 
+  name: MyString
+  type_id: 
+  marking_id: 
+  colour_id: 
+  size: 1
