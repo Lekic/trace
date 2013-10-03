@@ -30,6 +30,9 @@ gem 'jbuilder', '~> 1.2'
 # HAML with default .html.haml templating
 gem 'haml-rails'
 
+# YARDoc for automagic code documentation
+gem 'yard'
+
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.
   gem 'sdoc', require: false
