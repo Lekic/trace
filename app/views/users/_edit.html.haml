@@ -1,0 +1,19 @@
+= form_for @user do |f|
+	%p
+		= f.label :date_of_birth
+		%br
+		= f.date_select :date_of_birth	
+	%p
+		= f.label :phone
+		%br
+		-#= f.text_field :phone
+	%p
+		= f.label :address
+		%br
+		-#= f.text_field :address
+	%p
+		= f.label :park
+		%br
+		-#= f.collection_select :park_id, Park.order(:name),:id
+	%p
+		= f.submit

@@ -1,0 +1,24 @@
+%h1 Registered Users
+
+= link_to "Create New User", new_user_path
+
+%table
+	%tr
+		%th Name
+		%th Email
+		%th Date of Birth
+		%th Username
+		%th Password
+		%th Date Joined
+		%th Edit
+		%th Delete
+	- @users.each do |user|
+		%tr
+			%td= link_to user.name, user_path(user) # can also be written as just 'pest'
+			%td= user.email
+			%td= user.date_of_birth
+			%td= user.username
+			%td= user.password
+			%td= user.date_joined
+			%td= link_to "Edit pest", edit_user_path(user)
+			%td= link_to "Delete", user_path(user), method: :delete, data: { confirm: "Are you sure you want to delete this entry?" }
