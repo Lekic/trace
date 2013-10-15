@@ -1,0 +1,37 @@
+- if @pest.errors.any?
+	#errorExplanation
+		%h2
+			=pluralize(@pest.errors.count, "error")
+			prohibited this post from being saved:
+		%ul
+			- @pest.errors.full_messages.each do |msg|
+				%li= msg
+
+= form_for @pest do |f|
+	%p
+		= f.label :source
+		%br
+		-#= f.text_field :source
+	%p
+		= f.label :name
+		%br
+		= f.text_field :name
+	%p
+		= f.label :tracker_type
+		%br
+		-#= f.text_field :tracker_type
+	%p
+		= f.label :marking
+		%br
+		-#= f.text_field :marking
+	%p
+		= f.label :colour
+		%br
+		-#= f.password_field :colour
+	%p
+		= f.label :size
+		%br
+		= f.number_field :size
+	
+	%p
+		= f.submit
