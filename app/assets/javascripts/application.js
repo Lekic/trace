@@ -15,4 +15,4 @@
 //= require turbolinks
 //= require_tree .
 //= require bootstrap
-//= require isotope.min.js
+//= require dropzone
