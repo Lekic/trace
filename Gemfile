@@ -33,8 +33,8 @@ gem 'haml-rails'
 # YARDoc for automagic code documentation
 gem 'yard'
 
-# Bootstrap for scalable front-end architecture.
-gem "bootstrap-sass"
+# Bootstrap 3 for scalable front-end architecture.
+gem 'bootstrap-sass', github: 'thomas-mcdonald/bootstrap-sass'
 
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.
