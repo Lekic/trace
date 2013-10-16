@@ -33,8 +33,11 @@ gem 'haml-rails'
 # YARDoc for automagic code documentation
 gem 'yard'
 
-# Bootstrap 3 for scalable front-end architecture.
+# Bootstrap 3 for scalable front-end architecture
 gem 'bootstrap-sass', github: 'thomas-mcdonald/bootstrap-sass'
+
+# Dropzone for drag-to-send image file uploads
+gem 'dropzonejs-rails'
 
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.
