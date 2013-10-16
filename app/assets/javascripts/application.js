@@ -16,3 +16,8 @@
 //= require_tree .
 //= require bootstrap
 //= require dropzone
+//= require isotope.min.js
+
+$(document).ready(function() {
+	$('.isotope').isotope();	
+});
