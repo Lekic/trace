@@ -2,3 +2,11 @@
 -#= link_to "Get Started", controller: "users#new"
 = link_to "View all users", controller: "users"
 = link_to "View all pests", controller: "pests"
+
+.isotope
+	- (1..10).each do
+		.home-sighting
+			%img{:src => "http://www.abc.net.au/news/image/1119758-3x2-940x627.jpg"}
+			%p Pest name
+			%p Pest description
+			%p More details
