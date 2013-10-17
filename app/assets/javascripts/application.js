@@ -19,7 +19,8 @@
 //= require isotope.min.js
 
 $(document).ready(function() {
-
-	$('.isotope').isotope();
-	
+	$isotope = $('.isotope')
+	$isotope.imagesLoaded( function(){
+		$isotope.isotope();
+	});
 });
