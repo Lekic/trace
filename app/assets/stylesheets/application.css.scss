@@ -9,8 +9,9 @@
  * compiled file, but it's generally better to create a new file per style scope.
  *
  *= require_self
- *= require_tree .
+ *= require welcome
  *= require bootstrap
+ *= require applestrap
  */
 
 html {
@@ -23,7 +24,8 @@ body {
 }
 
 .user-image {
-	width: 36px;
-	height: 36px;
-	border-radius: 36px;
+	width: 32px;
+	height: 32px;
+	border-radius: 32px;
+	margin: -16px 8px -16px 0;
 }
