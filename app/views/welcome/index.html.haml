@@ -1,11 +1,10 @@
-%h1 stuff goes here
-
 .row
+
 	.col-lg-2
 		%ul.nav.nav-stacked.side-nav
-			- (1..12).each do
+			- (1..6).each do
 				%li
-					= link_to '#', "#"
+					= link_to 'Filter', "#"
 
 	.col-lg-10.isotope
 		- (1..96).each do
