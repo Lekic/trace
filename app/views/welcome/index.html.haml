@@ -1,3 +1,5 @@
+%h1 stuff goes here
+
 .row
 	.col-lg-2
 		%ul.nav.nav-stacked.side-nav
@@ -6,10 +8,9 @@
 					= link_to '#', "#"
 
 	.col-lg-10.isotope
-		- (1..12).each do
+		- (1..96).each do
 			.home-sighting
-				.thumbnail
-					%img{ :data => {'src' => 'holder.js/100x180' } }
+				%img{ :src => "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT3lyyTY5S-4xub1Xkn1FIEdN58ALHcw9YCOlqVvzMn5I7VWf10ig" }
 				%p Pest name
 				%p Pest description
 				%p More details
