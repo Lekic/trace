@@ -1,10 +1,15 @@
-%h1 Trace Home Page
--#= link_to "Get Started", controller: "users#new"
+.row
+	.col-lg-2
+		%ul.nav.nav-stacked.side-nav
+			- (1..12).each do
+				%li
+					= link_to '#', "#"
 
-.isotope
-	- (1..12).each do
-		.home-sighting
-			%img{:src => "http://www.abc.net.au/news/image/1119758-3x2-940x627.jpg"}
-			%p Pest name
-			%p Pest description
-			%p More details
+	.col-lg-10.isotope
+		- (1..12).each do
+			.home-sighting
+				.thumbnail
+					%img{ :data => {'src' => 'holder.js/100x180' } }
+				%p Pest name
+				%p Pest description
+				%p More details
