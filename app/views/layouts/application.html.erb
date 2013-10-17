@@ -47,9 +47,8 @@
                 </div>
                 <div class="collapse navbar-collapse navbar-ex1-collapse">
                     <ul class="nav navbar-nav">
-
                         <li class="<%= 'active' if params[:controller] == 'pests' %>">
-                            <%= link_to "Pests", controller: "pests" %>
+                            <%= link_to "Report sighting", controller: "pests" %>
                         </li>
                         <li class="<%= 'active' if params[:controller] == 'users' %>">
                             <%= link_to "Users", controller: "users" %>
