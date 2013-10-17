@@ -22,10 +22,4 @@ $(document).ready(function() {
 
 	$('.isotope').isotope();
 	
-	$('.side-nav').affix({
-		offset: {
-			top: 100,
-			bottom: 200
-    	}
-  	});
 });
