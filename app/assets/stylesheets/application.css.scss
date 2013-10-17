@@ -13,7 +13,17 @@
  *= require bootstrap
  */
 
- html {
- 	overflow-x: hidden;
- 	overflow-y: scroll;
- }
+html {
+	overflow-x: hidden;
+	overflow-y: scroll;
+}
+
+body {
+	padding-top: 70px;
+}
+
+.user-image {
+	width: 36px;
+	height: 36px;
+	border-radius: 36px;
+}
