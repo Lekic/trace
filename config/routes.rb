@@ -1,15 +1,25 @@
 Trace::Application.routes.draw do
+  get "sightings/index"
+  get "sightings/new"
+  get "sightings/edit"
+  get "sightings/show"
+  get "reports/index"
+  get "reports/new"
+  get "reports/edit"
+  get "reports/show"
   get "pests/index"
   get "pests/new"
+  get "pests/edit"
   get "pests/show"
   get "users/index"
   get "users/new"
+  get "users/edit"
   get "users/show"
   get "welcome/index"
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
-  resources :users, :pests
+  resources :users, :pests, :sightings, :reports
 
   # You can have the root of your site routed with "root"
   root 'welcome#index'

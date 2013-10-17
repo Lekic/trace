@@ -2,14 +2,18 @@
 
 one:
   pest_id: 
+  latitude: 
+  longitude: 
   park_id: 
-  timeSighted: 2013-10-03 01:46:42
+  time_sighted: 2013-10-18 01:02:15
   information: MyString
   reporter_id: 
 
 two:
   pest_id: 
+  latitude: 
+  longitude: 
   park_id: 
-  timeSighted: 2013-10-03 01:46:42
+  time_sighted: 2013-10-18 01:02:15
   information: MyString
   reporter_id: 

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131002155821) do
+ActiveRecord::Schema.define(version: 20131017140320) do
 
   create_table "address_types", force: true do |t|
     t.string   "type"
@@ -104,29 +104,31 @@ ActiveRecord::Schema.define(version: 20131002155821) do
   add_index "phones", ["phone_type_id"], name: "index_phones_on_phone_type_id"
 
   create_table "reports", force: true do |t|
-    t.datetime "date_created"
-    t.integer  "creator_id"
+    t.date     "date_created"
+    t.integer  "user_id"
     t.integer  "sighting_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
-  add_index "reports", ["creator_id"], name: "index_reports_on_creator_id"
   add_index "reports", ["sighting_id"], name: "index_reports_on_sighting_id"
+  add_index "reports", ["user_id"], name: "index_reports_on_user_id"
 
   create_table "sightings", force: true do |t|
     t.integer  "pest_id"
+    t.float    "latitude"
+    t.float    "longitude"
     t.integer  "park_id"
     t.datetime "time_sighted"
     t.string   "information"
-    t.integer  "reporter_id"
+    t.integer  "user_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
   add_index "sightings", ["park_id"], name: "index_sightings_on_park_id"
   add_index "sightings", ["pest_id"], name: "index_sightings_on_pest_id"
-  add_index "sightings", ["reporter_id"], name: "index_sightings_on_reporter_id"
+  add_index "sightings", ["user_id"], name: "index_sightings_on_user_id"
 
   create_table "sources", force: true do |t|
     t.string   "tracker_type"

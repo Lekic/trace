@@ -1,8 +1,8 @@
 class CreateReports < ActiveRecord::Migration
   def change
     create_table :reports do |t|
-      t.datetime :date_created
-      t.references :creator, index: true
+      t.date :date_created
+      t.references :user, index: true
       t.references :sighting, index: true
 
       t.timestamps

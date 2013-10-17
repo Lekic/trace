@@ -1,8 +1,8 @@
 = form_for @user do |f|
-	%p
-		= f.label :date_of_birth
-		%br
-		= f.date_select :date_of_birth	
+	.row.form-group
+		= f.label :date_of_birth, class: "col-lg-2"
+		.col-lg-10
+		= f.date_select :date_of_birth, class: "form-control"
 	%p
 		= f.label :phone
 		%br
