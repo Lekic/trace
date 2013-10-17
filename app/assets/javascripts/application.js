@@ -19,5 +19,13 @@
 //= require isotope.min.js
 
 $(document).ready(function() {
-	$('.isotope').isotope();	
+
+	$('.isotope').isotope();
+	
+	$('.side-nav').affix({
+		offset: {
+			top: 100,
+			bottom: 200
+    	}
+  	});
 });
