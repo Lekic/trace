@@ -1,13 +1,13 @@
 .row
 
-	.col-lg-2
-		%ul.nav.nav-stacked.side-nav.visible-lg
+	.col-lg-2.visible-lg
+		%ul.nav.nav-stacked.side-nav
 			- (1..6).each do
 				%li
 					= link_to 'Filter', "#"
 
-	.col-lg-10.isotope
-		- (1..96).each do
+	.col-lg-10.col-md-12.isotope
+		- (1..24).each do
 			.home-sighting
 				= image_tag("temp-pest.jpg")
 				%p Pest name
