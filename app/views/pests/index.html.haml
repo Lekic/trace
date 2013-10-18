@@ -16,11 +16,15 @@
 	- @pests.each do |pest|
 		%tr
 			%td= link_to pest.id, pest_path(@id) # can also be written as just 'pest'
-			%td= pest.source
+			%td
+			-# = pest.source
 			%td= pest.name
-			%td= pest.traker_type
-			%td= pest.markings
-			%td= pest.colour
+			%td
+			-# = pest.traker_type
+			%td
+			-# = pest.markings
+			%td
+			-# = pest.colour
 			%td= pest.size
 			%td= link_to "Edit pest", edit_pest_path(pest)
-			%td= link_to "Delete", user_path(pest), method: :delete, data: { confirm: "Are you sure you want to delete this entry?" }
+			%td= link_to "Delete", pest_path(pest), method: :delete, data: { confirm: "Are you sure you want to delete this entry?" }

@@ -27,7 +27,7 @@ class PestsController < ApplicationController
 	def update
 		@pest = Pest.find(params[:id])
 
-		if @pest.update(params[:pest].permit(:name))
+		if @pest.update(params[:pest].permit(:name, :size))
 			redirect_to @pest
 		else
 			render 'edit'
@@ -38,11 +38,11 @@ class PestsController < ApplicationController
 		@pest = Pest.find(params[:id])
 		@pest.destroy
 
-		redirect_to pests_path #check if you can reuse code
+		redirect_to pests_path
 	end
 
 	private
   		def pest_params
-    		params.require(:pest).permit(:name)
+    		params.require(:pest).permit(:name, :size)
   		end
 end
