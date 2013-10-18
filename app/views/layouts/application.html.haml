@@ -39,7 +39,9 @@
 						%span.icon-bar
 						%span.icon-bar
 						%span.icon-bar
-					= link_to "Trace", {:controller => "pests", :action => "index"}, :class => "navbar-brand"
+					= link_to root_url, :controller => "pests", :action => "index", :class => "navbar-brand" do
+						= image_tag "logo.png", :class => "logo"
+						Trace
 				.collapse.navbar-collapse.navbar-ex1-collapse
 					%ul.nav.navbar-nav
 						%li{class: ('active' if params[:controller] == 'pests')}
