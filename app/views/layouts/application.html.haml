@@ -1,0 +1,69 @@
+!!!
+%html{lang: "en"}
+	%head
+		%title Trace
+		%meta{charset: "utf-8"}
+		%meta{content: "", name: "description"}
+		%meta{content: "", name: "author"}
+		%meta{content: "", name: "designer"}
+		%meta{content: "index, follow", name: "robots"}
+		%meta{content: "width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no", name: "viewport"}
+		%meta{content: "general", name: "rating"}
+		%meta{content: "", name: "keywords"}
+		%meta{content: "true", name: "HandheldFriendly"}
+		%meta{content: "320", name: "MobileOptimized"}
+		%meta{content: "yes", name: "apple-mobile-web-app-capable"}
+		%meta{content: "black", name: "apple-mobile-web-app-status-bar-style"}
+		%meta{content: "telephone=yes", name: "format-detection"}
+		%meta{content: "website", property: "og:type"}
+		%meta{content: "", property: "og:title"}
+		%meta{content: "", property: "og:url"}
+		%meta{content: "", property: "og:description"}
+		%meta{content: "", property: "og:image"}
+		%meta{content: "IE=edge", "http-equiv" => "X-UA-Compatible"}
+
+		%link{href: "", rel: "shortcut icon"}
+		%link{href: "", rel: "apple-touch-icon-precomposed"}
+
+		= stylesheet_link_tag "application", media: "all", "data-turbolinks-track" => true
+		= javascript_include_tag "application", "data-turbolinks-track" => true
+		= csrf_meta_tags
+
+	%body
+
+		%nav.navbar.navbar-default.navbar-fixed-top
+			.container
+				.navbar-header
+					%button.navbar-toggle{"data-target" => ".navbar-ex1-collapse", "data-toggle" => "collapse", type: "button"}
+						%span.sr-only Toggle navigation
+						%span.icon-bar
+						%span.icon-bar
+						%span.icon-bar
+					= link_to "Trace", {:controller => "pests", :action => "index"}, :class => "navbar-brand"
+				.collapse.navbar-collapse.navbar-ex1-collapse
+					%ul.nav.navbar-nav
+						%li{class: ('active' if params[:controller] == 'pests')}
+							= link_to "Report sighting", new_sighting_path
+						%li{class: ('active' if params[:controller] == 'users')}
+							= link_to "Users", controller: "users"
+						%li
+							= link_to "Sightings", controller: "sightings"
+						%li
+							= link_to "Reports", controller: "reports"
+					%ul.nav.navbar-nav.navbar-right
+						%li.dropdown
+							%a.dropdown-toggle{"data-toggle" => "dropdown", href: "#"}
+								= image_tag("temp-user.jpg", :class => "user-image")
+								username
+								%b.caret
+							%ul.dropdown-menu
+								%li
+									%a{href: "#"} My Profile
+								%li
+									%a{href: "#"} Account Settings
+								%li
+									%a{href: "#"} Help and Support
+								%li
+									%a{href: "#"} Log out
+		.container
+			= yield
