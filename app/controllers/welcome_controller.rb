@@ -1,5 +1,5 @@
 class WelcomeController < ApplicationController
 	def index
-		@pests = { :pests => Pest.all }
+		@pests = Pest.all
 	end
 end
