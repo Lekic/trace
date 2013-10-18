@@ -1,19 +1,18 @@
-= form_for @user do |f|
-	.row.form-group
-		= f.label :date_of_birth, class: "col-lg-2"
+= form_for @user, :html => { :class => "form-horizontal" } do |f|
+	.form-group
+		= f.label :date_of_birth, :class => "col-lg-2 control-label"
 		.col-lg-10
-		= f.date_select :date_of_birth, class: "form-control"
-	%p
-		= f.label :phone
-		%br
-		-#= f.text_field :phone
-	%p
-		= f.label :address
-		%br
-		-#= f.text_field :address
-	%p
-		= f.label :park
-		%br
-		-#= f.collection_select :park_id, Park.order(:name),:id
-	%p
-		= f.submit
+			= f.date_select :date_of_birth, :class => "form-control"
+	.form-group
+		= f.label :phone, :class => "col-lg-2 control-label"
+		.col-lg-10
+			=# f.text_field :phone, :class => "form-control"
+	.form-group
+		= f.label :address, :class => "col-lg-2 control-label"
+		.col-lg-10
+			=# f.text_field :address, :class => "form-control"
+	.form-group
+		= f.label :park, :class => "col-lg-2 control-label"
+		.col-lg-10
+			=# f.collection_select :park_id, Park.order(:name), :id, :class => "form-control"
+	= f.submit :create, :class => "btn pull-right"

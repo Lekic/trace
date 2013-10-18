@@ -1,30 +1,27 @@
-.row
+- if @user.errors.any?
+	.alert.alert-danger
+		=pluralize(@user.errors.count, "error")
+		prohibited this post from being saved:
+		%ul
+			- @user.errors.full_messages.each do |msg|
+				%li= msg
 
-	.col-lg-6.col-lg-offset-3
-		- if @user.errors.any?
-			.alert.alert-danger
-				=pluralize(@user.errors.count, "error")
-				prohibited this post from being saved:
-				%ul
-					- @user.errors.full_messages.each do |msg|
-						%li= msg
-
-		= form_for @user, :html => { :class => "form-horizontal" } do |f|
-			.form-group
-				= f.label :Username, :class => "col-lg-2 control-label"
-				.col-lg-10.input-group
-					%span{:class => "input-group-addon"} @
-					= f.text_field :username, :class => "form-control", :required => "required"
-			.form-group
-				= f.label :Name, :class => "col-lg-2 control-label"
-				.col-lg-10
-					= f.text_field :name, :class => "form-control", :required => "required"
-			.form-group
-				= f.label :Email, :class => "col-lg-2 control-label"
-				.col-lg-10
-					= f.text_field :email, :class => "form-control", :required => "required"
-			.form-group
-				= f.label :Password, :class => "col-lg-2 control-label"
-				.col-lg-10
-					= f.password_field :password, :class => "form-control", :required => "required"
-			= f.submit :Create, :class => "btn pull-right"
+= form_for @user, :html => { :class => "form-horizontal" } do |f|
+	.form-group
+		= f.label :username, :class => "col-lg-2 control-label"
+		.col-lg-10.input-group
+			%span{:class => "input-group-addon"} @
+			= f.text_field :username, :class => "form-control", :required => "required"
+	.form-group
+		= f.label :name, :class => "col-lg-2 control-label"
+		.col-lg-10
+			= f.text_field :name, :class => "form-control", :required => "required"
+	.form-group
+		= f.label :email, :class => "col-lg-2 control-label"
+		.col-lg-10
+			= f.text_field :email, :class => "form-control", :required => "required"
+	.form-group
+		= f.label :password, :class => "col-lg-2 control-label"
+		.col-lg-10
+			= f.password_field :password, :class => "form-control", :required => "required"
+	= f.submit :create, :class => "btn pull-right"
