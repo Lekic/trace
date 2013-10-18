@@ -1,0 +1,30 @@
+%h1 Pests
+
+= link_to "Create New Pest", new_pest_path
+
+%table
+	%tr
+		%th Pest ID
+		%th ID Source
+		%th Name
+		%th Tracker Type
+		%th Markings
+		%th Colour
+		%th Size
+		%th Edit
+		%th Delete
+	- @pests.each do |pest|
+		%tr
+			%td= link_to pest.id, pest_path(@id) # can also be written as just 'pest'
+			%td
+			-# = pest.source
+			%td= pest.name
+			%td
+			-# = pest.traker_type
+			%td
+			-# = pest.markings
+			%td
+			-# = pest.colour
+			%td= pest.size
+			%td= link_to "Edit pest", edit_pest_path(pest)
+			%td= link_to "Delete", pest_path(pest), method: :delete, data: { confirm: "Are you sure you want to delete this entry?" }
