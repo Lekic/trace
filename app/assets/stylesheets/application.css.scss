@@ -11,7 +11,6 @@
  *= require_self
  *= require welcome
  *= require bootstrap
- *= require applestrap
  */
 
 html {
@@ -32,4 +31,14 @@ body {
 
 .logo {
 	margin: -14px 7px -14px 0;
+}
+
+.side-nav {
+	border: 1px solid #ddd;
+	margin-top: 10px;
+	padding: 10px 0;
+	border-radius: 4px;
+	position: fixed;
+	top: 70px;
+	width: 165px;
 }
