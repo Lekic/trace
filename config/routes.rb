@@ -1,4 +1,5 @@
 Trace::Application.routes.draw do
+  devise_for :users
   get "sightings/index"
   get "sightings/new"
   get "sightings/edit"
