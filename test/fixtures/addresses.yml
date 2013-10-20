@@ -6,7 +6,7 @@ one:
   suburb: MyString
   state: MyString
   postcode: 1
-  addressType_id: 
+  address_type_id: 
 
 two:
   number: 1
@@ -14,4 +14,4 @@ two:
   suburb: MyString
   state: MyString
   postcode: 1
-  addressType_id: 
+  address_type_id: 

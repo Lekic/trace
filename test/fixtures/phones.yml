@@ -1,15 +1,15 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
 
 one:
-  countryCode: 1
-  areaCode: 1
+  country_code: 1
+  area_code: 1
   phone: 1
   type_id: 
   comment: MyString
 
 two:
-  countryCode: 1
-  areaCode: 1
+  country_code: 1
+  area_code: 1
   phone: 1
   type_id: 
   comment: MyString

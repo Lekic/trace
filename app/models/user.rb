@@ -1,4 +1,5 @@
 class User < ActiveRecord::Base
+  before_save { self.email = email.downcase }
   has_one :person_type
   has_one :park
   belongs_to :sighting
