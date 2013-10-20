@@ -12,5 +12,5 @@ class User < ActiveRecord::Base
                     uniqueness:  { case_sensitive: false }
   validates :username, presence: true, length: { minimum: 5},
                        uniqueness:  { case_sensitive: false }
-  validares :password, presence: true
+  validates :password, presence: true
 end
