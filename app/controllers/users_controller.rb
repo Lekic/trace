@@ -1,4 +1,7 @@
 class UsersController < ApplicationController
+	before_filter :authenticate_user!
+  	before_filter :configure_permitted_parameters, if: :devise_controller?
+
 	def index
 		@users = User.all
 	end
@@ -39,6 +42,12 @@ class UsersController < ApplicationController
 		@user.destroy
 
 		redirect_to users_path
+	end
+
+	protected
+
+  	def configure_permitted_parameters
+  		devise_parameter_sanitizer.for(:sign_in) { |u| u.permit(:username, :email) }
 	end
 
 	private
