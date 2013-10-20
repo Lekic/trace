@@ -38,7 +38,7 @@ class UsersController < ApplicationController
 		@user = User.find(params[:id])
 		@user.destroy
 
-		redirect_to users_path #check if you can reuse code
+		redirect_to users_path
 	end
 
 	private
