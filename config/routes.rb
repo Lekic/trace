@@ -1,6 +1,4 @@
 Trace::Application.routes.draw do
-  devise_for :users, :path => "auth", :path_names => { :sign_in => 'login', :sign_out => 'logout', :password => 'secret', :confirmation => 'verification', :unlock => 'unblock', :registration => 'register', :sign_up => 'cmon_let_me_in' }
-  devise_for :users, :controllers => { :sessions => "users/sessions" }
   get "sightings/index"
   get "sightings/new"
   get "sightings/edit"
@@ -20,8 +18,10 @@ Trace::Application.routes.draw do
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
+  resources :users, :pests, :sightings, :reports
+
   # You can have the root of your site routed with "root"
-  root 'sightings#index'
+  root 'pests#index'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
@@ -31,8 +31,6 @@ Trace::Application.routes.draw do
 
   # Example resource route (maps HTTP verbs to controller actions automatically):
   #   resources :products
-
-  resources :users, :pests, :sightings, :reports
 
   # Example resource route with options:
   #   resources :products do
@@ -73,8 +71,4 @@ Trace::Application.routes.draw do
   #     # (app/controllers/admin/products_controller.rb)
   #     resources :products
   #   end
-
-  devise_scope :user do
-    get "sign_in", :to => "devise/sessions#new"
-  end
 end
