@@ -69,6 +69,7 @@ ActiveRecord::Schema.define(version: 20131017140320) do
   create_table "pests", force: true do |t|
     t.integer  "source_id"
     t.string   "name"
+    t.string   "characteristics"
     t.integer  "tracker_type_id"
     t.integer  "marking_id"
     t.integer  "colour_id"
