@@ -127,7 +127,6 @@ ActiveRecord::Schema.define(version: 20131023082540) do
   create_table "users", force: true do |t|
     t.string   "name"
     t.date     "date_of_birth"
-    t.string   "username"
     t.datetime "date_joined"
     t.integer  "person_type_id"
     t.integer  "park_id"
@@ -138,6 +137,7 @@ ActiveRecord::Schema.define(version: 20131023082540) do
     t.integer  "postcode"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "username",               default: "", null: false
     t.string   "email",                  default: "", null: false
     t.string   "encrypted_password",     default: "", null: false
     t.string   "reset_password_token"
@@ -154,5 +154,6 @@ ActiveRecord::Schema.define(version: 20131023082540) do
   add_index "users", ["park_id"], name: "index_users_on_park_id"
   add_index "users", ["person_type_id"], name: "index_users_on_person_type_id"
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
+  add_index "users", ["username"], name: "index_users_on_username", unique: true
 
 end

@@ -14,9 +14,6 @@ class User < ActiveRecord::Base
   NAME_CASE_REGEX = /\A([A-Z][a-zA-Z\'\-]+ ?)*/i
   USERNAME_REGEX = /\A[a-z]{5,20}\z/
 
-  validates_presence_of :username
-  validates_uniqueness_of :username
-
 #  validates :name, presence: true, length: { minimum: 5 }, format: { with: NAME_CASE_REGEX }
   
 #  validates :email, presence: true, format: { with: VALID_EMAIL_REGEX },
