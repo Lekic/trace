@@ -18,20 +18,39 @@ body {
 	color: #fff;
 	text-shadow: 0px 0px 10px #000000;
     filter: dropshadow(color=#000000, offx=0, offy=0);
+    line-height: 1.1em
 }
 
 .title-1 {
-	font-size: 36px;
-	line-height: 1.1em;
+	font-size: 21px;
 	font-weight: 700;
 }
 
 .title-2 {
-	font-size: 24px;
-	line-height: 1.1em;
+	font-size: 16px;
 	margin: 60px 0;
 }
 
 #logo {
 	margin-bottom: 120px;
+}
+
+@media (min-width: 768px) {
+	.title-1 {
+		font-size: 29px;
+	}
+
+	.title-2 {
+		font-size:20px;
+	}
+}
+
+@media (min-width: 992px) {
+	.title-1 {
+		font-size: 36px;
+	}
+
+	.title-2 {
+		font-size: 24px;
+	}
 }
