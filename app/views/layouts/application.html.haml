@@ -25,8 +25,14 @@
 		%link{href: "", rel: "shortcut icon"}
 		%link{href: "", rel: "apple-touch-icon-precomposed"}
 
+		%link{href: "http://fonts.googleapis.com/css?family=Montserrat:400,700", rel: "stylesheet"}
+
 		= stylesheet_link_tag "application", media: "all", "data-turbolinks-track" => true
+		= stylesheet_link_tag params[:controller]
+
 		= javascript_include_tag "application", "data-turbolinks-track" => true
+		= javascript_include_tag params[:controller]
+
 		= csrf_meta_tags
 
 	%body
@@ -73,8 +79,8 @@
 							%li.dropdown
 								= link_to "Sign In", new_user_session_path
 		.container
-			%p.notice 
-				= notice
-			%p.alert
-				= alert
+			-#%p.notice 
+				-#= notice
+			-#%p.alert
+				-#= alert
 			= yield

@@ -1,2 +1,21 @@
-%h1 Welcome#index
-%p Find me in app/views/welcome/index.html.haml
+.center.col-lg-10.col-lg-offset-1
+
+	= image_tag("logo-large.png", :id => "logo")
+
+	%p.title-1 Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+
+	%p.title-2 Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+
+	%button.btn.btn-primary.btn-lg{"data-toggle" => "modal", href: "#myModal"} Launch demo modal
+
+	#myModal.modal.fade{"aria-hidden" => "true", "aria-labelledby" => "myModalLabel", role: "dialog", tabindex: "-1"}
+		.modal-dialog
+			.modal-content
+				.modal-header
+					%button.close{"aria-hidden" => "true", "data-dismiss" => "modal", type: "button"} ×
+					%h4.modal-title Modal title
+				.modal-body
+					%input{:type => "password", :class => "form-control"}
+				.modal-footer
+					%button.btn.btn-default{"data-dismiss" => "modal", type: "button"} Close
+					%button.btn.btn-primary{type: "button"} Save changes
