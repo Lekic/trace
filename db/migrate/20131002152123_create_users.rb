@@ -2,10 +2,10 @@ class CreateUsers < ActiveRecord::Migration
   def change
     create_table :users do |t|
       t.string :name
-      t.string :email
+      #t.string :email
       t.date :date_of_birth
       t.string :username
-      t.string :password
+      #t.string :password
       t.datetime :date_joined
       #t.references :phone, index: true
       #t.references :address, index: true added to end

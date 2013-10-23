@@ -45,28 +45,31 @@
 				.collapse.navbar-collapse.navbar-ex1-collapse
 					%ul.nav.navbar-nav
 						%li{class: ('active' if params[:controller] == 'sightings')}
-							= link_to "Sightings", controller: "sightings"
-						%li{class: ('active' if params[:controller] == 'users')}
-							= link_to "Users", controller: "users"
+							= link_to "Sightings", sightings_path
+						-#%li{class: ('active' if params[:controller] == 'users')}
+							-#= link_to "Users", controller: "users"
 						%li{class: ('active' if params[:controller] == 'reports')}
-							= link_to "Reports", controller: "reports"
+							= link_to "Reports", reports_path
 						%li{class: ('active' if params[:controller] == 'pests')}
-							= link_to "Pests", controller: "pests"
+							= link_to "Pests", pests_path
 					%ul.nav.navbar-nav.navbar-right
-						%li.dropdown
-							%a.dropdown-toggle{"data-toggle" => "dropdown", href: "#"}
-								= image_tag("temp-user.jpg", :class => "user-image")
-								username
-								%b.caret
-							%ul.dropdown-menu
-								%li
-									%a{href: "#"} My Profile
-								%li
-									%a{href: "#"} Account Settings
-								%li
-									%a{href: "#"} Help and Support
-								%li
-									%a{href: "#"} Log out
+						- if user_signed_in?
+							%li.dropdown
+								%a.dropdown-toggle{"data-toggle" => "dropdown", href: "#"}
+									= image_tag("temp-user.jpg", :class => "user-image")
+									= current_user.email #change to username when modded
+									%b.caret
+								%ul.dropdown-menu
+									%li
+										%a{href: "#"} My Profile
+									%li
+										%a{href: "#"} Account Settings
+									%li
+										%a{href: "#"} Help and Support
+									%li
+										= link_to "Sign Out", destroy_user_session_path, method: :delete
+						- else
+							= link_to "Sign In", new_user_session_path
 		.container
 			%p.notice 
 				= notice
