@@ -48,10 +48,11 @@
 							= link_to "Sightings", sightings_path
 						-#%li{class: ('active' if params[:controller] == 'users')}
 							-#= link_to "Users", controller: "users"
-						%li{class: ('active' if params[:controller] == 'reports')}
-							= link_to "Reports", reports_path
 						%li{class: ('active' if params[:controller] == 'pests')}
 							= link_to "Pests", pests_path
+						- if user_signed_in?
+							%li{class: ('active' if params[:controller] == 'reports')}
+								= link_to "Reports", reports_path
 					%ul.nav.navbar-nav.navbar-right
 						- if user_signed_in?
 							%li.dropdown
@@ -69,7 +70,8 @@
 									%li
 										= link_to "Sign Out", destroy_user_session_path, method: :delete
 						- else
-							= link_to "Sign In", new_user_session_path
+							%li.dropdown
+								= link_to "Sign In", new_user_session_path
 		.container
 			%p.notice 
 				= notice
