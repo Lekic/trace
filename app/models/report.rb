@@ -1,5 +1,5 @@
 class Report < ActiveRecord::Base
-  has_one :user
-  has_many :sightings
-  has_many :pests, :through => :sightings
+  belongs_to :user, inverse_of: :reports
+  has_and_belongs_to_many :sightings
+  has_many :pests, through: :sightings
 end

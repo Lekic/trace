@@ -1,7 +1,8 @@
 class Pest < ActiveRecord::Base
-  has_many :sources
-  has_one :tracker_type
-  has_many :markings
-  has_one :colour
-  has_many :sighting
+  belongs_to :colour, inverse_of: :pests
+  has_and_belongs_to_many :markings
+  has_and_belongs_to_many :sources
+  has_many :sightings, inverse_of: :pest
+  #may not work
+  has_many :reports, through: :sightings
 end

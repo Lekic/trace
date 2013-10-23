@@ -3,7 +3,7 @@ class CreateReports < ActiveRecord::Migration
     create_table :reports do |t|
       t.date :date_created
       t.references :user, index: true
-      t.references :sighting, index: true
+      #t.references :sighting, index: true
 
       t.timestamps
     end

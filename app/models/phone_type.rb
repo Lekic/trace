@@ -1,3 +1,3 @@
 class PhoneType < ActiveRecord::Base
-  belongs_to :user
+  has_many :phones, inverse_of: :phone_type
 end

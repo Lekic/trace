@@ -1,3 +1,3 @@
 class Colour < ActiveRecord::Base
-  belongs_to :pest
+  has_many :pests, inverse_of: :colour
 end

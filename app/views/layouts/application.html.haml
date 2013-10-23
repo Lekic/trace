@@ -45,7 +45,7 @@
 				.collapse.navbar-collapse.navbar-ex1-collapse
 					%ul.nav.navbar-nav
 						%li{class: ('active' if params[:controller] == 'sightings')}
-							= link_to "Report sighting", new_sighting_path
+							= link_to "Sightings", controller: "sightings"
 						%li{class: ('active' if params[:controller] == 'users')}
 							= link_to "Users", controller: "users"
 						%li{class: ('active' if params[:controller] == 'reports')}

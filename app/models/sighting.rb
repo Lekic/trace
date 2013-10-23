@@ -1,6 +1,8 @@
 class Sighting < ActiveRecord::Base
-  has_one :pest
-  has_one :park
-  has_one :reporter
-  belongs_to :report
+  belongs_to :pest, inverse_of: :sightings
+  has_and_belongs_to_many :reports
+  belongs_to :park, inverse_of: :sightings
+  belongs_to :user, inverse_of: :sightings
+  #belongs_to :reporter, class_name: "User"
+  
 end

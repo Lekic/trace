@@ -1,3 +1,3 @@
 class PersonType < ActiveRecord::Base
-  belongs_to :user
+  has_many :users, inverse_of: :person_type
 end

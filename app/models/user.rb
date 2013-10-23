@@ -1,11 +1,14 @@
 class User < ActiveRecord::Base
   before_save { self.email = email.downcase }
-  has_one :person_type
-  has_one :park
-  belongs_to :sighting
+  belongs_to :person_type, inverse_of: :users
+  belongs_to :park, inverse_of: :users
+  has_many :phones, inverse_of: :user
+  has_many :reports, inverse_of: :user
+  has_many :sightings, inverse_of: :user
 
   VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
   NAME_CASE_REGEX = /\A([A-Z][a-zA-Z\'\-]+ ?)*/i
+  USERNAME_REGEX = /\A[a-z]{5,20}\z/
 
   validates :name, presence: true, length: { minimum: 5 }, format: { with: NAME_CASE_REGEX }
   

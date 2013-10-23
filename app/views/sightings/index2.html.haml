@@ -1,0 +1,15 @@
+%h1 Sighitngs
+
+= link_to "Create New Sighting", new_sighting_path
+-#above line differs from others, don't know why.
+
+%table
+	%tr
+		%th Name
+		%th Edit
+		%th Delete
+	- @sightings.each do |sighting|
+		%tr
+			%td= link_to sighting.id, sighting_path(sighting) # can also be written as just 'pest'
+			%td= link_to "Edit sighting", edit_sighting_path(sighting)
+			%td= link_to "Delete", sighting_path(sighting), method: :delete, data: { confirm: "Are you sure you want to delete this entry?" }

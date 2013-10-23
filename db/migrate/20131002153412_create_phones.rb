@@ -5,6 +5,7 @@ class CreatePhones < ActiveRecord::Migration
       t.integer :area_code
       t.integer :phone
       t.references :phone_type, index: true
+      t.references :user, index: true
       t.string :comment
 
       t.timestamps

@@ -1,0 +1,9 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  marking_id: 
+  pest_id: 
+
+two:
+  marking_id: 
+  pest_id: 
