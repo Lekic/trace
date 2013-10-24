@@ -40,7 +40,7 @@ ActiveRecord::Schema.define(version: 20131024063115) do
   end
 
   create_table "person_types", force: true do |t|
-    t.string   "type"
+    t.string   "name"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -75,7 +75,7 @@ ActiveRecord::Schema.define(version: 20131024063115) do
   end
 
   create_table "phone_types", force: true do |t|
-    t.string   "type"
+    t.string   "name"
     t.integer  "user_id"
     t.datetime "created_at"
     t.datetime "updated_at"
@@ -130,7 +130,7 @@ ActiveRecord::Schema.define(version: 20131024063115) do
   add_index "sightings", ["user_id"], name: "index_sightings_on_user_id"
 
   create_table "types", force: true do |t|
-    t.string   "type"
+    t.string   "name"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
