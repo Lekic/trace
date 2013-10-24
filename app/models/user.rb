@@ -3,6 +3,7 @@ class User < ActiveRecord::Base
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
+  
   before_save { self.email = email.downcase }
   belongs_to :person_type, inverse_of: :users
   belongs_to :park, inverse_of: :users
