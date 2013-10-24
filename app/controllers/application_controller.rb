@@ -12,6 +12,20 @@ class ApplicationController < ActionController::Base
     #fix this hoe.
   end
 
+  def resource_name
+    :user
+  end
+
+  def resource
+    @resource ||= User.new
+  end
+
+  def devise_mapping
+    @devise_mapping ||= Devise.mappings[:user]
+  end
+
+  helper_method :resource, :resource_name, :devise_mapping
+
   before_filter :configure_devise_params, if: :devise_controller?
   def configure_devise_params
     devise_parameter_sanitizer.for(:sign_up) do |u|

@@ -12,10 +12,23 @@
 		.modal-dialog
 			.modal-content
 				.modal-header
-					%button.close{"aria-hidden" => "true", "data-dismiss" => "modal", type: "button"} ×
+					%button.close{"aria-hidden" => "true", "data-dismiss" => "modal", type: "button"}
 					%h4.modal-title Sign In
 				.modal-body
-					This is the body swag
+					= form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f|
+						.form-group
+							= f.label :email
+							.col-lg-4.input-group
+								= f.email_field :email, :autofocus => true
+						.form-group
+							= f.label :password
+							.col-lg-4.input-group
+								= f.password_field :password
+						- if devise_mapping.rememberable?
+							= f.check_box :remember_me
+							= f.label :remember_me
+						= f.submit "Sign in"
+					= render "devise/shared/links"
 				.modal-footer
 					%button.btn.btn-default{"data-dismiss" => "modal", type: "button"} Close
-					%button.btn.btn-primary{type: "button"} Save changes
+					%button.btn.btn-primary{type: "button"} Sign In
