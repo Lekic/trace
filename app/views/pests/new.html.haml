@@ -1,4 +1,14 @@
 %h1 Create New Pest
+
+- if @pest.errors.any?
+	#errorExplanation
+		%h2
+			=pluralize(@pest.errors.count, "error")
+			prohibited this post from being saved:
+		%ul
+			- @pest.errors.full_messages.each do |msg|
+				%li= msg
+
 = semantic_form_for @pest do |f|
 	= f.inputs do
 		= f.input :name

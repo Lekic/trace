@@ -1,5 +1,15 @@
 %h1 Generate Report
 
+- if @report.errors.any?
+	#errorExplanation
+		%h2
+			=pluralize(@report.errors.count, "error")
+			prohibited this post from being saved:
+		%ul
+			- @report.errors.full_messages.each do |msg|
+				%li= msg
+
+
 = semantic_form_for @report do |f|
 	= f.inputs
 	= f.actions do
