@@ -27,7 +27,7 @@ class SightingsController < ApplicationController
   	def update
 		@sighting = Sighting.find(params[:id])
 
-		if @sighting.update(params[:sighting].permit(:latitude))
+		if @sighting.update(params[:sighting].permit(:latitude, :longitude))
 			redirect_to @sighting
 		else
 			render 'edit'
@@ -43,7 +43,7 @@ class SightingsController < ApplicationController
 
 	private
   		def sighting_params
-    		params.require(:sighting).permit(:latitude) #change params
+    		params.require(:sighting).permit(:latitude, :longitude) #change params
   		end
   		
 end

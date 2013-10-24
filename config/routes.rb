@@ -1,4 +1,5 @@
 Trace::Application.routes.draw do
+  get "landing/index"
   get "welcome/index"
 
 =begin  
@@ -25,12 +26,14 @@ Trace::Application.routes.draw do
 
 
   # You can have the root of your site routed with "root"
-  root 'welcome#index'
+  root 'landing#index'
 
-  devise_for :users
+  # Custom route for users root page
+  devise_for :users do
+    get 'users', :to => 'welcome#index', :as => :user_root
+  end
 
-  resources :pests, :sightings, :reports
-
+  resources :users, :pests, :sightings, :reports
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
