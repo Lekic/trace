@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131023082540) do
+ActiveRecord::Schema.define(version: 20131024063115) do
 
   create_table "colours", force: true do |t|
     t.string   "colour"
@@ -45,8 +45,18 @@ ActiveRecord::Schema.define(version: 20131023082540) do
     t.datetime "updated_at"
   end
 
+  create_table "pest_types", force: true do |t|
+    t.string   "type"
+    t.integer  "pest_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "pest_types", ["pest_id"], name: "index_pest_types_on_pest_id"
+
   create_table "pests", force: true do |t|
     t.string   "name"
+    t.integer  "pest_type_id"
     t.string   "characteristics"
     t.integer  "colour_id"
     t.integer  "size"
@@ -55,6 +65,7 @@ ActiveRecord::Schema.define(version: 20131023082540) do
   end
 
   add_index "pests", ["colour_id"], name: "index_pests_on_colour_id"
+  add_index "pests", ["pest_type_id"], name: "index_pests_on_pest_type_id"
 
   create_table "pests_sources", force: true do |t|
     t.integer  "pest_id",    null: false
