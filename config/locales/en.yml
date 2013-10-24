@@ -21,3 +21,8 @@
 
 en:
   hello: "Hello world"
+#  formtastic:
+#  	actions:
+#  		create: "Submit"
+#  		update: "Save"
+#  		cancel: "Go Back"

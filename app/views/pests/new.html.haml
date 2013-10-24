@@ -1,5 +1,11 @@
 %h1 Create New Pest
-
-= render 'register'
-
-= link_to "Back", pests_path
+= semantic_form_for @pest do |f|
+	= f.inputs do
+		= f.input :name
+		= f.input :pest_type
+		= f.input :size
+		= f.input :colour
+		= f.input :characteristics
+	= f.actions do
+		= f.action :submit, :as => :button, :label => "Submit"
+		= f.action :cancel, :as => :link, :label => "Go Back"
