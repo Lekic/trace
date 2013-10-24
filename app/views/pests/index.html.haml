@@ -7,7 +7,7 @@
 					= link_to 'Filter', "#"
 
 	.col-lg-10.col-md-12.isotope
-		-#= link_to "Create New Pest", new_pest_path
+		= link_to "Create New Pest", new_pest_path
 		- @pests.each do |pest|
 			.home-sighting
 				= image_tag("temp-pest.jpg")

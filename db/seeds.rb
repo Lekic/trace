@@ -6,6 +6,12 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
-red = Colour.create([{colour: 'Red'}])
-blue = Colour.create([{colour: 'Blue'}])
-green = Colour.create([{colour: 'Green'}])
+# Pest Colours
+Colour.create(name: "Red")
+Colour.create(name: "Blue")
+Colour.create(name: "Green")
+
+#Pest Types
+PestType.create(name: 'Dog')
+PestType.create(name: 'Cat')
+PestType.create(name: 'Fox')

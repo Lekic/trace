@@ -7,6 +7,7 @@
 					= link_to 'Filter', "#"
 
 	.col-lg-10.col-md-12.isotope
+		= link_to "Create New Sighting", new_sighting_path
 		- @sightings.each do |sighting|
 			.home-sighting
 				= image_tag("temp-pest.jpg")

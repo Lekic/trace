@@ -1,5 +1,7 @@
 %h1 Generate Report
 
-= render 'register'
-
-= link_to "Back", reports_path
+= semantic_form_for @report do |f|
+	= f.inputs
+	= f.actions do
+		= f.action :submit, :as => :button, :label => "Submit"
+		= f.action :cancel, :as => :link, :label => "Go Back"

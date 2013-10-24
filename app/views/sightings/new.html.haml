@@ -1,5 +1,7 @@
 %h1 Create Sighting
 
-= render 'register'
-
-= link_to "Back", sightings_path
+= semantic_form_for @sighting do |f|
+	= f.inputs
+	= f.actions do
+		= f.action :submit, :as => :button, :label => "Submit"
+		= f.action :cancel, :as => :link, :label => "Go Back"

@@ -14,7 +14,7 @@
 ActiveRecord::Schema.define(version: 20131024063115) do
 
   create_table "colours", force: true do |t|
-    t.string   "colour"
+    t.string   "name"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -46,7 +46,7 @@ ActiveRecord::Schema.define(version: 20131024063115) do
   end
 
   create_table "pest_types", force: true do |t|
-    t.string   "type"
+    t.string   "name"
     t.integer  "pest_id"
     t.datetime "created_at"
     t.datetime "updated_at"
