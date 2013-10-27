@@ -13,6 +13,9 @@
 
 ActiveRecord::Schema.define(version: 20131024063115) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "colours", force: true do |t|
     t.string   "name"
     t.datetime "created_at"
@@ -52,7 +55,7 @@ ActiveRecord::Schema.define(version: 20131024063115) do
     t.datetime "updated_at"
   end
 
-  add_index "pest_types", ["pest_id"], name: "index_pest_types_on_pest_id"
+  add_index "pest_types", ["pest_id"], name: "index_pest_types_on_pest_id", using: :btree
 
   create_table "pests", force: true do |t|
     t.string   "name"
@@ -64,8 +67,8 @@ ActiveRecord::Schema.define(version: 20131024063115) do
     t.datetime "updated_at"
   end
 
-  add_index "pests", ["colour_id"], name: "index_pests_on_colour_id"
-  add_index "pests", ["pest_type_id"], name: "index_pests_on_pest_type_id"
+  add_index "pests", ["colour_id"], name: "index_pests_on_colour_id", using: :btree
+  add_index "pests", ["pest_type_id"], name: "index_pests_on_pest_type_id", using: :btree
 
   create_table "pests_sources", force: true do |t|
     t.integer  "pest_id",    null: false
@@ -81,7 +84,7 @@ ActiveRecord::Schema.define(version: 20131024063115) do
     t.datetime "updated_at"
   end
 
-  add_index "phone_types", ["user_id"], name: "index_phone_types_on_user_id"
+  add_index "phone_types", ["user_id"], name: "index_phone_types_on_user_id", using: :btree
 
   create_table "phones", force: true do |t|
     t.integer  "country_code"
@@ -94,8 +97,8 @@ ActiveRecord::Schema.define(version: 20131024063115) do
     t.datetime "updated_at"
   end
 
-  add_index "phones", ["phone_type_id"], name: "index_phones_on_phone_type_id"
-  add_index "phones", ["user_id"], name: "index_phones_on_user_id"
+  add_index "phones", ["phone_type_id"], name: "index_phones_on_phone_type_id", using: :btree
+  add_index "phones", ["user_id"], name: "index_phones_on_user_id", using: :btree
 
   create_table "reports", force: true do |t|
     t.date     "date_created"
@@ -104,7 +107,7 @@ ActiveRecord::Schema.define(version: 20131024063115) do
     t.datetime "updated_at"
   end
 
-  add_index "reports", ["user_id"], name: "index_reports_on_user_id"
+  add_index "reports", ["user_id"], name: "index_reports_on_user_id", using: :btree
 
   create_table "reports_sightings", force: true do |t|
     t.integer  "report_id",   null: false
@@ -125,9 +128,9 @@ ActiveRecord::Schema.define(version: 20131024063115) do
     t.datetime "updated_at"
   end
 
-  add_index "sightings", ["park_id"], name: "index_sightings_on_park_id"
-  add_index "sightings", ["pest_id"], name: "index_sightings_on_pest_id"
-  add_index "sightings", ["user_id"], name: "index_sightings_on_user_id"
+  add_index "sightings", ["park_id"], name: "index_sightings_on_park_id", using: :btree
+  add_index "sightings", ["pest_id"], name: "index_sightings_on_pest_id", using: :btree
+  add_index "sightings", ["user_id"], name: "index_sightings_on_user_id", using: :btree
 
   create_table "types", force: true do |t|
     t.string   "name"
@@ -161,10 +164,10 @@ ActiveRecord::Schema.define(version: 20131024063115) do
     t.string   "last_sign_in_ip"
   end
 
-  add_index "users", ["email"], name: "index_users_on_email", unique: true
-  add_index "users", ["park_id"], name: "index_users_on_park_id"
-  add_index "users", ["person_type_id"], name: "index_users_on_person_type_id"
-  add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
-  add_index "users", ["username"], name: "index_users_on_username", unique: true
+  add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
+  add_index "users", ["park_id"], name: "index_users_on_park_id", using: :btree
+  add_index "users", ["person_type_id"], name: "index_users_on_person_type_id", using: :btree
+  add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
+  add_index "users", ["username"], name: "index_users_on_username", unique: true, using: :btree
 
 end
