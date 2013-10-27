@@ -49,7 +49,7 @@ gem 'formtastic'
 group :production do
   ruby "2.0.0" # for Heroku
   gem 'rails_12factor'
-  gem 'newrelic_rpm'
+  #gem 'newrelic_rpm'
 end
 
 group :doc do
