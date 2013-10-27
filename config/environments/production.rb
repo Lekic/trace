@@ -59,7 +59,23 @@ Trace::Application.configure do
 
   # Precompile additional assets.
   # application.js, application.css, and all non-JS/CSS in app/assets folder are already added.
-  config.assets.precompile = [ "landing", "pests", "welcome", "users", "sightings", "reports" ]
+  config.assets.precompile += [ 
+    "landing.css",
+    "pests.css",
+    "welcome.css",
+    "users.css",
+    "sightings.css",
+    "reports.css",
+    "landing.js",
+    "pests.js",
+    "welcome.js",
+    "users.js",
+    "sightings.js",
+    "reports.js"
+  ]
+
+  config.assets.css_compressor = :sass
+  config.assets.enabled = true
 
   # Ignore bad email addresses and do not raise email delivery errors.
   # Set this to true and configure the email server for immediate delivery to raise delivery errors.
