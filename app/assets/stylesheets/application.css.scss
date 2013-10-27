@@ -68,3 +68,7 @@ body {
 .text-center {
 	text-align: center;
 }
+
+body.modal-open {
+	margin-right: 0 !important;
+}
