@@ -45,8 +45,11 @@ gem 'devise'
 # Formtastic for high-performance form creation with relational implementation
 gem 'formtastic'
 
-# Heroku
-gem 'rails_12factor', group: :production
+# Force Ruby 2.0.0
+group :production do
+  ruby "2.0.0" # for Heroku
+  gem 'rails_12factor'
+end
 
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.
