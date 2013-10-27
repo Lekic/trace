@@ -42,8 +42,11 @@ gem 'dropzonejs-rails'
 # Devise for secure login authentication and email confirmation
 gem 'devise'
 
-#Formtastic for high-performance form creation with relational implementation
+# Formtastic for high-performance form creation with relational implementation
 gem 'formtastic'
+
+# Heroku
+gem 'rails_12factor', group: :production
 
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.
