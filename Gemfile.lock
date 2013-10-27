@@ -55,6 +55,7 @@ GEM
     execjs (2.0.2)
     formtastic (2.2.1)
       actionpack (>= 3.0)
+    gmaps4rails (2.0.3)
     haml (4.0.3)
       tilt
     haml-rails (0.4)
@@ -148,6 +149,7 @@ DEPENDENCIES
   devise
   dropzonejs-rails
   formtastic
+  gmaps4rails
   haml-rails
   jbuilder (~> 1.2)
   jquery-rails

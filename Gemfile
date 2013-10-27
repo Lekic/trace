@@ -45,6 +45,9 @@ gem 'devise'
 # Formtastic for high-performance form creation with relational implementation
 gem 'formtastic'
 
+# Google Maps
+gem "gmaps4rails"
+
 # Force Ruby 2.0.0
 group :production do
   ruby "2.0.0" # for Heroku
