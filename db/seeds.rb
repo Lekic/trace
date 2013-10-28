@@ -31,6 +31,11 @@ PestType.create(name: 'Rat')
 PestType.create(name: 'Rabbit')
 PestType.create(name: 'Sheep')
 
+# Pest Sources
+Source.create(name: 'Surveilance Camera')
+Source.create(name: 'Tracking Tag')
+Source.create(name: 'Visual Sighting')
+
 # Person Types
 PersonType.create(name: 'Employee')
 PersonType.create(name: 'Conservation partner')
