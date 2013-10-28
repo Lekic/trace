@@ -54,6 +54,15 @@ User.create(user_id: '10402', name: 'Regina Ison', date_joined: '2001-12-24', pe
 User.create(user_id: '10469', name: 'Alycia Dandridge', date_joined: '2012-10-19', person_type_id: '3')
 User.create(user_id: '10269', name: 'Lisette Karns', date_joined: '2003-07-14', person_type_id: '5')
 
+#Phone Types
+PhoneType.create(name: 'Home')
+PhoneType.create(name: 'Mobile')
+PhoneType.create(name: 'Business')
+
+#Phones
+Phone.create(user_id: '10033', country_code: '61', area_code: '2', phone: '96706517', phone_type_id: '3')
+
+
 #Areas
 Area.create(name: 'Central NSW')
 Area.create(name: 'Hunter and Mid North Coast')
