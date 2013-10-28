@@ -1,6 +1,7 @@
 class CreateUsers < ActiveRecord::Migration
   def change
     create_table :users do |t|
+      t.integer :user_id, unique: true
       t.string :name
       #t.string :email
       t.date :date_of_birth
