@@ -17,7 +17,13 @@ Colour.create(name: 'Purple')
 Colour.create(name: 'Brown')
 Colour.create(name: 'Black')
 
-#Pest Types
+# Pest Marking Types
+Marking.create(name: 'Scars')
+Marking.create(name: 'Stripes')
+Marking.create(name: 'Spots')
+Marking.create(name: 'Patches')
+
+# Pest Types
 PestType.create(name: 'Dog')
 PestType.create(name: 'Cat')
 PestType.create(name: 'Fox')
@@ -25,14 +31,14 @@ PestType.create(name: 'Rat')
 PestType.create(name: 'Rabbit')
 PestType.create(name: 'Sheep')
 
-#Person Types
+# Person Types
 PersonType.create(name: 'Employee')
 PersonType.create(name: 'Conservation partner')
 PersonType.create(name: 'Tour Operator')
 PersonType.create(name: 'Volunteer')
 PersonType.create(name: 'Fitness Trainer')
 
-#Users
+# Users
 User.create(user_id: '10827', name: 'Loree Basnett', date_joined: '2004-01-08', person_type_id: '4')
 User.create(user_id: '10162', name: 'Elvera Hunley', date_joined: '2001-11-22', person_type_id: '4')
 User.create(user_id: '10064', name: 'Abe Bhakta', date_joined: '1999-09-29', person_type_id: '2')
@@ -54,12 +60,12 @@ User.create(user_id: '10402', name: 'Regina Ison', date_joined: '2001-12-24', pe
 User.create(user_id: '10469', name: 'Alycia Dandridge', date_joined: '2012-10-19', person_type_id: '3')
 User.create(user_id: '10269', name: 'Lisette Karns', date_joined: '2003-07-14', person_type_id: '5')
 
-#Phone Types
+# Phone Types
 PhoneType.create(name: 'Home')
 PhoneType.create(name: 'Mobile')
 PhoneType.create(name: 'Business')
 
-#Phones
+# Phones
 Phone.create(user_id: '10033', country_code: '61', area_code: '2', phone: '96706517', phone_type_id: '3')
 Phone.create(user_id: '10064', country_code: '61', area_code: '2', phone: '96627114', phone_type_id: '3')
 Phone.create(user_id: '10106', country_code: '61', area_code: '2', phone: '96869417', phone_type_id: '3')
@@ -85,7 +91,7 @@ Phone.create(user_id: '10883', country_code: '61', area_code: '414', phone: '884
 Phone.create(user_id: '10957', country_code: '61', area_code: '413', phone: '834051', phone_type_id: '2')
 Phone.create(user_id: '10980', country_code: '61', area_code: '416', phone: '154513', phone_type_id: '2')
 
-#Areas
+# Areas
 Area.create(name: 'Central NSW')
 Area.create(name: 'Hunter and Mid North Coast')
 Area.create(name: 'Northern Rivers')
@@ -94,7 +100,7 @@ Area.create(name: 'Outback NSW')
 Area.create(name: 'South Coast and Highlands')
 Area.create(name: 'Sydney')
 
-#Parks
+# Parks
 Park.create(park_id: '2100100', name: 'Turon', area_id: '1')
 Park.create(park_id: '2100105', name: 'Nangar', area_id: '1')
 Park.create(park_id: '2100108', name: 'Coolah Tops', area_id: '1')
