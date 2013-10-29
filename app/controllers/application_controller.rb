@@ -29,10 +29,10 @@ class ApplicationController < ActionController::Base
   before_filter :configure_devise_params, if: :devise_controller?
   def configure_devise_params
     devise_parameter_sanitizer.for(:sign_up) do |u|
-      u.permit(:username, :name, :email, :password, :password_confirmation)
+      u.permit(:username, :name, :email, :password, :password_confirmation, :admin)
     end
     devise_parameter_sanitizer.for(:edit) do |u|
-      u.permit(:username, :name, :email, :password, :password_confirmation, :date_of_birth, :current_password)
+      u.permit(:username, :name, :email, :password, :password_confirmation, :admin, :date_of_birth, :current_password)
     end
   end
 end
