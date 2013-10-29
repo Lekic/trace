@@ -1,6 +1,9 @@
 class PestsController < ApplicationController
 	def index
 		@pests = Pest.all
+		@types = PestType.all
+		@colours = Colour.all
+		@sources = Source.all
 	end
 
 	def new
