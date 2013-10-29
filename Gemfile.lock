@@ -1,4 +1,11 @@
 GIT
+  remote: git://github.com/Compass/compass-rails.git
+  revision: aea69635f6000bbc7180f7fdd0ce216f904db30d
+  specs:
+    compass-rails (2.0.alpha.0)
+      compass (>= 0.12.2, < 0.14)
+
+GIT
   remote: git://github.com/thomas-mcdonald/bootstrap-sass.git
   revision: 6fa811399d9186e42a49814e177e11b8cec53028
   specs:
@@ -53,8 +60,6 @@ GEM
       chunky_png (~> 1.2)
       fssm (>= 0.2.7)
       sass (~> 3.1)
-    compass-rails (1.0.3)
-      compass (>= 0.12.2, < 0.14)
     devise (3.1.1)
       bcrypt-ruby (~> 3.0)
       orm_adapter (~> 0.1)
@@ -163,6 +168,7 @@ DEPENDENCIES
   bootstrap-sass!
   chosen-rails
   coffee-rails (~> 4.0.0)
+  compass-rails!
   devise
   dropzonejs-rails
   formtastic
