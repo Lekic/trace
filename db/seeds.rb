@@ -44,6 +44,12 @@ Source.create(name: 'Visual Sighting')
 Pest.delete_all
 Pest.create(name: 'Brown Fox #1927', pest_type_id: '3', source_id: '1', characteristics: 'Tall, brown unit.', colour_id: '8', size:'84')
 Pest.create(name: 'Red Dog #1291', pest_type_id: '1', source_id: '3', characteristics: 'This bloke hurt. Characteristic field', colour_id: '1', size:'92')
+Pest.create(name: 'Brown Fox #1927', pest_type_id: '3', source_id: '1', characteristics: 'Tall, brown unit.', colour_id: '8', size:'84')
+Pest.create(name: 'Red Dog #1291', pest_type_id: '1', source_id: '3', characteristics: 'This bloke hurt. Characteristic field', colour_id: '1', size:'92')
+Pest.create(name: 'Fat Cat #481', pest_type_id: '2', source_id: '2', characteristics: 'Mint as fuck cat.', colour_id: '2', size:'104')
+Pest.create(name: 'Bugs Bunny', pest_type_id: '5', source_id: '3', characteristics: 'Ermmmm, whats up doc?', colour_id: '4', size:'128')
+Pest.create(name: 'Snoop doggy dog', pest_type_id: '1', source_id: '2', characteristics: 'Rapper come reggaeton come dj flop.', colour_id: '9', size:'104')
+Pest.create(name: 'Hayden', pest_type_id: '2', source_id: '2', characteristics: 'Swagginnnn collared pussy ;)', colour_id: '3', size:'62')
 
 # Test M:M data for pests
 #MarkingPest.create(marking_id: '1', pest_id: '1')
