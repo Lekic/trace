@@ -9,7 +9,9 @@
  * compiled file, but it's generally better to create a new file per style scope.
  *
  *= require_self
+ *= require_tree .
  *= require bootstrap
+ *= isotope.min.css
  *= require formtastic
  *= require my_formtastic_changes
  */
@@ -71,4 +73,18 @@ body {
 
 body.modal-open {
 	margin-right: 0 !important;
+}
+
+.item {
+	width: 295px;
+	border: 1px solid #ddd;
+	padding: 20px;
+	float: left;
+	margin: 10px;
+	border-radius: 4px;
+
+	img {
+		max-width: 100%;
+	}
+
 }
