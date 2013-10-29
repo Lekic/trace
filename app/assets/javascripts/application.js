@@ -22,4 +22,22 @@ $(document).ready(function() {
 	$isotope.imagesLoaded( function(){
 		$isotope.isotope();
 	});
+	$('.side-nav select').bind('keyup', function() {
+		$this = $(this);
+
+		var filter_method = $this.attr("placeholder").toLowerCase();
+
+		if ($this.val() == "") {
+			$isotope.isotope({
+				filter: "*"
+			});
+		}
+		else {
+	    	var selector = "." + filter_method + "-" + $this.val().toLowerCase();
+			$isotope.isotope({
+				filter: selector
+			});
+		}
+		return false;
+	});
 });
