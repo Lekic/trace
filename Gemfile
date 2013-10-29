@@ -48,6 +48,12 @@ gem 'formtastic'
 # Google Maps
 gem "gmaps4rails"
 
+# Chosen
+gem "chosen-rails"
+
+# iCheck
+gem "icheck-rails"
+
 # Force Ruby 2.0.0
 group :production do
   ruby "2.0.0" # for Heroku
