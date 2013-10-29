@@ -67,7 +67,7 @@ User.create(user_id: '10162', name: 'Elvera Hunley', date_joined: '2001-11-22', 
 User.create(user_id: '10064', name: 'Abe Bhakta', date_joined: '1999-09-29', person_type_id: '2')
 User.create(user_id: '10957', name: 'Lorita Schartz', date_joined: '2001-07-25', person_type_id: '1')
 User.create(user_id: '10106', name: 'Sheri Coplan', date_joined: '2009-09-11', person_type_id: '1')
-#User.create(user_id: '10414', name: "Katheleen O'Callaghan", date_joined: '2009-03-29', person_type_id: '3')
+User.create(user_id: '10414', name: "Katheleen O'Callaghan", date_joined: '2009-03-29', person_type_id: '3')
 User.create(user_id: '10122', name: 'Cassie Rochin', date_joined: '2007-04-07', person_type_id: '5')
 User.create(user_id: '10641', name: 'Karmen Gin', date_joined: '2004-09-04', person_type_id: '1')
 User.create(user_id: '10033', name: 'Magda Harrah', date_joined: '2001-08-16', person_type_id: '1')
