@@ -2,14 +2,24 @@
 	%h2 Pests
 	.col-lg-2.visible-lg
 		%ul.nav.nav-stacked.side-nav
-			- (1..6).each do
-				%li
-					= link_to 'Filter', "#"
+			%select.form-control
+				- @types.each do |type|
+					%option
+						= type.name.to_s
+			%select.form-control
+				- @colours.each do |colour|
+					%option
+						= colour.name.to_s
+			%select.form-control
+				- @sources.each do |source|
+					%option
+						= source.name.to_s
+			%input.form-control{:type => "text", :placeholder => "Size"}
 
 	.col-lg-10.col-md-12.isotope
 		= link_to "Create New Pest", new_pest_path
 		- @pests.each do |pest|
-			.item
+			.item{:class => "name-" + pest.name.to_s.downcase.squish.gsub( /\s/, '_' ) + " type-" + pest.pest_type.name.downcase.squish.gsub( /\s/, '_' ) + " size-" + pest.size.to_s.squish.gsub( /\s/, '_' ) + " source-" + pest.source.name.downcase.squish.gsub( /\s/, '_' ) + " colour-" + pest.colour.name.downcase.squish.gsub( /\s/, '_' )}
 				= image_tag("temp-pest.jpg")
 				%p
 					Name:
