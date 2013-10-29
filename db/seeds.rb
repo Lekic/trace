@@ -42,8 +42,8 @@ Source.create(name: 'Visual Sighting')
 
 # Test pests
 Pest.delete_all
-Pest.create(name: 'Brown Fox #1927', pest_type_id: '3', characteristics: 'Tall, brown unit.', colour_id: '8', size:'84')
-Pest.create(name: 'Red Dog #1291', pest_type_id: '1', characteristics: 'This bloke hurt. Characteristic field', colour_id: '1', size:'92')
+Pest.create(name: 'Brown Fox #1927', pest_type_id: '3', source_id: '1', characteristics: 'Tall, brown unit.', colour_id: '8', size:'84')
+Pest.create(name: 'Red Dog #1291', pest_type_id: '1', source_id: '3', characteristics: 'This bloke hurt. Characteristic field', colour_id: '1', size:'92')
 
 # Test M:M data for pests
 #MarkingPest.create(marking_id: '1', pest_id: '1')

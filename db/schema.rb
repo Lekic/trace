@@ -81,13 +81,6 @@ ActiveRecord::Schema.define(version: 20131028043332) do
   add_index "pests", ["pest_type_id"], name: "index_pests_on_pest_type_id", using: :btree
   add_index "pests", ["source_id"], name: "index_pests_on_source_id", using: :btree
 
-  create_table "pests_sources", force: true do |t|
-    t.integer  "pest_id",    null: false
-    t.integer  "source_id",  null: false
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
   create_table "phone_types", force: true do |t|
     t.string   "name"
     t.datetime "created_at"
