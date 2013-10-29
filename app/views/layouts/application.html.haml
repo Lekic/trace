@@ -79,9 +79,17 @@
 						- else
 							%li.dropdown
 								= link_to "Sign In", new_user_session_path
+
 		.container
 			-#%p.notice 
 				-#= notice
 			-#%p.alert
 				-#= alert
 			= yield
+
+		%footer
+			.container
+				.pull-left
+					%p Made with love by Hayden Bleasel and Daniel Lekic
+				.pull-right
+					%p Copyright &copy; Trace 2013
