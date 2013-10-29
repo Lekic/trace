@@ -7,6 +7,7 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
 # Pest Colours
+Colour.delete_all
 Colour.create(name: 'Red')
 Colour.create(name: 'Blue')
 Colour.create(name: 'Green')
@@ -18,12 +19,14 @@ Colour.create(name: 'Brown')
 Colour.create(name: 'Black')
 
 # Pest Marking Types
+Marking.delete_all
 Marking.create(name: 'Scars')
 Marking.create(name: 'Stripes')
 Marking.create(name: 'Spots')
 Marking.create(name: 'Patches')
 
 # Pest Types
+PestType.delete_all
 PestType.create(name: 'Dog')
 PestType.create(name: 'Cat')
 PestType.create(name: 'Fox')
@@ -32,11 +35,13 @@ PestType.create(name: 'Rabbit')
 PestType.create(name: 'Sheep')
 
 # Pest Sources
+Source.delete_all
 Source.create(name: 'Surveilance Camera')
 Source.create(name: 'Tracking Tag')
 Source.create(name: 'Visual Sighting')
 
 # Test pests
+Pest.delete_all
 Pest.create(name: 'Brown Fox #1927', pest_type_id: '3', characteristics: 'Tall, brown unit.', colour_id: '8', size:'84')
 Pest.create(name: 'Red Dog #1291', pest_type_id: '1', characteristics: 'This bloke hurt. Characteristic field', colour_id: '1', size:'92')
 
@@ -48,6 +53,7 @@ Pest.create(name: 'Red Dog #1291', pest_type_id: '1', characteristics: 'This blo
 #MarkingPest.create(marking_id: '4', pest_id: '1')
 
 # Person Types
+PersonType.delete_all
 PersonType.create(name: 'Employee')
 PersonType.create(name: 'Conservation partner')
 PersonType.create(name: 'Tour Operator')
@@ -55,12 +61,13 @@ PersonType.create(name: 'Volunteer')
 PersonType.create(name: 'Fitness Trainer')
 
 # Users
+User.delete_all
 User.create(user_id: '10827', name: 'Loree Basnett', date_joined: '2004-01-08', person_type_id: '4')
 User.create(user_id: '10162', name: 'Elvera Hunley', date_joined: '2001-11-22', person_type_id: '4')
 User.create(user_id: '10064', name: 'Abe Bhakta', date_joined: '1999-09-29', person_type_id: '2')
 User.create(user_id: '10957', name: 'Lorita Schartz', date_joined: '2001-07-25', person_type_id: '1')
 User.create(user_id: '10106', name: 'Sheri Coplan', date_joined: '2009-09-11', person_type_id: '1')
-User.create(user_id: '10414', name: "Katheleen O'Callaghan", date_joined: '2009-03-29', person_type_id: '3')
+#User.create(user_id: '10414', name: "Katheleen O'Callaghan", date_joined: '2009-03-29', person_type_id: '3')
 User.create(user_id: '10122', name: 'Cassie Rochin', date_joined: '2007-04-07', person_type_id: '5')
 User.create(user_id: '10641', name: 'Karmen Gin', date_joined: '2004-09-04', person_type_id: '1')
 User.create(user_id: '10033', name: 'Magda Harrah', date_joined: '2001-08-16', person_type_id: '1')
@@ -77,11 +84,13 @@ User.create(user_id: '10469', name: 'Alycia Dandridge', date_joined: '2012-10-19
 User.create(user_id: '10269', name: 'Lisette Karns', date_joined: '2003-07-14', person_type_id: '5')
 
 # Phone Types
+PhoneType.delete_all
 PhoneType.create(name: 'Home')
 PhoneType.create(name: 'Mobile')
 PhoneType.create(name: 'Business')
 
 # Phones
+Phone.delete_all
 Phone.create(user_id: '10033', country_code: '61', area_code: '2', phone: '96706517', phone_type_id: '3')
 Phone.create(user_id: '10064', country_code: '61', area_code: '2', phone: '96627114', phone_type_id: '3')
 Phone.create(user_id: '10106', country_code: '61', area_code: '2', phone: '96869417', phone_type_id: '3')
@@ -108,6 +117,7 @@ Phone.create(user_id: '10957', country_code: '61', area_code: '413', phone: '834
 Phone.create(user_id: '10980', country_code: '61', area_code: '416', phone: '154513', phone_type_id: '2')
 
 # Areas
+Area.delete_all
 Area.create(name: 'Central NSW')
 Area.create(name: 'Hunter and Mid North Coast')
 Area.create(name: 'Northern Rivers')
@@ -117,6 +127,7 @@ Area.create(name: 'South Coast and Highlands')
 Area.create(name: 'Sydney')
 
 # Parks
+Park.delete_all
 Park.create(park_id: '2100100', name: 'Turon', area_id: '1')
 Park.create(park_id: '2100105', name: 'Nangar', area_id: '1')
 Park.create(park_id: '2100108', name: 'Coolah Tops', area_id: '1')
