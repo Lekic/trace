@@ -41,9 +41,14 @@
 						%span.icon-bar
 						%span.icon-bar
 						%span.icon-bar
-					= link_to root_url, :controller => "welcome", :class => "navbar-brand" do
-						= image_tag "logo.png", :class => "logo"
-						Trace
+					- if user_signed_in?
+						= link_to welcome_index_path, :controller => "welcome", :class => "navbar-brand" do
+							= image_tag "logo.png", :class => "logo"
+							Trace
+					- else
+						= link_to root_url, :controller => "landing", :class => "navbar-brand" do
+							= image_tag "logo.png", :class => "logo"
+							Trace
 				.collapse.navbar-collapse.navbar-ex1-collapse
 					%ul.nav.navbar-nav
 						%li{class: ('active' if params[:controller] == 'sightings')}
