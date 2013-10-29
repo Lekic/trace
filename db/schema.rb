@@ -11,10 +11,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131024063115) do
+ActiveRecord::Schema.define(version: 20131028043332) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "areas", force: true do |t|
+    t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "colours", force: true do |t|
     t.string   "name"
@@ -23,7 +29,7 @@ ActiveRecord::Schema.define(version: 20131024063115) do
   end
 
   create_table "markings", force: true do |t|
-    t.string   "marking"
+    t.string   "name"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -36,11 +42,14 @@ ActiveRecord::Schema.define(version: 20131024063115) do
   end
 
   create_table "parks", force: true do |t|
+    t.integer  "park_id"
     t.string   "name"
-    t.string   "area"
+    t.integer  "area_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  add_index "parks", ["area_id"], name: "index_parks_on_area_id", using: :btree
 
   create_table "person_types", force: true do |t|
     t.string   "name"
@@ -79,12 +88,9 @@ ActiveRecord::Schema.define(version: 20131024063115) do
 
   create_table "phone_types", force: true do |t|
     t.string   "name"
-    t.integer  "user_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
-
-  add_index "phone_types", ["user_id"], name: "index_phone_types_on_user_id", using: :btree
 
   create_table "phones", force: true do |t|
     t.integer  "country_code"
@@ -132,13 +138,14 @@ ActiveRecord::Schema.define(version: 20131024063115) do
   add_index "sightings", ["pest_id"], name: "index_sightings_on_pest_id", using: :btree
   add_index "sightings", ["user_id"], name: "index_sightings_on_user_id", using: :btree
 
-  create_table "types", force: true do |t|
+  create_table "sources", force: true do |t|
     t.string   "name"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
   create_table "users", force: true do |t|
+    t.integer  "user_id"
     t.string   "name"
     t.date     "date_of_birth"
     t.datetime "date_joined"

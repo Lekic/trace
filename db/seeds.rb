@@ -41,11 +41,11 @@ Pest.create(name: 'Brown Fox #1927', pest_type_id: '3', characteristics: 'Tall, 
 Pest.create(name: 'Red Dog #1291', pest_type_id: '1', characteristics: 'This bloke hurt. Characteristic field', colour_id: '1', size:'92')
 
 # Test M:M data for pests
-MarkingPest.create(marking_id: '1', pest_id: '1')
-MarkingPest.create(marking_id: '3', pest_id: '1')
-MarkingPest.create(marking_id: '1', pest_id: '1')
-MarkingPest.create(marking_id: '2', pest_id: '1')
-MarkingPest.create(marking_id: '4', pest_id: '1')
+#MarkingPest.create(marking_id: '1', pest_id: '1')
+#MarkingPest.create(marking_id: '3', pest_id: '1')
+#MarkingPest.create(marking_id: '1', pest_id: '1')
+#MarkingPest.create(marking_id: '2', pest_id: '1')
+#MarkingPest.create(marking_id: '4', pest_id: '1')
 
 # Person Types
 PersonType.create(name: 'Employee')
