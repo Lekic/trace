@@ -1,7 +1,7 @@
 class CreatePests < ActiveRecord::Migration
   def change
     create_table :pests do |t|
-      #t.references :source, index: true
+      t.references :source, index: true
       t.string :name, unique: true
       t.references :pest_type, index: true
       t.string :characteristics

@@ -67,6 +67,7 @@ ActiveRecord::Schema.define(version: 20131028043332) do
   add_index "pest_types", ["pest_id"], name: "index_pest_types_on_pest_id", using: :btree
 
   create_table "pests", force: true do |t|
+    t.integer  "source_id"
     t.string   "name"
     t.integer  "pest_type_id"
     t.string   "characteristics"
@@ -78,6 +79,7 @@ ActiveRecord::Schema.define(version: 20131028043332) do
 
   add_index "pests", ["colour_id"], name: "index_pests_on_colour_id", using: :btree
   add_index "pests", ["pest_type_id"], name: "index_pests_on_pest_type_id", using: :btree
+  add_index "pests", ["source_id"], name: "index_pests_on_source_id", using: :btree
 
   create_table "pests_sources", force: true do |t|
     t.integer  "pest_id",    null: false
