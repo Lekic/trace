@@ -29,7 +29,7 @@
   %div
     = f.label :date_of_birth
     %br/
-    = f.date_select :date_of_birth
+    = f.date_select :date_of_birth, { :include_blank => true, :start_year => 1960, :end_day => Time.now }
   %div
     = f.label :current_password
     %i (we need your current password to confirm your changes)
