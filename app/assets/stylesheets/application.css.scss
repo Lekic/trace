@@ -8,13 +8,13 @@
  * You're free to add application-wide styles to this file and they'll appear at the top of the
  * compiled file, but it's generally better to create a new file per style scope.
  *
- *= require_self
- *= require_tree .
  *= require bootstrap
  *= require formtastic
  *= require chosen
  *= require my_formtastic_changes
  *= require isotope.min.css
+ *= require_self
+ *= require_tree .
  */
 
 html, body {
@@ -81,15 +81,18 @@ body.modal-open {
 	float: left;
 	margin: 10px;
 	border-radius: 4px;
-
 	img {
 		max-width: 100%;
 	}
-
 }
 
 footer {
 	background: #242628;
 	color: #777;
 	padding: 30px 0;
+}
+
+h1 {
+	font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+	font-weight: 100;
 }
