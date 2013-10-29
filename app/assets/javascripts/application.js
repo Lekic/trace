@@ -15,6 +15,7 @@
 //= require turbolinks
 //= require bootstrap
 //= require dropzone
+//= require chosen-jquery
 //= require isotope.min.js
 
 $(document).ready(function() {

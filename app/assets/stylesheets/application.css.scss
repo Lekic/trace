@@ -11,9 +11,10 @@
  *= require_self
  *= require_tree .
  *= require bootstrap
- *= require isotope.min.css
  *= require formtastic
+ *= require chosen
  *= require my_formtastic_changes
+ *= require isotope.min.css
  */
 
 html, body {

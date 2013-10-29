@@ -2,15 +2,15 @@
 	%h2 Pests
 	.col-lg-2.visible-lg
 		%ul.nav.nav-stacked.side-nav
-			%select.form-control
+			%select.form-control.chosen-select{:multiple => "multiple"}
 				- @types.each do |type|
 					%option
 						= type.name.to_s
-			%select.form-control
+			%select.form-control.chosen-select{:multiple => "multiple"}
 				- @colours.each do |colour|
 					%option
 						= colour.name.to_s
-			%select.form-control
+			%select.form-control.chosen-select{:multiple => "multiple"}
 				- @sources.each do |source|
 					%option
 						= source.name.to_s
