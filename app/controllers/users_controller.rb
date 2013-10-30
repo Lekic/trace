@@ -50,6 +50,10 @@ class UsersController < ApplicationController
 		redirect_to users_path
 	end
 
+	def phones
+		Phones.where(:user_id => @user.id).order('id').all
+	end
+
 	private
   		def user_params
     		params.require(:user).permit(:name, :email, :date_of_birth, :username, :password, :date_joined, :park_id, :phone_id, :admin)
