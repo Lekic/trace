@@ -35,6 +35,10 @@ body {
 	min-height: 100%;
 }
 
+#container {
+	padding-bottom: 70px;
+}
+
 .user-image {
 	width: 32px;
 	height: 32px;
@@ -83,6 +87,10 @@ body.modal-open {
 	border-radius: 4px;
 	img {
 		max-width: 100%;
+	}
+	&:hover {
+		background: #eee;
+		text-decoration: none;
 	}
 }
 

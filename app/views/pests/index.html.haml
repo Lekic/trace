@@ -1,5 +1,4 @@
 .row
-	%h2 Pests
 	.col-lg-2.visible-lg
 		%ul.nav.nav-stacked.side-nav
 			%select.form-control.chosen-select{:multiple => "multiple"}
@@ -19,11 +18,11 @@
 	.col-lg-10.col-md-12.isotope
 		= link_to "Create New Pest", new_pest_path
 		- @pests.each do |pest|
-			.item{:class => "name-" + pest.name.to_s.downcase.squish.gsub( /\s/, '_' ) + " type-" + pest.pest_type.name.downcase.squish.gsub( /\s/, '_' ) + " size-" + pest.size.to_s.squish.gsub( /\s/, '_' ) + " source-" + pest.source.name.downcase.squish.gsub( /\s/, '_' ) + " colour-" + pest.colour.name.downcase.squish.gsub( /\s/, '_' )}
+			= link_to pest_path(pest), :class => "item name-" + pest.name.to_s.downcase.squish.gsub( /\s/, '_' ) + " type-" + pest.pest_type.name.downcase.squish.gsub( /\s/, '_' ) + " size-" + pest.size.to_s.squish.gsub( /\s/, '_' ) + " source-" + pest.source.name.downcase.squish.gsub( /\s/, '_' ) + " colour-" + pest.colour.name.downcase.squish.gsub( /\s/, '_' ) do
 				= image_tag("temp-pest.jpg")
 				%p
 					Name:
-					= link_to pest.name, pest_path(pest)
+					= pest.name
 				%p
 					Pest type:
 					= pest.pest_type.name
