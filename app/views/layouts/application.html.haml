@@ -74,7 +74,7 @@
 									%li
 										%a{href: "#"} My Profile
 									%li
-										= link_to "Account Settings", edit_user_registration_path
+										= link_to "Account Settings", edit_user_path(@user), controller: "users"
 									%li
 										%a{href: "#"} Help and Support
 									%li
