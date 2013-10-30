@@ -1,8 +1,23 @@
 %p
-	%strong Name:
+	Name:
 	= @pest.name
-	%strong Size:
+%p
+	Pest type:
+	= @pest.pest_type.name
+%p
+	Source:
+	= @pest.source.name
+%p
+	Size:
 	= @pest.size
+%p
+	Colour:
+	= @pest.colour.name
+%p
+	Characteristics:
+	= @pest.characteristics
 
 = link_to "Edit", edit_pest_path(@pest)
+- if current_user.try(:admin?)
+	= link_to "Delete", pest_path(@pest), method: :delete, data: { confirm: "Are you sure you want to delete this entry?" }
 = link_to "Back", pests_path
