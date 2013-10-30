@@ -45,6 +45,9 @@ gem 'dropzonejs-rails'
 # Devise for secure login authentication and email confirmation
 gem 'devise'
 
+#Attr_accessible support for devise
+gem 'protected_attributes'
+
 # Formtastic for high-performance form creation with relational implementation
 gem 'formtastic'
 
