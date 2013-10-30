@@ -1,0 +1,23 @@
+production:
+  adapter: postgresql
+  encoding: unicode
+  database: uts-trace_development
+  pool: 5
+  #username: Daniel
+  password:
+
+development:
+  adapter: postgresql
+  encoding: unicode
+  database: uts-trace_development
+  pool: 5
+  #username: Daniel
+  password:
+
+test: &test
+  adapter: postgresql
+  encoding: unicode
+  database: uts-trace_test
+  pool: 5
+  #username: Daniel
+  password:
