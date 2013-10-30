@@ -14,7 +14,7 @@
 		= f.input :name
 		= f.input :email
 		= f.input :password
-		= f.input :date_of_birth
+		= f.date_select :date_of_birth, { :include_blank => true, :start_year => 1960, :end_day => Time.now }
 		= f.input :park
 		= f.inputs :name => "Contact Details", :for => :phone do |phone_form|
 			= phone_form.input :country_code
