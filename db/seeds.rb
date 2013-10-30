@@ -24,6 +24,7 @@ Marking.create(name: 'Scars')
 Marking.create(name: 'Stripes')
 Marking.create(name: 'Spots')
 Marking.create(name: 'Patches')
+Marking.create(name: 'Scales')
 
 # Pest Types
 PestType.delete_all
@@ -32,7 +33,8 @@ PestType.create(name: 'Cat')
 PestType.create(name: 'Fox')
 PestType.create(name: 'Rat')
 PestType.create(name: 'Rabbit')
-PestType.create(name: 'Sheep')
+PestType.create(name: 'Fish')
+PestType.create(name: 'Frog')
 
 # Pest Sources
 Source.delete_all
