@@ -1,6 +1,7 @@
 class CreatePhones < ActiveRecord::Migration
   def change
     create_table :phones do |t|
+      t.integer :employee_id
       t.integer :country_code, null: false
       t.integer :area_code, null: false
       t.integer :phone, null: false
