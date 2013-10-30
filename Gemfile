@@ -46,7 +46,7 @@ gem 'dropzonejs-rails'
 gem 'devise'
 
 #Attr_accessible support for devise
-gem 'protected_attributes'
+#gem 'protected_attributes'
 
 # Formtastic for high-performance form creation with relational implementation
 gem 'formtastic'
