@@ -38,9 +38,13 @@ class PestsController < ApplicationController
 	end
 
 	def destroy
-		@pest = Pest.find(params[:id])
-		@pest.destroy
-
+		if current_user.try(:admin?)
+			@pest = Pest.find(params[:id])
+			@pest.destroy
+			flash[:notice] = "User successfully deleted."
+		else
+			flash[:alert] = "You cannot delete a pest without admin rights."
+		end
 		redirect_to pests_path
 	end
 
