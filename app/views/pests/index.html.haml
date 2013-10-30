@@ -23,7 +23,7 @@
 				= image_tag("temp-pest.jpg")
 				%p
 					Name:
-					= pest.name
+					= link_to pest.name, pest_path(pest)
 				%p
 					Pest type:
 					= pest.pest_type.name
