@@ -1,7 +1,6 @@
 Trace::Application.routes.draw do
   get "landing/index"
   get "welcome/index"
-
 =begin  
   get "sightings/index"
   get "sightings/new"
@@ -35,7 +34,7 @@ Trace::Application.routes.draw do
 
   resources :users, :pests, :sightings, :reports
 
-  #match '/users/:id', :to => 'users#show',    :as => :user,         :via => :get
+  match '/index', :to => 'welcome#index', :via => :get
   #match '/users/:id', :to => 'users#destroy', :as => :destroy_user, :via => :delete
 
   # Example of regular route:
