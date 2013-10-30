@@ -84,10 +84,10 @@
 								= link_to "Sign In", new_user_session_path
 
 		.container
-			-#%p.notice 
-				-#= notice
-			-#%p.alert
-				-#= alert
+			%p.notice 
+				= notice
+			%p.alert
+				= alert
 			= yield
 
 		%footer

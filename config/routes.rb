@@ -36,7 +36,7 @@ Trace::Application.routes.draw do
   resources :users, :pests, :sightings, :reports
 
   #match '/users/:id', :to => 'users#show',    :as => :user,         :via => :get
-  match '/users/:id', :to => 'users#destroy', :as => :destroy_user, :via => :delete
+  #match '/users/:id', :to => 'users#destroy', :as => :destroy_user, :via => :delete
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

@@ -17,8 +17,12 @@ class UsersController < ApplicationController
 	end
 
 	def show
-		#before_filter :verify_is_admin
-		@user = User.find(params[:id])
+		if current_user.try(:admin?)
+			@user = User.find(params[:id])
+		else
+			flash[:alert] = "Only admins can access this page"
+			redirect_to users_path
+		end
 	end
 
 	def edit
@@ -28,7 +32,7 @@ class UsersController < ApplicationController
 	def update
 		@user = User.find(params[:id])
 
-		if @user.update(params[:user].permit(:name, :email, :date_of_birth, :username, :password, :date_joined))
+		if @user.update(params[:user].permit(:name, :email, :date_of_birth, :username, :password, :date_joined, :park, :phone))
 			redirect_to @user
 		else
 			render 'edit'
@@ -36,16 +40,19 @@ class UsersController < ApplicationController
 	end
 
 	def destroy
-		#before_filter :verify_is_admin
-		@user = User.find(params[:id])
-		@user.destroy
-
+		if current_user.try(:admin?)
+			@user = User.find(params[:id])
+			@user.destroy
+			flash[:notice] = "User successfully deleted."
+		else
+			flash[:alert] = "You cannot delete a user without admin rights."
+		end
 		redirect_to users_path
 	end
 
 	private
   		def user_params
-    		params.require(:user).permit(:name, :email, :date_of_birth, :username, :password, :date_joined)
+    		params.require(:user).permit(:name, :email, :date_of_birth, :username, :password, :date_joined, :park, :phone)
   		end
 		def verify_is_admin
 			(current_user.nil?) ? redirect_to(root_path) : (redirect_to(root_path) unless current_user.admin?)
