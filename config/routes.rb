@@ -32,7 +32,7 @@ Trace::Application.routes.draw do
     get 'users', :to => 'welcome#index', :as => :user_root
   end
 
-  resources :users, :pests, :sightings, :reports
+  resources :users, :pests, :sightings, :reports, :welcome, :landing
 
   match '/index', :to => 'welcome#index', :via => :get
   #match '/users/:id', :to => 'users#destroy', :as => :destroy_user, :via => :delete
