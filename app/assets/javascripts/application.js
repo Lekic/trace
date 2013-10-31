@@ -23,4 +23,18 @@ $(document).ready(function() {
 	$isotope.imagesLoaded( function(){
 		$isotope.isotope();
 	});
+	$('.chosen-select').chosen({
+		allow_single_deselect: true,
+		no_results_text: 'No results matched',
+		width: '160px'
+	});
+	$("#pest-filter").chosen().change(function(e, params) {
+		var parameter = params.selected.toLowerCase();
+		if (parameter == "all")
+			var selector = "*";
+		else
+			var selector = ".type-" + params.selected.toLowerCase();
+		$isotope.isotope({ filter: selector });
+		return false;
+	});
 });
