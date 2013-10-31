@@ -102,6 +102,38 @@ body.modal-open {
 .isotope-header {
 	margin-bottom: 10px;
 	padding: 10px;
+	.chosen-container {
+		.chosen-single {
+			padding: 5px 0 4px 8px;
+			height: 34px;
+			background: #fff;
+			box-shadow: none;
+			border: 1px solid #ddd;
+			div {
+				width: 16px;
+				margin-top: 5px;
+			}
+		}
+		.chosen-results {
+			li.highlighted {
+				background: #428bca;
+			}
+		}
+		.chosen-drop {
+			border-bottom: 1px solid #ddd;
+			border-left: 1px solid #ddd;
+			border-right: 1px solid #ddd;
+			input {
+				border: 1px solid #ddd;
+				border-radius: 4px;
+			}
+		}
+	}
+	.chosen-container-active.chosen-with-drop {
+		.chosen-single {
+			background: #fff;
+		}
+	}
 }
 
 footer {
