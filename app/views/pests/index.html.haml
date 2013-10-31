@@ -2,10 +2,15 @@
 	.pull-left
 		%h2 Recorded Pests
 	.pull-right
+		%select#pest-filter.chosen-select
+			%option All
+			- @types.each do |type|
+				%option
+					= type.name
 		= link_to "Create New Pest", new_pest_path, :class => "btn btn-primary"
 .isotope
 	- @pests.each do |pest|
-		= link_to pest_path(pest), :class => "col-md-3 name-" + pest.name.to_s.downcase.squish.gsub( /\s/, '_' ) + " type-" + pest.pest_type.name.downcase.squish.gsub( /\s/, '_' ) + " size-" + pest.size.to_s.squish.gsub( /\s/, '_' ) + " source-" + pest.source.name.downcase.squish.gsub( /\s/, '_' ) + " colour-" + pest.colour.name.downcase.squish.gsub( /\s/, '_' ) do
+		= link_to pest_path(pest), :class => "col-md-3 type-" + pest.pest_type.name.downcase.squish.gsub( /\s/, '_' ) do
 			.isotope-item-wrapper
 				= image_tag("temp-pest.jpg")
 				%p
