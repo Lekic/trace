@@ -84,12 +84,6 @@
 								= link_to "Sign In", new_user_session_path
 
 		#container.container
-			- if notice
-				%p.notice 
-					= notice
-			-if alert
-				%p.alert
-					= alert
 			= yield
 
 		%footer

@@ -88,9 +88,10 @@ ActiveRecord::Schema.define(version: 20131029043729) do
   end
 
   create_table "phones", force: true do |t|
-    t.integer  "country_code"
-    t.integer  "area_code"
-    t.integer  "phone"
+    t.integer  "employee_id"
+    t.integer  "country_code",  null: false
+    t.integer  "area_code",     null: false
+    t.integer  "phone",         null: false
     t.integer  "phone_type_id"
     t.integer  "user_id"
     t.string   "comment"
@@ -140,7 +141,7 @@ ActiveRecord::Schema.define(version: 20131029043729) do
   end
 
   create_table "users", force: true do |t|
-    t.integer  "user_id"
+    t.integer  "employee_id"
     t.string   "name"
     t.date     "date_of_birth"
     t.datetime "date_joined"
