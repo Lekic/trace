@@ -11,7 +11,6 @@
  *= require bootstrap
  *= require formtastic
  *= require chosen
- *= require my_formtastic_changes
  *= require isotope.min.css
  *= require_self
  *= require_tree .
@@ -86,16 +85,23 @@ body.modal-open {
 .isotope-item {
 	float: left;
 	padding: 10px;
+	&:hover {
+		text-decoration: none;
+		.isotope-item-wrapper {
+			background: #eee;
+		}
+	}
 }
 
 .isotope-item-wrapper {
 	border-radius: 4px;
 	border: 1px solid #ddd;
 	padding: 20px;
-	&:hover {
-		background: #eee;
-		text-decoration: none;
-	}
+}
+
+.isotope-header {
+	margin-bottom: 10px;
+	padding: 10px;
 }
 
 footer {
@@ -104,7 +110,11 @@ footer {
 	padding: 30px 0;
 }
 
-h1 {
-	font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
-	font-weight: 300;
+h1, h2, h3, h4, h5, h6, body, input, textarea {
+	font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+
+h2 {
+	font-size: 31px;
+	margin: 0;
 }
