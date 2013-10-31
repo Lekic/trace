@@ -31,6 +31,11 @@ body {
 	overflow-y: scroll;
 }
 
+img {
+	max-width: 100%;
+	height: auto;
+}
+
 .container {
 	min-height: 100%;
 }
@@ -79,13 +84,14 @@ body.modal-open {
 }
 
 .isotope-item {
+	float: left;
+	padding: 10px;
+}
+
+.isotope-item-wrapper {
+	border-radius: 4px;
 	border: 1px solid #ddd;
 	padding: 20px;
-	float: left;
-	border-radius: 4px;
-	img {
-		max-width: 100%;
-	}
 	&:hover {
 		background: #eee;
 		text-decoration: none;

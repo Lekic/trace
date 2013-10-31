@@ -2,22 +2,23 @@
 .isotope
 	- @pests.each do |pest|
 		= link_to pest_path(pest), :class => "col-md-3 name-" + pest.name.to_s.downcase.squish.gsub( /\s/, '_' ) + " type-" + pest.pest_type.name.downcase.squish.gsub( /\s/, '_' ) + " size-" + pest.size.to_s.squish.gsub( /\s/, '_' ) + " source-" + pest.source.name.downcase.squish.gsub( /\s/, '_' ) + " colour-" + pest.colour.name.downcase.squish.gsub( /\s/, '_' ) do
-			= image_tag("temp-pest.jpg")
-			%p
-				Name:
-				= pest.name
-			%p
-				Pest type:
-				= pest.pest_type.name
-			%p
-				Source:
-				= pest.source.name
-			%p
-				Size:
-				= pest.size
-			%p
-				Colour:
-				= pest.colour.name
-			%p
-				Characteristics:
-				= pest.characteristics
+			.isotope-item-wrapper
+				= image_tag("temp-pest.jpg")
+				%p
+					Name:
+					= pest.name
+				%p
+					Pest type:
+					= pest.pest_type.name
+				%p
+					Source:
+					= pest.source.name
+				%p
+					Size:
+					= pest.size
+				%p
+					Colour:
+					= pest.colour.name
+				%p
+					Characteristics:
+					= pest.characteristics
