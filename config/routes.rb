@@ -1,4 +1,5 @@
 Trace::Application.routes.draw do
+  get "documentation/index"
   get "landing/index"
   get "welcome/index"
 =begin  
