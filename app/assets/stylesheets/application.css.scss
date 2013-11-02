@@ -53,12 +53,45 @@ img {
 	margin: -14px 7px -14px 0;
 }
 
-.side-nav {
+.nav.side-nav {
 	border: 1px solid #ddd;
 	margin-top: 25px;
 	padding: 10px 0;
 	border-radius: 4px;
 	width: 262px;
+	li a {
+		padding: 5px 15px;
+		&:hover, &:focus {
+			text-decoration: none;
+			color: #fff;
+			background-color: #428bca;
+		}
+	}
+	.open > a {
+		background-color: #428bca;
+		color: #fff;
+	}
+	.dropdown-menu {
+		position: relative;
+		width: 260px;
+		border-radius: 0;
+		border: 0;
+		left: 0;
+		margin: 0;
+		box-shadow: none;
+		float: none;
+		li a {
+			position: relative;
+			display: block;
+			color: #428bca;
+			padding: 5px 30px;
+			&:hover, &:focus {
+				text-decoration: none;
+				color: #fff;
+				background-color: #428bca;
+			}
+		}
+	}
 }
 
 .center {
@@ -90,12 +123,11 @@ body.modal-open {
 			background: #eee;
 		}
 	}
-}
-
-.isotope-item-wrapper {
-	border-radius: 4px;
-	border: 1px solid #ddd;
-	padding: 20px;
+	.isotope-item-wrapper {
+		border-radius: 4px;
+		border: 1px solid #ddd;
+		padding: 20px;
+	}
 }
 
 .isotope-header {

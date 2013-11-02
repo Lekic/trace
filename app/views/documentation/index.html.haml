@@ -1,14 +1,50 @@
 #documentation.row
 	#documentation-nav.col-md-3.col-md-offset-1
 		%ul.nav.nav-stacked.side-nav.affix
-			%li= link_to 'Introduction', "#introduction"
+			%li.dropdown
+				= link_to 'Introduction', "#", "data-toggle" => "dropdown", :class => "dropdown-toggle"
+				%ul.dropdown-menu
+					%li= link_to 'Purpose', "#purpose"
+					%li= link_to 'Conventions', "#conventions"
+					%li= link_to 'Audience', "#audience"
+					%li= link_to 'Scope', "#scope"
 			%li= link_to 'Overall Description', "#overalldescription"
-			%li= link_to 'System Features', "#systemfeatures"
+			%li= link_to 'Functional Requirements', "#functionalrequirements"
 			%li= link_to 'Non-Functional Requirements', "#nonfunctionalrequirements"
 			%li= link_to 'Testing and Implementation', "#systemdocumentation"
 	#documentation-content.col-md-6{'data-spy' => "scroll", 'data-target' => "#documentation-nav"}
-		#introduction= render 'introduction'
-		#overalldescription= render 'overalldescription'
-		#systemfeatures= render 'systemfeatures'
-		#nonfunctionalrequirements= render 'nonfunctionalrequirements'
-		#systemdocumentation= render 'systemdocumentation'
+		#introduction
+			%h1 Introduction
+			#purpose= render 'purpose'
+			#conventions= render 'conventions'
+			#audience= render 'audience'
+			#scope= render 'scope'
+		#overalldescription
+			%h1 Overall Description
+			#perspective= render 'perspective'
+			#functions= render 'functions'
+			#users= render 'users'
+			#operating= render 'operating'
+			#constraints= render 'constraints'
+			#userdocumentation= render 'userdocumentation'
+			#assumptions= render 'assumptions'
+		#functionalrequirements
+			%h1 Functional Requirements
+			#functionalrequirement1= render 'functionalrequirement1'
+			#functionalrequirement2= render 'functionalrequirement2'
+			#functionalrequirement3= render 'functionalrequirement3'
+			#functionalrequirement4= render 'functionalrequirement4'
+			#functionalrequirement5= render 'functionalrequirement5'
+			#functionalrequirement6= render 'functionalrequirement6'
+			#functionalrequirement7= render 'functionalrequirement7'
+			#functionalrequirement8= render 'functionalrequirement8'
+		#nonfunctionalrequirements
+			%h1 Non-Functional Requirements
+			#appearance= render 'appearance'
+			#usability= render 'usability'
+			#legal= render 'legal'
+			#performance= render 'performance'
+			#maintainability= render 'maintainability'
+			#security= render 'security'
+			#cultural= render 'cultural'
+			#environmental= render 'environmental'

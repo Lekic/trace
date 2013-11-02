@@ -1,0 +1,5 @@
+## Intended Audience and Reading Suggestions
+
+This document is directed to the PWS to detail the software system being developed. It is suggested that a basic technical understanding is present for the majority of the document and is intended for project managers, users, testers and documentation writers. Some of the technical diagrams illustrated toward the end should be read by those with advanced understanding of software development, such as web system developers.
+
+The recommended reading of this document is in section order as the document is presented in a tier structure, detailing all information in the appropriate order. The document goes from high level to lower level detail as the sections progress. Developers and Architects can skip to later sections (Section 3 onwards) if it suits their needs best.
