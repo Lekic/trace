@@ -1,2 +1,14 @@
-%h1 Documentation#index
-%p Find me in app/views/documentation/index.html.haml
+#documentation.row
+	#documentation-nav.col-md-3.col-md-offset-1
+		%ul.nav.nav-stacked.side-nav.affix
+			%li= link_to 'Introduction', "#introduction"
+			%li= link_to 'Overall Description', "#overalldescription"
+			%li= link_to 'System Features', "#systemfeatures"
+			%li= link_to 'Non-Functional Requirements', "#nonfunctionalrequirements"
+			%li= link_to 'Testing and Implementation', "#systemdocumentation"
+	#documentation-content.col-md-6{'data-spy' => "scroll", 'data-target' => "#documentation-nav"}
+		#introduction= render 'introduction'
+		#overalldescription= render 'overalldescription'
+		#systemfeatures= render 'systemfeatures'
+		#nonfunctionalrequirements= render 'nonfunctionalrequirements'
+		#systemdocumentation= render 'systemdocumentation'
