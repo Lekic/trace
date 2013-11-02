@@ -20,7 +20,7 @@
 
 $(document).ready(function() {
 	$isotope = $('.isotope')
-	$isotope.imagesLoaded( function(){
+	$isotope.imagesLoaded(function(){
 		$isotope.isotope();
 	});
 	$('.chosen-select').chosen({
