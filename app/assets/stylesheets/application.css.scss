@@ -134,6 +134,7 @@ body.modal-open {
 	margin-bottom: 10px;
 	padding: 10px;
 	.chosen-container {
+		font-size: 14px;
 		.chosen-single {
 			padding: 5px 0 4px 8px;
 			height: 34px;
@@ -146,6 +147,11 @@ body.modal-open {
 			}
 		}
 		.chosen-results {
+			padding: 0;
+			margin: 0;
+			li {
+				padding: 3px 20px;
+			}
 			li.highlighted {
 				background: #428bca;
 			}
@@ -154,6 +160,7 @@ body.modal-open {
 			border-bottom: 1px solid #ddd;
 			border-left: 1px solid #ddd;
 			border-right: 1px solid #ddd;
+			padding: 5px 0;
 			input {
 				border: 1px solid #ddd;
 				border-radius: 4px;
