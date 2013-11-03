@@ -86,8 +86,9 @@
 		#container.container
 			%p.notice
 				= notice
-			%p.alert
-				= alert
+			- if !alert.nil?
+				.alert.alert-danger
+					= alert
 			= yield
 
 		%footer
