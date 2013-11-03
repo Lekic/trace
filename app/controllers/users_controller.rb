@@ -26,7 +26,12 @@ class UsersController < ApplicationController
 	end
 
 	def edit
-		@user = User.find(params[:id])
+		if current_user.try(:admin?)
+			@user = User.find(params[:id])
+		else
+			flash[:alert] = "Only admins can access this page"
+			redirect_to users_path
+		end
 	end
 
 	def update

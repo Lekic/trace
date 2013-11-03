@@ -24,7 +24,12 @@ class PestsController < ApplicationController
 	end
 
 	def edit
-		@pest = Pest.find(params[:id])
+		if user_signed_in?
+			@pest = Pest.find(params[:id])
+		else
+			flash[:alert] = "You must be signed in to edit pests"
+			redirect_to :back
+		end
 	end
 
 	def update
