@@ -84,8 +84,9 @@
 								= link_to "Sign In", new_user_session_path
 
 		#container.container
-			%p.notice
-				= notice
+			= if !notice.nil?
+				%p.notice
+					= notice
 			- if !alert.nil?
 				.alert.alert-danger
 					= alert

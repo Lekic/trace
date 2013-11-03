@@ -7,31 +7,16 @@
 			- @pest.errors.full_messages.each do |msg|
 				%li= msg
 
-= form_for @pest do |f|
-	%p
-		= f.label :source
-		%br
-		-#= f.text_field :source
-	%p
-		= f.label :name
-		%br
-		= f.text_field :name
-	%p
-		= f.label :tracker_type
-		%br
-		-#= f.text_field :tracker_type
-	%p
-		= f.label :marking
-		%br
-		-#= f.text_field :marking
-	%p
-		= f.label :colour
-		%br
-		-#= f.password_field :colour
-	%p
-		= f.label :size
-		%br
-		= f.number_field :size
-	
-	%p
-		= f.submit
+= semantic_form_for @pest, :html => { :class => "form-horizontal" } do |f|
+	= f.inputs do
+		.form-group
+			= f.input :name, :input_html => { :class => 'form-control' }
+		= f.input :pest_type
+		= f.input :source
+		= f.input :size
+		= f.input :colour
+		= f.input :markings, :as => :check_boxes
+		= f.input :characteristics
+	= f.actions do
+		= f.action :submit, :as => :button, :label => "Submit"
+		= f.action :cancel, :as => :link, :label => "Go Back"
