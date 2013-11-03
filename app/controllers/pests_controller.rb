@@ -24,7 +24,7 @@ class PestsController < ApplicationController
 	end
 
 	def edit
-		@pest = pest_params.find(params[:id])
+		@pest = Pest.find(params[:id])
 	end
 
 	def update
