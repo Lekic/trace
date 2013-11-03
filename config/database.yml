@@ -3,7 +3,7 @@ production:
   encoding: unicode
   database: uts-trace_development
   pool: 5
-  #username: Daniel
+  username: haydenbleasel
   password:
 
 development:
@@ -11,7 +11,7 @@ development:
   encoding: unicode
   database: uts-trace_development
   pool: 5
-  #username: Daniel
+  username: haydenbleasel
   password:
 
 test: &test
@@ -19,5 +19,5 @@ test: &test
   encoding: unicode
   database: uts-trace_test
   pool: 5
-  #username: Daniel
+  username: haydenbleasel
   password:
