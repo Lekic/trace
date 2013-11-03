@@ -23,5 +23,13 @@ Created by Hayden Bleasel ([GitHub](https://github.com/haydenbleasel), [Twitter]
 ## Deployment
 We used Heroku to deploy the application. Check it out [here](http://uts-trace.herokuapp.com/).
 
+## Heroku
+
+### Database Reset
+
+* `heroku pg:reset HEROKU_POSTGRESQL_GREEN_URL`
+* `heroku run rake db:migrate`
+* `heroku run rake db:seed`
+
 ## Contributions
 Due to this being a university project, no contributions will be accepted. The project was due in November, 2013. However, feel free to clone the repo and check out how we built it.
