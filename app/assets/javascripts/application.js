@@ -39,8 +39,8 @@ $(document).ready(function() {
 	});
 	$("#documentation-nav a").click(function() {
 		$('html, body').animate({
-        	scrollTop: $( $.attr(this, 'href') ).offset().top
-    	}, 500);
-    	return false;
+			scrollTop: $( $.attr(this, 'href') ).offset().top
+		}, 500);
+		return false;
 	});
 });
