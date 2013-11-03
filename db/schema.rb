@@ -144,7 +144,7 @@ ActiveRecord::Schema.define(version: 20131029043729) do
     t.integer  "employee_id"
     t.string   "name"
     t.date     "date_of_birth"
-    t.datetime "date_joined"
+    t.date     "date_joined"
     t.integer  "person_type_id"
     t.integer  "park_id"
     t.integer  "street_number"
