@@ -7,7 +7,7 @@ class CreateUsers < ActiveRecord::Migration
       t.date :date_of_birth
       #t.string :username, unique: true
       #t.string :password
-      t.datetime :date_joined
+      t.date :date_joined
       #t.references :phone, index: true
       #t.references :address, index: true added to end
       t.references :person_type, index: true
