@@ -13,7 +13,7 @@
 		%th Delete
 	- @users.each do |user|
 		%tr
-			%td= link_to user.name, user_path(user) # can also be written as just 'pest'
+			%td= link_to user.name, user_path(user)
 			%td= user.email
 			%td= user.date_of_birth
 			%td= user.username

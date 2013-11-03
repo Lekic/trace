@@ -21,7 +21,7 @@
 			= phone_form.input :country_code
 			= phone_form.input :area_code
 			= phone_form.input :phone
-			= phone_form.input :phone_type
+			= phone_form.input :phone_type, :as => :select
 			= phone_form.input :user_id, :as => :hidden, :value => @user.id
 			= phone_form.input :comment
 
