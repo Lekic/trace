@@ -1,4 +1,6 @@
-## User Classes and Characteristics
+## Stakeholders
+
+> User Classes and Characteristics
 
 The users will be able to select their class based on a large list of user types, each with their own permission levels. The user types will fall under either user or administrator depending on the type (i.e. Tour Guides are users while Park Staff are administrators). The account types are differentiated based on occupation, while the privileges are determined by the occupation relation to the system.
 
@@ -17,3 +19,7 @@ The user classes are adapted from the provided data base schema, and categorised
 The first iteration of the system will contain these classes. The variety will not be expanded at this time for ease of use, and all users who do not fit directly into one of the categories are considered volunteers.
 
 It is most important that the system satisfies all users in direct contact with the Parks and Wildlife Service, while also satisfying the needs of all other users.
+
+> The main stakeholders are:
+> Park employees - Parks and wildlife rangers, administration, technical support, Area Manager, CIO
+> General Public - Farmers, Bush walkers

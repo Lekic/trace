@@ -8,7 +8,7 @@
 					%li= link_to 'Conventions', "#conventions"
 					%li= link_to 'Audience', "#audience"
 					%li= link_to 'Scope', "#scope"
-			%li= link_to 'Overall Description', "#overalldescription"
+			%li= link_to 'Overall Description', "#description"
 			%li= link_to 'Functional Requirements', "#functionalrequirements"
 			%li= link_to 'Non-Functional Requirements', "#nonfunctionalrequirements"
 			%li= link_to 'Testing and Implementation', "#systemdocumentation"
@@ -20,15 +20,17 @@
 			#audience= render 'audience'
 			#scope= render 'scope'
 		%hr
-		#overalldescription
-			%h1 Overall Description
+		#description
+			%h1 Project Description
 			#perspective= render 'perspective'
 			#functions= render 'functions'
-			#users= render 'users'
+			#stakeholders= render 'stakeholders'
 			#operating= render 'operating'
 			#constraints= render 'constraints'
-			#userdocumentation= render 'userdocumentation'
 			#assumptions= render 'assumptions'
+			#stories= render 'stories'
+			#criteria= render 'criteria'
+			#nonrequirements= render 'nonrequirements'
 		%hr
 		#functionalrequirements
 			%h1 Functional Requirements
@@ -51,3 +53,19 @@
 			#security= render 'security'
 			#cultural= render 'cultural'
 			#environmental= render 'environmental'
+		%hr
+		#conceptualarchitecture
+			%h1 Conceptual Architecture
+			#classdiagram= render 'classdiagram'
+			#communicationdiagram= render 'communicationdiagram'
+			...
+		%hr
+		#implementationarchitecture
+			%h1 Implementation Architecture
+			#language= render 'language'
+			#frameworks= render 'frameworks'
+			#backend= render 'backend'
+			#frontend= render 'frontend'
+
+
+		#userdocumentation= render 'userdocumentation'

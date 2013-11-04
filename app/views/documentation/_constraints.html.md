@@ -9,3 +9,9 @@ The software, after being verified as completely functional, will be multilingua
 All the data being transferred between the user and the system must be transmittable through Hypertext Transfer Protocol (HTTP) or File Transfer Protocol (FTP), as the system is web-based and they are the two protocols adopted by the team.
 
 Traditional programming conventions will have to be maintained throughout the system, with adequate supporting documentation, as the system will be solely maintained by the Parks and Wildlife Service after development completion.
+
+> Only a system administrator may register accounts for other users
+> Cost
+> Only a park manager may access the weekly summary report
+> Rangers may phone in to register a pest or pest sighting
+> Minimum training required to access system
