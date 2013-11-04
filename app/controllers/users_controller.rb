@@ -1,6 +1,11 @@
 class UsersController < ApplicationController
 	def index
-		@users = User.all.order(:name)
+		if current_user.try(:admin?)
+			@users = User.all.order(:name)
+		else
+			flash[:alert] = "Only admins can access the users page."
+			redirect_to index_path
+		end
 	end
 	
 	def new
@@ -17,19 +22,14 @@ class UsersController < ApplicationController
 	end
 
 	def show
-		if current_user.try(:admin?)
-			@user = User.find(params[:id])
-		else
-			flash[:alert] = "Only admins can access this page."
-			redirect_to users_path
-		end
+		@user = User.find(params[:id])
 	end
 
 	def edit
 		if current_user.try(:admin?)
 			@user = User.find(params[:id])
 		else
-			flash[:alert] = "Only admins edit users."
+			flash[:alert] = "Only admins can edit users."
 			redirect_to users_path
 		end
 	end

@@ -1,31 +1,36 @@
 class ReportsController < ApplicationController
 	def index
-		@reports = Report.all
-  	end
-
-  	def new
-  		@report = Report.new
-  	end
-
-  	def create
-  		@report = Report.new(report_params)
-		if @report.save	
-  			redirect_to @report
-  		else
-  			render 'new'
-  		end
+    if current_user.try(:admin?)
+		  @reports = Report.all
+    else
+      flash[:alert] = "Only admins can access the reports page."
+      redirect_to index_path
+    end
 	end
 
-  	def show
-  		@report = Report.find(params[:id])
-  	end
+	def new
+		@report = Report.new
+	end
 
-  	def edit
-  		@report = report_params.find(params[:id])
-  	end
+	def create
+		@report = Report.new(report_params)
+    if @report.save	
+			redirect_to @report
+		else
+			render 'new'
+		end
+	end
 
-  	def update
+	def show
 		@report = Report.find(params[:id])
+	end
+
+	def edit
+		@report = report_params.find(params[:id])
+	end
+
+	def update
+    @report = Report.find(params[:id])
 
 		if @report.update(params[:report].permit(:date_created))
 			redirect_to @report
@@ -42,7 +47,7 @@ class ReportsController < ApplicationController
 	end
 
 	private
-  		def report_params
-    		params.require(:report).permit(:date_created) #change params
-  		end
+      def report_params
+        params.require(:report).permit(:date_created) #change params
+      end
 end

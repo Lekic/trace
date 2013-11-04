@@ -53,10 +53,9 @@
 							= link_to "Sightings", sightings_path
 						%li{class: ('active' if params[:controller] == 'pests')}
 							= link_to "Pests", pests_path
-						- if user_signed_in?
+						- if current_user.try(:admin?)
 							%li{class: ('active' if params[:controller] == 'reports')}
 								= link_to "Reports", reports_path
-						- if current_user.try(:admin?)
 							%li{class: ('active' if params[:controller] == 'users')}
 								= link_to "Users", controller: "users"
 					%ul.nav.navbar-nav.navbar-right
@@ -68,9 +67,9 @@
 									%b.caret
 								%ul.dropdown-menu
 									%li
-										%a{href: "#"} My Profile
+										= link_to "My Profile", user_path(current_user.id)
 									%li
-										= link_to "Account Settings", edit_user_path(@user), controller: "users"
+										= link_to "Account Settings", edit_user_registration_path(@user), controller: "users"
 									%li
 										%a{href: "#"} Help and Support
 									%li
