@@ -16,6 +16,8 @@ class User < ActiveRecord::Base
   has_many :reports, inverse_of: :user
   has_many :sightings, inverse_of: :user
 
+  accepts_nested_attributes_for :phones
+
   VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
   NAME_CASE_REGEX = /\A([A-Z][a-zA-Z\'\-]+ ?)*/i
   USERNAME_REGEX = /\A[a-zA-Z0-9]+\z/
