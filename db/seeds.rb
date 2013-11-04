@@ -71,6 +71,8 @@ PersonType.create(name: 'Fitness Trainer')
 # Users
 User.delete_all
 User.create(name: 'Daniel Lekic', username: 'lekic', email: 'daniel@lekic.net', password: 'daniel123', password_confirmation: 'daniel123', admin: 'true')
+User.create(name: 'Hayden Bleasel', username: 'haydenbleasel', email: 'haydenbleasel@gmail.com', password: 'hayden123', password_confirmation: 'hayden123', admin: 'true')
+User.create(name: 'Angelo Echevarria', username: 'giknows', email: 'angelo.echevarria@live.com', password: 'gino123', password_confirmation: 'gino123', admin: 'false')
 
 User.create(employee_id: '10827', name: 'Loree Basnett', date_joined: '2004-01-08', person_type_id: '4')
 User.create(employee_id: '10162', name: 'Elvera Hunley', date_joined: '2001-11-22', person_type_id: '4')

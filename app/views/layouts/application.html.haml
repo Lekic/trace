@@ -44,7 +44,7 @@
 						%span.icon-bar
 						%span.icon-bar
 					- if user_signed_in?
-						= link_to welcome_index_path, :controller => "welcome", :class => "navbar-brand" do
+						= link_to index_path, :controller => "welcome", :class => "navbar-brand" do
 							= image_tag "logo.png", :class => "logo"
 							Trace
 					- else
