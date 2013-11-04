@@ -18,7 +18,7 @@ class User < ActiveRecord::Base
 
   accepts_nested_attributes_for :phones
 
-  VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
+  VALID_EMAIL_REGEX = /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\z/i #for reference
   NAME_CASE_REGEX = /\A([A-Z][a-zA-Z\'\-]+ ?)*/i
   USERNAME_REGEX = /\A[a-zA-Z0-9]+\z/
 
@@ -35,12 +35,8 @@ class User < ActiveRecord::Base
                        uniqueness: {case_sensitive: false },
                        format: { with: USERNAME_REGEX}
 
+  validates :contact_number, phone_number: {ten_digits: true, message: "must be 8 or 10 digits" }
+
 #  validates :name, presence: true, length: { minimum: 5 }, format: { with: NAME_CASE_REGEX }
-  
-#  validates :email, presence: true, format: { with: VALID_EMAIL_REGEX },
-#                    uniqueness:  { case_sensitive: false }
-#  validates :username, presence: true, length: { minimum: 5},
-#                       uniqueness:  { case_sensitive: false }
-#  validates :password, presence: true
 
 end

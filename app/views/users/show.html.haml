@@ -35,13 +35,15 @@
 	%p
 		%strong Park:
 		= @user.park.name
-%p
-	%strong Address:
-	= @user.street_number
-	= @user.street_name + ','
-	= @user.suburb
-	= @user.state
-	= @user.postcode
+		
+- if !@user.street_number.nil?
+	%p
+		%strong Address:
+		= @user.street_number
+		= @user.street_name + ','
+		= @user.suburb
+		= @user.state
+		= @user.postcode
 	
 = link_to "Edit", edit_user_path(@user)
 - if current_user.try(:admin?)
