@@ -19,7 +19,10 @@ class User < ActiveRecord::Base
   accepts_nested_attributes_for :phones
 
   VALID_EMAIL_REGEX = /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\z/i #for reference
-  NAME_CASE_REGEX = /\A([A-Z][a-zA-Z\'\-]+ ?)*/i
+  
+  # add any other characters you'd like to disallow inside the [ brackets ]
+  # metacharacters [, \, ^, $, ., |, ?, *, +, (, and ) need to be escaped with a \
+  NAME_CASE_REGEX = /\A[^0-9`!@#\$%\^&*+_=]+\z/
   USERNAME_REGEX = /\A[a-zA-Z0-9]+\z/
 
   def self.find_first_by_auth_conditions(warden_conditions)
@@ -35,8 +38,8 @@ class User < ActiveRecord::Base
                        uniqueness: {case_sensitive: false },
                        format: { with: USERNAME_REGEX}
 
-  validates :contact_number, phone_number: {ten_digits: true, message: "must be 8 or 10 digits" }
+  validates :contact_number, phone_number: {ten_digits: true, message: "must be 10 digits" }
 
-#  validates :name, presence: true, length: { minimum: 5 }, format: { with: NAME_CASE_REGEX }
+  validates :name, presence: true, length: { minimum: 5, maximum: 30 }, format: { with: NAME_CASE_REGEX}
 
 end
