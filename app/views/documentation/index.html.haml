@@ -13,15 +13,12 @@
 			%li= link_to 'Non-Functional Requirements', "#nonfunctionalrequirements"
 			%li= link_to 'Testing and Implementation', "#systemdocumentation"
 	#documentation-content.col-md-6{'data-spy' => "scroll", 'data-target' => "#documentation-nav"}
-		#introduction
-			%h1 Introduction
+		#information
+			%h1 Project Information
 			#purpose= render 'purpose'
 			#conventions= render 'conventions'
 			#audience= render 'audience'
 			#scope= render 'scope'
-		%hr
-		#description
-			%h1 Project Description
 			#perspective= render 'perspective'
 			#functions= render 'functions'
 			#stakeholders= render 'stakeholders'
@@ -31,6 +28,16 @@
 			#stories= render 'stories'
 			#nonrequirements= render 'nonrequirements'
 		%hr
+		#sprints
+			%h1 Sprint Planning and Management
+			#backlog= render 'backlog'
+			#releases= render 'releases'
+			#tasks= render 'tasks'
+			#allocation= render 'allocation'
+			#management= render 'management'
+			#updates= render 'updates'
+			#review= render 'review'
+			#tools= render 'tools'
 		#functionalrequirements
 			%h1 Functional Requirements
 			#functionalrequirement1= render 'functionalrequirement1'
@@ -55,16 +62,34 @@
 		%hr
 		#conceptualarchitecture
 			%h1 Conceptual Architecture
-			#classdiagram= render 'classdiagram'
-			#communicationdiagram= render 'communicationdiagram'
-			...
+			#activitydiagram
+				%h2 Activity Diagram
+			#classdiagram
+				%h2 Class Diagram
+			#collaborationdiagram
+				%h2 Collaboration Diagram
+			#dataflowdiagram
+				%h2 Dataflow Diagram
+			#deploymentdiagram
+				%h2 Deployment Diagram
+			#entityrelationshipdiagram
+				%h2 Entity-Relationship Diagram
+			#sequencediagram
+				%h2 Sequence Diagram
+			#usecasediagram
+				%h2 Use-Case Diagram
+			#datadictionary
+				%h2 Data Dictionary
 		%hr
 		#implementationarchitecture
 			%h1 Implementation Architecture
-			#language= render 'language'
+			#platform= render 'platform'
+			#pattern= render 'pattern'
+			#languages= render 'languages'
 			#frameworks= render 'frameworks'
-			#backend= render 'backend'
-			#frontend= render 'frontend'
-
+			#deployment= render 'deployment'
+		%hr
+		#userinterfacedesign
+			%h1 User Interface Design
 
 		#userdocumentation= render 'userdocumentation'

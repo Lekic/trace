@@ -1,0 +1,3 @@
+## Backlog
+
+This project’s sprint backlog was managed by the Project Manager. Each week has 4 columns, the first being the sprint backlog. Tasks in the sprint backlog were taken from the master project backlog - grouped with similar tasks and assigned to a sprint. Any task in the backlog from a previous week were marked as outstanding using Trello labels. All backlog tasks were realistically defined by a short title, a description and a use case.

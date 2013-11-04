@@ -1,0 +1,3 @@
+## Releases
+
+Release plans were created for each sprint and reflected in the sprint plan / description. Each release plan described the outcome derived from the completion of all tasks in the respective sprint. In earlier weeks, these were simply the production of documentation or diagrams. However, in later weeks, release plans related more closely to the production of the system and it’s release candidates.
