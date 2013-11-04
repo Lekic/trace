@@ -1,4 +1,4 @@
-#documentation.row
+.row
 	#documentation-nav.col-md-3.col-md-offset-1
 		%ul.nav.nav-stacked.side-nav.affix
 			%li.dropdown
@@ -63,7 +63,13 @@
 		#conceptualarchitecture
 			%h1 Conceptual Architecture
 			#activitydiagram
-				%h2 Activity Diagram
+				%h2 Activity Diagrams
+				= image_tag "documentation/activitydiagram/admin.jpg"
+				.caption Activity Diagram: Admin
+				= image_tag "documentation/activitydiagram/ranger.jpg"
+				.caption Activity Diagram: Ranger
+				= image_tag "documentation/activitydiagram/reporting.jpg"
+				.caption Activity Diagram: Reporting
 			#classdiagram
 				%h2 Class Diagram
 			#collaborationdiagram
