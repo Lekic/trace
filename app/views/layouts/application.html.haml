@@ -85,10 +85,14 @@
 
 		#container.container
 			- if !notice.nil?
-				%p.notice
+				.alert.alert-success.alert-dismissable
+					%button.close{:type => "button", "data-dismiss" => "alert"}
+						&times;
 					= notice
 			- if !alert.nil?
-				.alert.alert-danger
+				.alert.alert-danger.alert-dismissable
+					%button.close{:type => "button", "data-dismiss" => "alert"}
+						&times;
 					= alert
 			= yield
 
