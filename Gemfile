@@ -63,6 +63,9 @@ gem "icheck-rails"
 # Markdown for documentation
 gem "markdown-rails"
 
+# Phone number validation
+gem "validates_phone_number"
+
 # Force Ruby 2.0.0
 group :production do
   ruby "2.0.0" # for Heroku
