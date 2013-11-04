@@ -145,7 +145,7 @@ ActiveRecord::Schema.define(version: 20131029043729) do
     t.date     "date_joined"
     t.integer  "person_type_id"
     t.integer  "park_id"
-    t.integer  "contact_number"
+    t.string   "contact_number"
     t.integer  "street_number"
     t.string   "street_name"
     t.string   "suburb"

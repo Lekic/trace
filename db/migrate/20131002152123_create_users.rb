@@ -7,7 +7,7 @@ class CreateUsers < ActiveRecord::Migration
       t.date :date_joined
       t.references :person_type, index: true
       t.references :park, index: true
-      t.integer :contact_number, phone_number: true
+      t.string :contact_number, phone_number: true
       t.integer :street_number
       t.string :street_name
       t.string :suburb
