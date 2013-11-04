@@ -68,6 +68,17 @@
 					%li= link_to 'Languages', '#languages'
 					%li= link_to 'Frameworks', '#frameworks'
 					%li= link_to 'Deployment', '#deployment'
+			%li.dropdown
+				= link_to 'User Interface Design', "#", "data-toggle" => "dropdown", :class => "dropdown-toggle"
+				%ul.dropdown-menu
+					%li= link_to 'Wireframes', '#wireframes'
+					%li= link_to 'Typography', '#typography'
+					%li= link_to 'Colour', '#colour'
+					%li= link_to 'Layout', '#layout'
+					%li= link_to 'Icons', '#icons'
+					%li= link_to 'Visual Elements', '#elements'
+					%li= link_to 'Accessibility', '#accessibility'
+					%li= link_to 'Heuristic Evaluation', '#heuristics'
 
 
 
@@ -240,7 +251,26 @@
 
 		%hr
 		
-		#userinterfacedesign
-			%h1 User Interface Design
+		%h1 User Interface
+		#wireframes
+			= image_tag "documentation/wireframes/account.png"
+			.caption Wireframe: Account Management
+			= image_tag "documentation/wireframes/home.png"
+			.caption Wireframe: Pests overview
+			= image_tag "documentation/wireframes/filter.png"
+			.caption Wireframe: Pests filter
+			= image_tag "documentation/wireframes/single.png"
+			.caption Wireframe: Pests entry
+			= image_tag "documentation/wireframes/report.png"
+			.caption Wireframe: Generate Report
+			= image_tag "documentation/wireframes/sighting.png"
+			.caption Wireframe: Create Sighting
+		#typography= render 'typography'
+		#colour= render 'colour'
+		#layout= render 'layout'
+		#icons= render 'icons'
+		#elements= render 'elements'
+		#accessibility= render 'accessibility'
+		#heuristics= render 'heuristics'
 
 		-#userdocumentation= render 'userdocumentation'
