@@ -1,4 +1,4 @@
-## Design and Implementation Constraints
+## Constraints
 
 The software must comply with a minimum hardware requirement for each of the platforms it will operate on; meaning it should run fluidly on PC, tablet and mobile. The software system should be designed with the constraints of each of these operating systems in mind.
 
