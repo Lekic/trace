@@ -49,7 +49,7 @@ gem 'devise'
 #gem 'protected_attributes'
 
 # Formtastic for high-performance form creation with relational implementation
-gem 'formtastic'
+gem 'formtastic-bootstrap'
 
 # Google Maps
 gem "gmaps4rails"

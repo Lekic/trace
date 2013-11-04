@@ -72,6 +72,8 @@ GEM
     execjs (2.0.2)
     formtastic (2.2.1)
       actionpack (>= 3.0)
+    formtastic-bootstrap (2.1.3)
+      formtastic (~> 2.2)
     fssm (0.2.10)
     gmaps4rails (2.0.3)
     haml (4.0.3)
@@ -175,7 +177,7 @@ DEPENDENCIES
   compass-rails!
   devise
   dropzonejs-rails
-  formtastic
+  formtastic-bootstrap
   gmaps4rails
   haml-rails
   icheck-rails
