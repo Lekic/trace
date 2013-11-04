@@ -59,15 +59,13 @@ ActiveRecord::Schema.define(version: 20131029043729) do
 
   create_table "pest_types", force: true do |t|
     t.string   "name"
-    t.integer  "pest_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
-  add_index "pest_types", ["pest_id"], name: "index_pest_types_on_pest_id", using: :btree
-
   create_table "pests", force: true do |t|
     t.integer  "source_id"
+    t.integer  "tracker_id"
     t.string   "name"
     t.integer  "pest_type_id"
     t.string   "characteristics"
@@ -88,10 +86,7 @@ ActiveRecord::Schema.define(version: 20131029043729) do
   end
 
   create_table "phones", force: true do |t|
-    t.integer  "employee_id"
-    t.integer  "country_code",  null: false
-    t.integer  "area_code",     null: false
-    t.integer  "phone",         null: false
+    t.integer  "number",        null: false
     t.integer  "phone_type_id"
     t.integer  "user_id"
     t.string   "comment"

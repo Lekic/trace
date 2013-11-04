@@ -1,8 +1,8 @@
 class CreateReportsSightings < ActiveRecord::Migration
   def change
     create_table :reports_sightings do |t|
-      t.references :report, null: false
-      t.references :sighting, null: false
+      t.belongs_to :report, null: false
+      t.belongs_to :sighting, null: false
 
       t.timestamps
     end
