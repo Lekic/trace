@@ -7,7 +7,7 @@
 	%p.title-2 You submit sightings of pests to help us keep your national parks safe.
 
 	- if user_signed_in?
-		%button.btn.btn-primary.btn-lg= link_to "Get Started", index_path
+		= link_to "Welcome back @" + current_user.username + "!", index_path, :class => "btn btn-primary btn-lg"
 	- else
 		%button.btn.btn-primary.btn-lg{"data-toggle" => "modal", href: "#myModal"} Get Started
 
