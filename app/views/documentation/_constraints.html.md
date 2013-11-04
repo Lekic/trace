@@ -10,8 +10,4 @@ All the data being transferred between the user and the system must be transmitt
 
 Traditional programming conventions will have to be maintained throughout the system, with adequate supporting documentation, as the system will be solely maintained by the Parks and Wildlife Service after development completion.
 
-> Only a system administrator may register accounts for other users
-> Cost
-> Only a park manager may access the weekly summary report
-> Rangers may phone in to register a pest or pest sighting
-> Minimum training required to access system
+Administrative implementation constraints involve preventing general users from accessing the more secure parts of the system such as user accounts and report generation.

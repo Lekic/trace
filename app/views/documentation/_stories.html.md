@@ -1,15 +1,17 @@
-## User Stories (NEEDS REWORDING)
+## User Stories
 
-* As a system administrator, I want to register an account for a park staff member so they can record pests and sightings or maintain the system.
-* As a NSW Park employee, I want to login so that I can access the system.
-* As a NSW Park employee, i want to record the details of a feral pest so that the pest can be identified.
-* As a NSW Park employee, i want to update the details of a feral pest record so that information about the pest is up to date.
-* As a NSW Park employee, i want to record the sighting of a feral pest so that others are aware of its presence and it may be tracked.
-* As a NSW Park employee, i want to update the details of a feral pest sighting so that information about the pest is up to date.
-* As a NSW Park Ranger, i want to view a pest or list of pests based on my search parameters so that i may get information about a certain pest or pests.
-* As a NSW Park employee, i want to view a pest sighting or list of sightings based on my search parameters so that i may locate a certain pest or pests.
-* As a NSW Park employee, i want to export the results of a pest sighting or list of sightings based on my search parameters so that i may keep record of them.
-* As a NSW Park Manager, i want a summary report of all sightings in a nominated date range so that i may see any changes in location, and changes in populations of a pest.
-* As a system administrator, i want to delete a user so that they can no longer access the system.
-* As a system administrator, i want to delete a pest record so that it no longer exists on the system.
-* As a system administrator, i want to delete a pest sighting so that it no longer exists on the system.
+Our user stories form the basis for our User Acceptance testing.
+
+* Administrator (inherits User)
+	* As a system administrator, I want to generate reports of pest sightings based on parameters I select.
+	* As a system administrator, I want to print reports to keep a hard copy.
+	* As a system administrator, I want to delete users to keep them from accessing the system.
+	* As a system administrator, I want to delete recorded pests so it no longer exists on the system. 
+* User
+	* As a user, I want to login to the system so I can access it's features.
+	* As a user, I want to report a specific pest to make others aware of it's presence.
+	* As a user, I want to record a pest sighting to make others aware of it's status.
+	* As a user, I want to update a pest sighting to keep others up to date on it's status.
+	* As a user, I want to view all reported sightings to identify the status of a pest.
+	* As a user, I want to filter through reported sightings to keep track of their status.
+	* As a user, I want to be able to update my account information to keep it up-to-date.
