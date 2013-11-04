@@ -84,7 +84,7 @@
 								= link_to "Sign In", new_user_session_path
 
 		#container.container
-			= if !notice.nil?
+			- if !notice.nil?
 				%p.notice
 					= notice
 			- if !alert.nil?
@@ -97,4 +97,4 @@
 				.pull-left
 					%p Made with love by SDP Group 14, UTS.
 				.pull-right
-					= link_to "Documentation", "documentation/index"
+					= link_to "Documentation", documentation_path
