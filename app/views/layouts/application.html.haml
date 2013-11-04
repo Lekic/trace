@@ -29,8 +29,8 @@
 
 		%link{href: "http://fonts.googleapis.com/css?family=Open+Sans:300' rel='stylesheet", rel: "stylesheet"}
 
-		= stylesheet_link_tag "application", media: "all", "data-turbolinks-track" => true
-		= javascript_include_tag "application", "data-turbolinks-track" => true
+		= stylesheet_link_tag "application", media: "all"
+		= javascript_include_tag "application"
 		= csrf_meta_tags
 
 	%body{:class => params[:controller]}
@@ -95,6 +95,9 @@
 		%footer
 			.container
 				.pull-left
-					%p Made with love by SDP Group 14, UTS.
+					%p
+						Made with love by
+						= linkTo "https://twitter.com/haydenbleasel", "Hayden Bleasel"
+						and Daniel Lekic.
 				.pull-right
 					= link_to "Documentation", "documentation/index"
