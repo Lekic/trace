@@ -9,10 +9,10 @@
 
 = semantic_form_for @pest, :html => { :class => "form-horizontal" } do |f|
 	= f.inputs do
-		.form-group
-			= f.input :name, :input_html => { :class => 'form-control' }
+		= f.input :name
 		= f.input :pest_type
 		= f.input :source
+		= f.input :tracker_id
 		= f.input :size
 		= f.input :colour
 		= f.input :markings, :as => :check_boxes

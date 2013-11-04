@@ -23,11 +23,27 @@
 					Source:
 					= pest.source.name
 				%p
+					Tracker ID:
+					- if !pest.tracker_id.nil?
+						= pest.tracker_id
+					- else
+						= "None"
+				%p
 					Size:
 					= pest.size
 				%p
 					Colour:
 					= pest.colour.name
 				%p
+					Markings:
+					- if !pest.markings.empty?
+						- pest.markings.each do |marking|
+							= Marking.find(marking).name
+					- else
+						= "None"
+				%p
 					Characteristics:
-					= pest.characteristics
+					- if !pest.characteristics.nil?
+						= pest.characteristics
+					- else
+						= "None"

@@ -15,8 +15,11 @@
 	= @pest.colour.name
 %p
 	Markings:
-	- @pest.markings.each do |marking|
-		= marking.name
+	- if !@pest.markings.empty?
+		- @pest.markings.each do |marking|
+			= marking.name
+	- else
+		= "None"
 %p
 	Characteristics:
 	= @pest.characteristics

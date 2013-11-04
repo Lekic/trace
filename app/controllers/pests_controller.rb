@@ -35,7 +35,7 @@ class PestsController < ApplicationController
 	def update
 		@pest = Pest.find(params[:id])
 
-		if @pest.update(params[:pest].permit(:name, :source_id, :pest_type_id, :characteristics, {:marking_ids => []}, :colour_id, :size))
+		if @pest.update(params[:pest].permit(:name, :source_id, :tracker_id, :pest_type_id, :characteristics, {:marking_ids => []}, :colour_id, :size))
 			redirect_to @pest
 		else
 			render 'edit'
@@ -46,7 +46,7 @@ class PestsController < ApplicationController
 		if current_user.try(:admin?)
 			@pest = Pest.find(params[:id])
 			@pest.destroy
-			flash[:notice] = "User successfully deleted."
+			flash[:notice] = "Pest successfully deleted."
 		else
 			flash[:alert] = "You cannot delete a pest without admin rights."
 		end
@@ -55,6 +55,6 @@ class PestsController < ApplicationController
 
 	private
   		def pest_params
-    		params.require(:pest).permit(:name, :source_id, :pest_type_id, :characteristics, {:marking_ids => []}, :colour_id, :size)
+    		params.require(:pest).permit(:name, :source_id, :tracker_id, :pest_type_id, :characteristics, {:marking_ids => []}, :colour_id, :size)
   		end
 end
