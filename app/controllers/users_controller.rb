@@ -20,7 +20,7 @@ class UsersController < ApplicationController
 		if current_user.try(:admin?)
 			@user = User.find(params[:id])
 		else
-			flash[:alert] = "Only admins can access this page"
+			flash[:alert] = "Only admins can access this page."
 			redirect_to users_path
 		end
 	end
@@ -29,7 +29,7 @@ class UsersController < ApplicationController
 		if current_user.try(:admin?)
 			@user = User.find(params[:id])
 		else
-			flash[:alert] = "Only admins can access this page"
+			flash[:alert] = "Only admins edit users."
 			redirect_to users_path
 		end
 	end
@@ -37,7 +37,7 @@ class UsersController < ApplicationController
 	def update
 		@user = User.find(params[:id])
 
-		if @user.update(params[:user].permit(:employee_id, :name, :email, :date_of_birth, :username, :password, :date_joined, :park_id, :contact_number, :admin, :street_number, :street_name, :suburb, :state, :postcode))
+		if @user.update(params[:user].permit(:employee_id, :name, :email, :date_of_birth, :username, :password, :date_joined, :park_id, :contact_number, :person_type_id, :admin, :street_number, :street_name, :suburb, :state, :postcode))
 			redirect_to @user
 		else
 			render 'edit'
@@ -61,7 +61,7 @@ class UsersController < ApplicationController
 
 	private
   		def user_params
-    		params.require(:user).permit(:employee_id, :name, :email, :date_of_birth, :username, :password, :date_joined, :park_id, :contact_number, :admin, :street_number, :street_name, :suburb, :state, :postcode)
+    		params.require(:user).permit(:employee_id, :name, :email, :date_of_birth, :username, :password, :date_joined, :park_id, :contact_number, :person_type_id, :admin, :street_number, :street_name, :suburb, :state, :postcode)
   		end
 		def verify_is_admin
 			(current_user.nil?) ? redirect_to(root_path) : (redirect_to(root_path) unless current_user.admin?)

@@ -19,8 +19,11 @@
 			%td= user.date_joined
 			%td= user.username
 			%td= user.contact_number
-			- if !user.person_type.nil?
-				%td= user.person_type.name
+			%td
+				- if !user.person_type.nil?
+					= user.person_type.name
+				- else
+					= "Not specified"
 			%td= user.admin
 			%td= user.date_joined
 			%td= link_to "Edit", edit_user_path(user)
