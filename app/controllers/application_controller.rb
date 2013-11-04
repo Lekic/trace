@@ -8,7 +8,7 @@ class ApplicationController < ActionController::Base
   end
 
   def after_update_path_for(resource)
-    #fix this hoe.
+    index_path
   end
 
   def resource_name
