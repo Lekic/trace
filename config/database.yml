@@ -1,11 +1,19 @@
 production:
   adapter: postgresql
   encoding: unicode
-  database: d13f3a99cjceic
   pool: 5
+<<<<<<< HEAD
   #username: lcixcopdpeqtsg
   #password: d16vJ48I13VihY_E9DmiGR7giW
   password:
+=======
+  #database: d13f3a99cjceic
+  #username: lcixcopdpeqtsg
+  #password: d16vJ48I13VihY_E9DmiGR7giW
+  database: uts-trace_development
+  password: 
+  username: haydenbleasel
+>>>>>>> ffc3ff76f3221c5e288722dfaa4dfc84124f306b
 
 development:
   adapter: postgresql
