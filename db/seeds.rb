@@ -53,6 +53,14 @@ Pest.create(name: 'Bugs Bunny', pest_type_id: '5', source_id: '3', characteristi
 Pest.create(name: 'Snoop doggy dog', pest_type_id: '1', source_id: '2', characteristics: 'Rapper come reggaeton come dj flop.', colour_id: '9', size:'104')
 Pest.create(name: 'Hayden', pest_type_id: '2', source_id: '2', characteristics: 'Swagginnnn collared pussy ;)', colour_id: '3', size:'62')
 
+# Test sightings
+Sighting.delete_all
+Sighting.create()
+
+# Test reports
+Report.delete_all
+Report.create()
+
 # Person Types
 PersonType.delete_all
 PersonType.create(name: 'Employee')
