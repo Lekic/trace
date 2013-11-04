@@ -8,6 +8,7 @@
 				%li= msg
 
 = semantic_form_for @user, :html => { :class => "form-horizontal" } do |f|
+	= f.semantic_errors *f.object.errors.keys
 	= f.inputs do
 		=# f.input :employee_id
 		= f.input :username
