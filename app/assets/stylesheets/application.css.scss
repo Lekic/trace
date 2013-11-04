@@ -193,3 +193,10 @@ h2 {
 	font-size: 31px;
 	margin: 0;
 }
+
+.navbar-default .navbar-nav > .active > a,
+.navbar-default .navbar-nav > .active > a:hover,
+.navbar-default .navbar-nav > .active > a:focus {
+	color: #fff;
+	background-color: #428bca;
+}
