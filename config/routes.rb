@@ -40,6 +40,7 @@ Trace::Application.routes.draw do
   resources :users, :pests, :sightings, :reports, :welcome, :landing
 
   match '/index', :to => 'welcome#index', :via => :get
+  match '/documentation', :to => 'documentation#index', :via => :get 
   #match '/users/:id', :to => 'users#destroy', :as => :destroy_user, :via => :delete
 
   # Example of regular route:
