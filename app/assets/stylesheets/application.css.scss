@@ -196,7 +196,12 @@ h2 {
 
 .navbar-default .navbar-nav > .active > a,
 .navbar-default .navbar-nav > .active > a:hover,
-.navbar-default .navbar-nav > .active > a:focus {
+.navbar-default .navbar-nav > .active > a:focus,
+.dropdown-menu > li > a:hover, .dropdown-menu > li > a:focus {
 	color: #fff;
 	background-color: #428bca;
+}
+
+.navbar-default .dropdown-menu {
+	width: 191px;
 }
