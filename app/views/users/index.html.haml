@@ -3,8 +3,10 @@
 		%th Name
 		%th Email
 		%th Date of Birth
+		%th Date Joined
 		%th Username
-		%th Password
+		%th Phone
+		%th Occupation
 		%th Admin
 		%th Date Joined
 		%th Edit User
@@ -14,8 +16,11 @@
 			%td= link_to user.name, user_path(user)
 			%td= user.email
 			%td= user.date_of_birth
+			%td= user.date_joined
 			%td= user.username
-			%td= user.password
+			%td= user.contact_number
+			- if !user.person_type.nil?
+				%td= user.person_type.name
 			%td= user.admin
 			%td= user.date_joined
 			%td= link_to "Edit", edit_user_path(user)

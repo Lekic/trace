@@ -8,24 +8,22 @@
 				%li= msg
 
 = semantic_form_for @user, :html => { :class => "form-horizontal" } do |f|
-	= f.semantic_errors *f.object.errors.keys
 	= f.inputs do
 		=# f.input :employee_id
 		= f.input :username
 		= f.input :name
 		= f.input :email
 		= f.input :password
-		= f.date_select :date_of_birth, { :include_blank => true, :start_year => 1960, :end_day => Time.now }
-		= f.date_select :date_joined, { :include_blank => true, :start_year => 1990, :end_day => Time.now }
+		= f.input :contact_number
 		= f.input :park
-		
-		= f.inputs :name => "Contact Details", :for => :phone do |phone_form|
-			= phone_form.input :country_code
-			= phone_form.input :area_code
-			= phone_form.input :phone
-			= phone_form.input :phone_type, :as => :select
-			= phone_form.input :user_id, :as => :hidden, :value => @user.id
-			= phone_form.input :comment
+		= f.input :date_of_birth, { :include_blank => true, :start_year => 1960, :end_day => Time.now }
+		= f.input :date_joined, { :include_blank => true, :start_year => 1990, :end_day => Time.now }
+		%h4 Address Details
+		= f.input :street_number
+		= f.input :street_name
+		= f.input :suburb
+		= f.input :state
+		= f.input :postcode
 
 	= f.actions do
 		= f.action :submit

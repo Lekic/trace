@@ -3,9 +3,11 @@
 %p
 	%strong ID:
 	= @user.id
-%p
-	%strong User ID:
-	-#= @user.employee_id
+
+- if !@user.employee_id.nil?	
+	%p
+		%strong User ID:
+		= @user.employee_id
 %p
 	%strong Name:
 	= @user.name
@@ -15,16 +17,28 @@
 %p
 	%strong Date of Birth:
 	= @user.date_of_birth
+
 %p
-	%strong Occupation:
-	-#= @user.person_type.name
+	%strong Date Joined:
+	= @user.date_joined
+
 %p
-	%strong Park:
-	=#= @user.park.name
+	%strong Contact Number:
+	= @user.contact_number
+
+- if !@user.person_type.nil?	
+	%p
+		%strong Occupation:
+		= @user.person_type.name
+
+- if !@user.park_id.nil?
+	%p
+		%strong Park:
+		= @user.park.name
 %p
 	%strong Address:
 	= @user.street_number
-	= @user.street_name
+	= @user.street_name + ','
 	= @user.suburb
 	= @user.state
 	= @user.postcode

@@ -37,7 +37,7 @@ class UsersController < ApplicationController
 	def update
 		@user = User.find(params[:id])
 
-		if @user.update(params[:user].permit(:name, :email, :date_of_birth, :username, :password, :date_joined, :park_id, :phone_id, :admin))
+		if @user.update(params[:user].permit(:employee_id, :name, :email, :date_of_birth, :username, :password, :date_joined, :park_id, :contact_number, :admin, :street_number, :street_name, :suburb, :state, :postcode))
 			redirect_to @user
 		else
 			render 'edit'
@@ -61,7 +61,7 @@ class UsersController < ApplicationController
 
 	private
   		def user_params
-    		params.require(:user).permit(:name, :email, :date_of_birth, :username, :password, :date_joined, :park_id, :phone_id, :admin)
+    		params.require(:user).permit(:employee_id, :name, :email, :date_of_birth, :username, :password, :date_joined, :park_id, :contact_number, :admin, :street_number, :street_name, :suburb, :state, :postcode)
   		end
 		def verify_is_admin
 			(current_user.nil?) ? redirect_to(root_path) : (redirect_to(root_path) unless current_user.admin?)
