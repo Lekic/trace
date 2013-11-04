@@ -38,6 +38,7 @@ class UsersController < ApplicationController
 		@user = User.find(params[:id])
 
 		if @user.update(params[:user].permit(:employee_id, :name, :email, :date_of_birth, :username, :password, :date_joined, :park_id, :contact_number, :person_type_id, :admin, :street_number, :street_name, :suburb, :state, :postcode))
+			flash[:notice] = "User updated successfully."
 			redirect_to @user
 		else
 			render 'edit'
