@@ -12,10 +12,11 @@
 	- @pests.each do |pest|
 		= link_to pest_path(pest), :class => "col-md-3 type-" + pest.pest_type.name.downcase.squish.gsub( /\s/, '_' ) do
 			.isotope-item-wrapper
-				= image_tag("temp-pest.jpg")
-				%p
-					Name:
-					= pest.name
+				.image-wrapper{:style => "background: " + image_path("temp-pest.jpg")}
+				.overlay
+					%h3
+						Name:
+						= pest.name
 				%p
 					Pest type:
 					= pest.pest_type.name
