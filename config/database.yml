@@ -3,15 +3,16 @@ production:
   encoding: unicode
   database: d13f3a99cjceic
   pool: 5
-  username: lcixcopdpeqtsg
-  password: d16vJ48I13VihY_E9DmiGR7giW
+  #username: lcixcopdpeqtsg
+  #password: d16vJ48I13VihY_E9DmiGR7giW
+  password:
 
 development:
   adapter: postgresql
   encoding: unicode
   database: uts-trace_development
   pool: 5
-  username: haydenbleasel
+  #username: haydenbleasel
   password:
 
 test: &test
@@ -19,5 +20,5 @@ test: &test
   encoding: unicode
   database: uts-trace_test
   pool: 5
-  username: haydenbleasel
+  #username: haydenbleasel
   password:
