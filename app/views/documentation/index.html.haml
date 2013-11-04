@@ -2,7 +2,7 @@
 	#documentation-nav.col-md-3.col-md-offset-1
 		%ul.nav.nav-stacked.side-nav.affix
 			%li.dropdown
-				= link_to 'Information', "#", "data-toggle" => "dropdown", :class => "dropdown-toggle"
+				= link_to 'Project Information', "#", "data-toggle" => "dropdown", :class => "dropdown-toggle"
 				%ul.dropdown-menu
 					%li= link_to 'Purpose', '#purpose'
 					%li= link_to 'Conventions', '#conventions'
@@ -14,10 +14,11 @@
 					%li= link_to 'Operating', '#operating'
 					%li= link_to 'Constraints', '#constraints'
 					%li= link_to 'Assumptions', '#assumptions'
-					%li= link_to 'Stories', '#stories'
+					%li= link_to 'User Stories', '#stories'
+					%li= link_to 'User Acceptance Critera', '#critera'
 					%li= link_to 'Non-Requirements', '#nonrequirements'
 			%li.dropdown
-				= link_to 'Sprints', "#", "data-toggle" => "dropdown", :class => "dropdown-toggle"
+				= link_to 'Sprint Planning', "#", "data-toggle" => "dropdown", :class => "dropdown-toggle"
 				%ul.dropdown-menu
 					%li= link_to 'Backlog', '#backlog'
 					%li= link_to 'Releases', '#releases'
@@ -72,168 +73,175 @@
 
 
 	#documentation-content.col-md-6
-		#information
-			%h1 Project Information
-			#purpose= render 'purpose'
-			#conventions= render 'conventions'
-			#audience= render 'audience'
-			#scope= render 'scope'
-			#perspective= render 'perspective'
-			#functions= render 'functions'
-			#stakeholders= render 'stakeholders'
-			#operating= render 'operating'
-			#constraints= render 'constraints'
-			#assumptions= render 'assumptions'
-			#stories= render 'stories'
-			#nonrequirements= render 'nonrequirements'
+
+		%h1 Project Information
+		#purpose= render 'purpose'
+		#conventions= render 'conventions'
+		#audience= render 'audience'
+		#scope= render 'scope'
+		#perspective= render 'perspective'
+		#functions= render 'functions'
+		#stakeholders= render 'stakeholders'
+		#operating= render 'operating'
+		#constraints= render 'constraints'
+		#assumptions= render 'assumptions'
+		#stories= render 'stories'
+		#nonrequirements= render 'nonrequirements'
+
 		%hr
-		#sprints
-			%h1 Sprint Planning and Management
-			#backlog= render 'backlog'
-			#releases= render 'releases'
-			#tasks= render 'tasks'
-			#allocation= render 'allocation'
-			#management= render 'management'
-			#updates= render 'updates'
-			#review= render 'review'
-			#tools= render 'tools'
+		
+		%h1 Sprint Planning and Management
+		#backlog= render 'backlog'
+		#releases= render 'releases'
+		#tasks= render 'tasks'
+		#allocation= render 'allocation'
+		#management= render 'management'
+		#updates= render 'updates'
+		#review= render 'review'
+		#tools= render 'tools'
+		
 		%hr
-		#functionalrequirements
-			%h1 Functional Requirements
-			#functionalrequirement1= render 'functionalrequirement1'
-			#functionalrequirement2= render 'functionalrequirement2'
-			#functionalrequirement3= render 'functionalrequirement3'
-			#functionalrequirement4= render 'functionalrequirement4'
-			#functionalrequirement5= render 'functionalrequirement5'
-			#functionalrequirement6= render 'functionalrequirement6'
-			#functionalrequirement7= render 'functionalrequirement7'
-			#functionalrequirement8= render 'functionalrequirement8'
+		
+		%h1 Functional Requirements
+		#functionalrequirement1= render 'functionalrequirement1'
+		#functionalrequirement2= render 'functionalrequirement2'
+		#functionalrequirement3= render 'functionalrequirement3'
+		#functionalrequirement4= render 'functionalrequirement4'
+		#functionalrequirement5= render 'functionalrequirement5'
+		#functionalrequirement6= render 'functionalrequirement6'
+		#functionalrequirement7= render 'functionalrequirement7'
+		#functionalrequirement8= render 'functionalrequirement8'
+		
 		%hr
-		#nonfunctionalrequirements
-			%h1 Non-Functional Requirements
-			#appearance= render 'appearance'
-			#usability= render 'usability'
-			#legal= render 'legal'
-			#performance= render 'performance'
-			#maintainability= render 'maintainability'
-			#security= render 'security'
-			#cultural= render 'cultural'
-			#environmental= render 'environmental'
+		
+		%h1 Non-Functional Requirements
+		#appearance= render 'appearance'
+		#usability= render 'usability'
+		#legal= render 'legal'
+		#performance= render 'performance'
+		#maintainability= render 'maintainability'
+		#security= render 'security'
+		#cultural= render 'cultural'
+		#environmental= render 'environmental'
+		
 		%hr
-		#conceptualarchitecture
-			%h1 Conceptual Architecture
-			#activitydiagram
-				%h2 Activity Diagrams
-				= image_tag "documentation/activitydiagram/admin.jpg"
-				.caption Activity Diagram: Admin
-				= image_tag "documentation/activitydiagram/ranger.jpg"
-				.caption Activity Diagram: Ranger
-				= image_tag "documentation/activitydiagram/reporting.jpg"
-				.caption Activity Diagram: Reporting
-			#classdiagram
-				%h2 Class Diagram
-				= image_tag "documentation/classdiagram.jpg"
-				.caption Class Diagram
-			#collaborationdiagram
-				%h2 Collaboration Diagrams
-				= image_tag "documentation/collaborationdiagram/editaccount.jpg"
-				.caption Collaboration Diagram: Edit User Account
-				= image_tag "documentation/collaborationdiagram/login.jpg"
-				.caption Collaboration Diagram: User Login
-				= image_tag "documentation/collaborationdiagram/report.jpg"
-				.caption Collaboration Diagram: Generate Report
-				= image_tag "documentation/collaborationdiagram/sighting.jpg"
-				.caption Collaboration Diagram: Sighting Inquiry
-			#dataflowdiagram
-				%h2 Dataflow Diagrams
-				= image_tag "documentation/dataflowdiagram/context.jpg"
-				.caption Dataflow Diagram: Context Diagram
-				= image_tag "documentation/dataflowdiagram/level1.jpg"
-				.caption Dataflow Diagram: Level 1
-				= image_tag "documentation/dataflowdiagram/pest/level2.jpg"
-				.caption Dataflow Diagram: Level 2 (Pest)
-				= image_tag "documentation/dataflowdiagram/pest/level3inquiry.jpg"
-				.caption Dataflow Diagram: Level 3 (Pest / Inquiry)
-				= image_tag "documentation/dataflowdiagram/pest/level3record.jpg"
-				.caption Dataflow Diagram: Level 3 (Pest / Record)
-				= image_tag "documentation/dataflowdiagram/pest/level3update.jpg"
-				.caption Dataflow Diagram: Level 3 (Pest / Update)
-				= image_tag "documentation/dataflowdiagram/report/level2.jpg"
-				.caption Dataflow Diagram: Level 2 (Report)
-				= image_tag "documentation/dataflowdiagram/report/level3generate.png"
-				.caption Dataflow Diagram: Level 3 (Report / Generate)
-				= image_tag "documentation/dataflowdiagram/report/level3view.png"
-				.caption Dataflow Diagram: Level 3 (Report / View)
-				= image_tag "documentation/dataflowdiagram/user/level2.png"
-				.caption Dataflow Diagram: Level 2 (User)
-				= image_tag "documentation/dataflowdiagram/user/level3login.png"
-				.caption Dataflow Diagram: Level 3 (User / Login)
-				= image_tag "documentation/dataflowdiagram/user/level3record.png"
-				.caption Dataflow Diagram: Level 3 (User / Record)
-				= image_tag "documentation/dataflowdiagram/user/level3update.png"
-				.caption Dataflow Diagram: Level 3 (User / Update)
-			#deploymentdiagram
-				%h2 Deployment Diagram
-				= image_tag "documentation/deploymentdiagram.png"
-				.caption Deployment Diagram
-			#entityrelationshipdiagram
-				%h2 Entity-Relationship Diagram
-				= image_tag "documentation/dataflowdiagram/user/level3update.png"
-				.caption Entity-Relationship Diagram
-			#sequencediagram
-				%h2 Sequence Diagrams
-				= image_tag "documentation/sequencediagram/accountmanage.jpg"
-				.caption Sequence Diagram: Account Management
-				= image_tag "documentation/sequencediagram/pestinquiry.jpg"
-				.caption Sequence Diagram: Pest Inquiry
-				= image_tag "documentation/sequencediagram/pestrecord.jpg"
-				.caption Sequence Diagram: Record Pest
-				= image_tag "documentation/sequencediagram/pestupdate.jpg"
-				.caption Sequence Diagram: Update Pest
-				= image_tag "documentation/sequencediagram/report.jpg"
-				.caption Sequence Diagram: Generate Report
-				= image_tag "documentation/sequencediagram/sightinginquiry.jpg"
-				.caption Sequence Diagram: Sighting Inquiry
-				= image_tag "documentation/sequencediagram/sightingrecord.jpg"
-				.caption Sequence Diagram: Record Sighting
-				= image_tag "documentation/sequencediagram/sightingupdate.jpg"
-				.caption Sequence Diagram: Update Sighting
-				= image_tag "documentation/sequencediagram/userlogin.jpg"
-				.caption Sequence Diagram: User Login
-				= image_tag "documentation/sequencediagram/userrecord.jpg"
-				.caption Sequence Diagram: Record User
-			#usecasediagram
-				%h2 Use-Case Diagrams
-				= image_tag "documentation/usecasediagram/accountmanage.jpg"
-				.caption Use-Case Diagram: Account Management
-				= image_tag "documentation/usecasediagram/pestinquiry.jpg"
-				.caption Use-Case Diagram: Pest Inquiry
-				= image_tag "documentation/usecasediagram/pestrecord.jpg"
-				.caption Use-Case Diagram: Record Pest
-				= image_tag "documentation/usecasediagram/pestupdate.jpg"
-				.caption Use-Case Diagram: Update Pest
-				= image_tag "documentation/usecasediagram/report.jpg"
-				.caption Use-Case Diagram: Generate Report
-				= image_tag "documentation/usecasediagram/sightinginquiry.jpg"
-				.caption Use-Case Diagram: Sighting Inquiry
-				= image_tag "documentation/usecasediagram/sightingrecord.jpg"
-				.caption Use-Case Diagram: Record Sighting
-				= image_tag "documentation/usecasediagram/sightingupdate.jpg"
-				.caption Use-Case Diagram: Update Sighting
-				= image_tag "documentation/usecasediagram/system.jpg"
-				.caption Use-Case Diagram: System
-				= image_tag "documentation/usecasediagram/userrecord.jpg"
-				.caption Use-Case Diagram: Record User
+		
+		%h1 Conceptual Architecture
+		#activitydiagram
+			%h2 Activity Diagrams
+			= image_tag "documentation/activitydiagram/admin.jpg"
+			.caption Activity Diagram: Admin
+			= image_tag "documentation/activitydiagram/ranger.jpg"
+			.caption Activity Diagram: Ranger
+			= image_tag "documentation/activitydiagram/reporting.jpg"
+			.caption Activity Diagram: Reporting
+		#classdiagram
+			%h2 Class Diagram
+			= image_tag "documentation/classdiagram.jpg"
+			.caption Class Diagram
+		#collaborationdiagram
+			%h2 Collaboration Diagrams
+			= image_tag "documentation/collaborationdiagram/editaccount.jpg"
+			.caption Collaboration Diagram: Edit User Account
+			= image_tag "documentation/collaborationdiagram/login.jpg"
+			.caption Collaboration Diagram: User Login
+			= image_tag "documentation/collaborationdiagram/report.jpg"
+			.caption Collaboration Diagram: Generate Report
+			= image_tag "documentation/collaborationdiagram/sighting.jpg"
+			.caption Collaboration Diagram: Sighting Inquiry
+		#dataflowdiagram
+			%h2 Dataflow Diagrams
+			= image_tag "documentation/dataflowdiagram/context.jpg"
+			.caption Dataflow Diagram: Context Diagram
+			= image_tag "documentation/dataflowdiagram/level1.jpg"
+			.caption Dataflow Diagram: Level 1
+			= image_tag "documentation/dataflowdiagram/pest/level2.jpg"
+			.caption Dataflow Diagram: Level 2 (Pest)
+			= image_tag "documentation/dataflowdiagram/pest/level3inquiry.jpg"
+			.caption Dataflow Diagram: Level 3 (Pest / Inquiry)
+			= image_tag "documentation/dataflowdiagram/pest/level3record.jpg"
+			.caption Dataflow Diagram: Level 3 (Pest / Record)
+			= image_tag "documentation/dataflowdiagram/pest/level3update.jpg"
+			.caption Dataflow Diagram: Level 3 (Pest / Update)
+			= image_tag "documentation/dataflowdiagram/report/level2.jpg"
+			.caption Dataflow Diagram: Level 2 (Report)
+			= image_tag "documentation/dataflowdiagram/report/level3generate.png"
+			.caption Dataflow Diagram: Level 3 (Report / Generate)
+			= image_tag "documentation/dataflowdiagram/report/level3view.png"
+			.caption Dataflow Diagram: Level 3 (Report / View)
+			= image_tag "documentation/dataflowdiagram/user/level2.png"
+			.caption Dataflow Diagram: Level 2 (User)
+			= image_tag "documentation/dataflowdiagram/user/level3login.png"
+			.caption Dataflow Diagram: Level 3 (User / Login)
+			= image_tag "documentation/dataflowdiagram/user/level3record.png"
+			.caption Dataflow Diagram: Level 3 (User / Record)
+			= image_tag "documentation/dataflowdiagram/user/level3update.png"
+			.caption Dataflow Diagram: Level 3 (User / Update)
+		#deploymentdiagram
+			%h2 Deployment Diagram
+			= image_tag "documentation/deploymentdiagram.png"
+			.caption Deployment Diagram
+		#entityrelationshipdiagram
+			%h2 Entity-Relationship Diagram
+			= image_tag "documentation/dataflowdiagram/user/level3update.png"
+			.caption Entity-Relationship Diagram
+		#sequencediagram
+			%h2 Sequence Diagrams
+			= image_tag "documentation/sequencediagram/accountmanage.jpg"
+			.caption Sequence Diagram: Account Management
+			= image_tag "documentation/sequencediagram/pestinquiry.jpg"
+			.caption Sequence Diagram: Pest Inquiry
+			= image_tag "documentation/sequencediagram/pestrecord.jpg"
+			.caption Sequence Diagram: Record Pest
+			= image_tag "documentation/sequencediagram/pestupdate.jpg"
+			.caption Sequence Diagram: Update Pest
+			= image_tag "documentation/sequencediagram/report.jpg"
+			.caption Sequence Diagram: Generate Report
+			= image_tag "documentation/sequencediagram/sightinginquiry.jpg"
+			.caption Sequence Diagram: Sighting Inquiry
+			= image_tag "documentation/sequencediagram/sightingrecord.jpg"
+			.caption Sequence Diagram: Record Sighting
+			= image_tag "documentation/sequencediagram/sightingupdate.jpg"
+			.caption Sequence Diagram: Update Sighting
+			= image_tag "documentation/sequencediagram/userlogin.jpg"
+			.caption Sequence Diagram: User Login
+			= image_tag "documentation/sequencediagram/userrecord.jpg"
+			.caption Sequence Diagram: Record User
+		#usecasediagram
+			%h2 Use-Case Diagrams
+			= image_tag "documentation/usecasediagram/accountmanage.jpg"
+			.caption Use-Case Diagram: Account Management
+			= image_tag "documentation/usecasediagram/pestinquiry.jpg"
+			.caption Use-Case Diagram: Pest Inquiry
+			= image_tag "documentation/usecasediagram/pestrecord.jpg"
+			.caption Use-Case Diagram: Record Pest
+			= image_tag "documentation/usecasediagram/pestupdate.jpg"
+			.caption Use-Case Diagram: Update Pest
+			= image_tag "documentation/usecasediagram/report.jpg"
+			.caption Use-Case Diagram: Generate Report
+			= image_tag "documentation/usecasediagram/sightinginquiry.jpg"
+			.caption Use-Case Diagram: Sighting Inquiry
+			= image_tag "documentation/usecasediagram/sightingrecord.jpg"
+			.caption Use-Case Diagram: Record Sighting
+			= image_tag "documentation/usecasediagram/sightingupdate.jpg"
+			.caption Use-Case Diagram: Update Sighting
+			= image_tag "documentation/usecasediagram/system.jpg"
+			.caption Use-Case Diagram: System
+			= image_tag "documentation/usecasediagram/userrecord.jpg"
+			.caption Use-Case Diagram: Record User
+
 		%hr
-		#implementationarchitecture
-			%h1 Implementation Architecture
-			#platform= render 'platform'
-			#pattern= render 'pattern'
-			#languages= render 'languages'
-			#frameworks= render 'frameworks'
-			#deployment= render 'deployment'
+
+		%h1 Implementation Architecture
+		#platform= render 'platform'
+		#pattern= render 'pattern'
+		#languages= render 'languages'
+		#frameworks= render 'frameworks'
+		#deployment= render 'deployment'
+
 		%hr
+		
 		#userinterfacedesign
 			%h1 User Interface Design
 
-		#userdocumentation= render 'userdocumentation'
+		-#userdocumentation= render 'userdocumentation'
