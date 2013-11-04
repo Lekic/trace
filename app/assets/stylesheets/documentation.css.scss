@@ -1,3 +1,17 @@
 // Place all the styles related to the documentation controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.documentation {
+	#documentation-content {
+		img {
+			margin: 20px 0 0 0;
+		}
+		.caption {
+			text-align: center;
+			font-style: italic;
+			color: #999;
+			margin: 10px 0 20px 0;
+		}
+	}
+}
