@@ -239,7 +239,7 @@ body.modal-open {
 			position: absolute;
 			bottom: 10px;
 			right: 10px;
-			opacity: 0.1;
+			display: none;
 		}
 		.table {
 			margin-bottom: 0;
@@ -256,7 +256,7 @@ body.modal-open {
 	}
 	&:hover {
 		.button-container {
-			opacity: 1;
+			display: block;
 		}
 	}
 }

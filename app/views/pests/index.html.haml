@@ -20,7 +20,7 @@
 					.text-right.button-container
 						= link_to "Edit", edit_pest_path(pest), :class => "btn btn-default btn-xs"
 						- if current_user.try(:admin?)
-							= link_to "Delete", pest_path(pest), method: :delete, data: { confirm: "Are you sure you want to delete this entry?" }, :class => "btn btn-danger btn-xs"
+							= link_to "Delete", pest_path(pest), method: :delete, data: { confirm: "Are you sure you want to delete this pest?" }, :class => "btn btn-danger btn-xs"
 				%table.meta.table.table-striped
 					%tr
 						%td Pest type

@@ -1,6 +1,6 @@
 .isotope-header.clearfix
 	.pull-left
-		%h2 Recorded Sightings
+		%h2 Reported Sightings
 	.pull-right
 		%select#pest-filter.chosen-select
 			%option All
@@ -8,48 +8,47 @@
 				%option
 					= type.name
 		= link_to "Create New Sighting", new_sighting_path, :class => "btn btn-primary"
+%hr
 .isotope
 	- @sightings.each do |sighting|
 		.col-md-3{ :class => " type-" + sighting.pest.pest_type.name.downcase.squish.gsub( /\s/, '_' ) }
 			.isotope-item-wrapper
-				.image-wrapper{:style => "background: " + image_path("temp-pest.jpg")}
-				.overlay
-					%h3= sighting.pest.name + " at " + sighting.park.name
-				.meta
-					%p
-						Pest:
-						= link_to sighting.pest.name, sighting_path(sighting)
-					%p
-						Pest Type:
-						= sighting.pest.pest_type.name
-					%p
-						Quantity:
+				.image
+					.image-wrapper{:style => "background: " + image_path("temp-pest.jpg")}
+					.overlay
+						%h3= sighting.pest.name
+					.text-right.button-container
+						= link_to "Edit", edit_sighting_path(sighting), :class => "btn btn-default btn-xs"
+						- if current_user.try(:admin?)
+							= link_to "Delete", sighting_path(sighting), method: :delete, data: { confirm: "Are you sure you want to delete this sighting?" }, :class => "btn btn-danger btn-xs"
+				%table.meta.table.table-striped
+					%tr
+						%td Pest Type
+						%td= sighting.pest.pest_type.name
+					%tr
+						%td Quantity
 						- if !sighting.quantity.nil?
-							= sighting.quantity
+							%td= sighting.quantity
 						- else
-							= "Not specified"
-					%p
-						Location:
-						= sighting.park.name
-					%p
-						Area:
-						= sighting.park.area.name
-					%p
-						Sighting Time:
+							%td Not specified
+					%tr
+						%td Location
+						%td= sighting.park.name
+					%tr
+						%td Area
+						%td= sighting.park.area.name
+					%tr
+						%td Sighting Time
 						- if !sighting.time_sighted.nil?
-							= sighting.time_sighted
+							%td= sighting.time_sighted
 						- else
-							= "Not specified"
-					%p
-						Further Information:
+							%td Not specified
+					%tr
+						%td Further Information
 						- if !sighting.information.empty?
-							= sighting.information
+							%td= sighting.information
 						- else
-							= "Not specified"
-					%p
-						Created By:
-						= sighting.user.name
-					%p
-					= link_to "Edit", edit_sighting_path(sighting)
-					- if current_user.try(:admin?) || current_user.id == @sighting.user_id
-						= link_to "Delete", sighting_path(sighting), method: :delete, data: { confirm: "Are you sure you want to delete this entry?" }
+							%td Not specified
+					%tr
+						%td Created By
+						%td= sighting.user.name
