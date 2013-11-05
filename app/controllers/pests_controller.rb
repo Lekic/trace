@@ -31,10 +31,6 @@ class PestsController < ApplicationController
   		end
 	end
 
-	def show
-		@pest = Pest.find(params[:id])
-	end
-
 	def edit
 		if current_user.try(:admin?)
 			@pest = Pest.find(params[:id])
