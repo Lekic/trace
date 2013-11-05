@@ -25,7 +25,7 @@ class PestsController < ApplicationController
  		@pest = Pest.new(pest_params)
 		if @pest.save
 			flash[:notice] = "Yay - pest successfully created!"	
-  			redirect_to @pest
+  			redirect_to pests_path
   		else
   			render 'new'
   		end

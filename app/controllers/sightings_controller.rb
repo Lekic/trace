@@ -29,17 +29,10 @@ class SightingsController < ApplicationController
     @sighting.user = current_user
     if @sighting.save	
       flash[:notice] = "Yay - sighting successfully created!" 
-			redirect_to @sighting
+			redirect_to sightings_path
 		else
 			render 'new'
 		end
-	end
-
-  # Handles a GET request to /sightings/{id}
-  # Accessible to anyone (no sign-in)
-  # @returns [Sighting] a single sighting
-	def show
-		@sighting = Sighting.find(params[:id])
 	end
 
   # Handles a GET request to /sightings/{id}/edit
@@ -49,7 +42,7 @@ class SightingsController < ApplicationController
 		@sighting = Sighting.find(params[:id])
     if !current_user.try(:admin?) && !current_user.id == @sighting.user_id
       flash[:alert] = "Oi, edit your own sightings!"
-      redirect_to @sighting
+      redirect_to sightings_path
     end
 	end
 
@@ -60,7 +53,7 @@ class SightingsController < ApplicationController
 	@sighting = Sighting.find(params[:id])
   	if @sighting.update(params[:sighting].permit(:pest_id, :park_id, :quantity, :time_sighted, :information))
       flash[:notice] = "Yay - pest successfully updated!"
-  		redirect_to @sighting
+  		redirect_to sightings_path
   	else
   		render 'edit'
   	end
