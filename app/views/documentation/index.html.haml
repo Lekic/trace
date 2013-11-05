@@ -30,6 +30,8 @@
 					%li= link_to 'Updates', '#updates'
 					%li= link_to 'Review', '#review'
 					%li= link_to 'Tools', '#tools'
+					%li= link_to 'Gantt Chart', '#gantt'
+					%li= link_to 'Task Matrix', '#matrix'
 			%li.dropdown
 				= link_to 'Functional Requirements', "#", "data-toggle" => "dropdown", :class => "dropdown-toggle"
 				%ul.dropdown-menu
@@ -133,6 +135,14 @@
 		#updates= render 'updates'
 		#review= render 'review'
 		#tools= render 'tools'
+		#gantt
+			%h2 Gantt Chart
+			= image_tag "documentation/gantt.png"
+			.caption Gantt Chart
+		#matrix
+			%h2 Task Matrix
+			= image_tag "documentation/matrix.png"
+			.caption Task Matrix
 		
 		%hr
 		
