@@ -31,7 +31,7 @@ $(document).ready(function() {
 	});
 
 	/* Initiate the Isotope Chosen filter */
-	$('.isotope-header .chosen-select').chosen({
+	$('header .chosen-select').chosen({
 		allow_single_deselect: true,
 		no_results_text: 'No results matched',
 		width: "160px"

@@ -25,6 +25,13 @@ html {
 	overflow: hidden;
 }
 
+.remember {
+	margin-left: 20%;
+	@media (max-width: 768px) {
+		margin-left: 0;
+	}
+}
+
 body {
 	padding-top: 70px;
 	overflow-x: hidden;
@@ -265,9 +272,9 @@ body.modal-open {
 	}
 }
 
-.isotope-header {
+header {
 	margin-bottom: 10px;
-	padding: 10px;
+	padding: 10px 0;
 	.chosen-container {
 		width: 160px;
 	}
