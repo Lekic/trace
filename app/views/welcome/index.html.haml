@@ -1,22 +1,9 @@
-.row
-	.col-xs-8
-		%h1
-			Hey there 
-			= "@" + current_user.username + ","
-			welcome to Trace!
-		%h1
-			Today there have been
-			= @pests_today.length
-			pests created and
-			= @sightings_today.length
-			sightings have added to the system.
-		%h1
-			There are currently
-			= pluralize(@pests.length, "pest")
-			recorded across the system over
-			= pluralize(@sightings.length, "sighting")
-		- if current_user.try(:admin?)
-			%h1
-				There are currently
-				= pluralize(@users.length, "user")
-				registered with Trace.
+.jumbotron
+	%h1= "Welcome back @" + current_user.username + "!"
+	%p
+		So far today,
+		= pluralize(@pests_today.length, "pest")
+		have been created and
+		= pluralize(@sightings_today.length, "sighting")
+		have added to the system.
+	.btn.btn-primary.btn-lg Report a sighting
