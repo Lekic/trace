@@ -33,6 +33,14 @@ class UsersController < ApplicationController
   		end
 	end
 
+	# Handles a GET request to /users/{id}
+  	# Accessible to anyone (no sign-in)
+  	# @returns [User] a single user
+	def show
+		@user = User.find(params[:id])
+		@sightings = Sighting.where(:user_id => params[:id])
+	end
+
 	# Handles a GET request to /sightings/{id}/edit
   	# Accessible to administrator or account holder
   	# @returns [Path] to the users page

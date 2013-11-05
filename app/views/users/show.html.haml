@@ -1,0 +1,56 @@
+%h2 User Profile
+
+= image_tag @user.avatar.url(:thumb)
+%p
+	%strong ID:
+	= @user.id
+
+- if !@user.employee_id.nil?	
+	%p
+		%strong User ID:
+		= @user.employee_id
+%p
+	%strong Name:
+	= @user.name
+%p
+	%strong Username:
+	= @user.username
+%p
+	%strong Date of Birth:
+	= @user.date_of_birth
+%p
+	%strong Date Joined:
+	= @user.date_joined
+%p
+	%strong Contact Number:
+	= @user.contact_number
+
+- if !@user.person_type.nil?	
+	%p
+		%strong Occupation:
+		= @user.person_type.name
+
+- if !@user.park_id.nil?
+	%p
+		%strong Park:
+		= @user.park.name
+		
+- if !@user.street_number.nil?
+	%p
+		%strong Address:
+		= @user.street_number
+		= @user.street_name + ','
+		= @user.suburb
+		= @user.state
+		= @user.postcode
+
+%h3 My Sightings
+- @sightings.each do |sighting|
+	%br
+	= link_to sighting.pest.name + " spotted at " + sighting.park.name, sighting_path(sighting)
+
+%p	
+= link_to "Edit", edit_user_path(@user)
+- if current_user.try(:admin?)
+	= link_to "Delete", user_path(@user), method: :delete, data: { confirm: "Are you sure you want to delete this entry?" }
+= link_to "Back", users_path
