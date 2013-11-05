@@ -59,7 +59,7 @@ Pest.create(name: 'Greninja', pest_type_id: '7', source_id: '2', tracker_id: '10
 
 # Test sightings
 Sighting.delete_all
-Sighting.create()
+Sighting.create(pest_id: '1', quantity: '5', park_id: '4', time_sighted: '2013-11-01-09-04-04', information: 'Bro they were running at me, but I bashed them.', user_id: '1')
 
 # Test reports
 Report.delete_all
