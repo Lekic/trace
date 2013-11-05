@@ -10,7 +10,7 @@
 		= link_to "Create New Pest", new_pest_path, :class => "btn btn-primary"
 .isotope
 	- @pests.each do |pest|
-		= link_to pest_path(pest), :class => "col-md-3 type-" + pest.pest_type.name.downcase.squish.gsub( /\s/, '_' ) do
+		.col-md-3{ :class => " type-" + pest.pest_type.name.downcase.squish.gsub( /\s/, '_' )}
 			.isotope-item-wrapper
 				.image-wrapper{:style => "background: " + image_path("temp-pest.jpg")}
 				.overlay
@@ -47,3 +47,7 @@
 							= pest.characteristics
 						- else
 							= "None"
+					%p
+						= link_to "Edit", edit_pest_path(pest)
+						- if current_user.try(:admin?)
+							= link_to "Delete", pest_path(pest), method: :delete, data: { confirm: "Are you sure you want to delete this entry?" }

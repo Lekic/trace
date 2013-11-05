@@ -208,6 +208,7 @@ body.modal-open {
 .isotope-item {
 	float: left;
 	padding: 10px;
+	cursor: pointer;
 	&:hover {
 		text-decoration: none;
 		.isotope-item-wrapper {

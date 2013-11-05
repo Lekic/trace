@@ -68,4 +68,7 @@ $(document).ready(function() {
 		/* Relayout */
 		$isotope.isotope('reLayout');
 	});
+	$('.isotope-item .meta a').click(function(e) {
+        e.stopPropagation();
+    });
 });
