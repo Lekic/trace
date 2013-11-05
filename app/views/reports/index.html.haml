@@ -1,7 +1,9 @@
-%h1 Reports
-
-= link_to "Create New Report", new_report_path
-
+%header.clearfix
+	.pull-left
+		%h2 Reports
+	.pull-right
+		= link_to "Generate Report", new_report_path, :class => "btn btn-primary"
+%hr
 %table.table.table-striped
 	%tr
 		%th Report ID
