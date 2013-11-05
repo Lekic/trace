@@ -28,7 +28,7 @@ class SightingsController < ApplicationController
 		@sighting = Sighting.new(sighting_params)
     @sighting.user = current_user
     if @sighting.save	
-      flash[:notice] = "Awesome - sighting successfully created!" 
+      flash[:notice] = "Yay - sighting successfully created!" 
 			redirect_to @sighting
 		else
 			render 'new'
@@ -59,7 +59,7 @@ class SightingsController < ApplicationController
 	def update
 	@sighting = Sighting.find(params[:id])
   	if @sighting.update(params[:sighting].permit(:pest_id, :park_id, :quantity, :time_sighted, :information))
-      flash[:notice] = "Awesome - pest successfully updated!"
+      flash[:notice] = "Yay - pest successfully updated!"
   		redirect_to @sighting
   	else
   		render 'edit'
@@ -74,7 +74,7 @@ class SightingsController < ApplicationController
     if current_user.try(:admin?) || current_user.id == @sighting.user_id
   		@sighting.destroy
     else
-      flash[:alert] = "BZZT - sighting successfully deleted!"
+      flash[:alert] = "Yay - sighting successfully deleted!"
     end
 		redirect_to sightings_path
 	end

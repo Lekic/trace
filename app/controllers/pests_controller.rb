@@ -24,7 +24,7 @@ class PestsController < ApplicationController
 	def create
  		@pest = Pest.new(pest_params)
 		if @pest.save
-			flash[:notice] = "Awesome - pest successfully created!"	
+			flash[:notice] = "Yay - pest successfully created!"	
   			redirect_to @pest
   		else
   			render 'new'
@@ -48,7 +48,7 @@ class PestsController < ApplicationController
 		@pest = Pest.find(params[:id])
 
 		if @pest.update(params[:pest].permit(:name, :source_id, :tracker_id, :pest_type_id, :characteristics, {:marking_ids => []}, :colour_id, :size))
-			flash[:notice] = "Awesome - pest successfully updated!"
+			flash[:notice] = "Yay - pest successfully updated!"
 			redirect_to pests_path
 		else
 			render 'edit'
@@ -59,7 +59,7 @@ class PestsController < ApplicationController
 		if current_user.try(:admin?)
 			@pest = Pest.find(params[:id])
 			@pest.destroy
-			flash[:notice] = "BZZT - pest successfully deleted!"
+			flash[:notice] = "Yay - pest successfully deleted!"
 		else
 			flash[:alert] = "Sorry, you don't have the right privileges to delete a pest."
 		end
