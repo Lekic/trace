@@ -137,7 +137,8 @@ img {
 			width: 100%;
 		}
 	}
-	#sighting_time_sighted_input .chosen-container {
+	#sighting_time_sighted_input .chosen-container,
+	#user_date_of_birth_input .chosen-container {
 		margin-bottom: 10px;
 	}
 }
