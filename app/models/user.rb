@@ -9,7 +9,7 @@ class User < ActiveRecord::Base
   # This is in addition to a real persisted field like 'username'
   attr_accessor :login
 
-  has_attached_file :avatar, styles: { medium: "300x300>", thumb: "100x100>" }, default_irl: "/images/:style/missing.png"
+  has_attached_file :avatar, styles: { medium: "300x300>", thumb: "30x30>" }, default_irl: "/images/:style/missing.png"
   
   before_save { self.email = email.downcase }
   belongs_to :person_type, inverse_of: :users

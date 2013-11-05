@@ -14,6 +14,7 @@
 		= f.input :name
 		= f.input :email
 		= f.input :password
+		= f.input :avatar, as: :file, label: "Profile Picture"
 		= f.input :contact_number
 		= f.input :person_type
 		= f.input :park
@@ -25,7 +26,6 @@
 		= f.input :suburb
 		= f.input :state
 		= f.input :postcode
-		= f.input :avatar, as: :file
 
 	= f.actions do
 		= f.action :submit
