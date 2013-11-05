@@ -1,5 +1,5 @@
 - if @pest.errors.any?
-	.alert.alert-danger
+	#errorExplanation
 		%h2
 			=pluralize(@pest.errors.count, "error")
 			prohibited this post from being saved:
@@ -19,4 +19,4 @@
 		= f.input :characteristics
 	= f.actions do
 		= f.action :submit, :as => :button, :label => "Submit"
-		= f.action :cancel, :as => :link, :label => "Go Back"
+		= f.action :cancel, :as => :link, :label => "Go Back"x
