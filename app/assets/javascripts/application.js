@@ -43,9 +43,23 @@ $(document).ready(function() {
 		return false;
 	});*/
 	$(".isotope-item").click(function(e) {
+
+		/* Prevent default action */
 		e.preventDefault();
-		$(".meta").hide();
-		$(".meta", this).show();
+
+		/* Give this meta a variable name */
+		$meta = $(".meta", this);
+
+		/* If it's already open, close it, otherwise, open it! */
+		if ($meta.hasClass("open")) {
+			$(".meta").hide().removeClass("open");
+		}
+		else {
+			$(".meta").hide().removeClass("open");
+			$meta.show().addClass("open");
+		}
+
+		/* Relayout */
 		$isotope.isotope('reLayout');
 	});
 });
