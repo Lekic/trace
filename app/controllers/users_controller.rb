@@ -25,7 +25,8 @@ class UsersController < ApplicationController
   	# @returns [Path] to the following page (user or new form)
 	def create
  		@user = User.new(user_params)
-		if @user.save	
+ 		@user.admin = false
+		if @user.save
   			redirect_to @user
   		else
   			render 'new'
@@ -58,7 +59,7 @@ class UsersController < ApplicationController
 	def update
 		@user = User.find(params[:id])
 
-		if @user.update(params[:user].permit(:employee_id, :name, :email, :date_of_birth, :username, :password, :date_joined, :park_id, :contact_number, :person_type_id, :admin, :street_number, :street_name, :suburb, :state, :postcode))
+		if @user.update(params[:user].permit(:employee_id, :name, :email, :date_of_birth, :username, :password, :date_joined, :park_id, :contact_number, :person_type_id, :admin, :street_number, :street_name, :suburb, :state, :postcode, :avatar))
 			flash[:notice] = "Yay - profile successfully updated!"
 			redirect_to @user
 		else
@@ -90,7 +91,7 @@ class UsersController < ApplicationController
 	# Permitted parameters when creating a user
 	private
   		def user_params
-    		params.require(:user).permit(:employee_id, :name, :email, :date_of_birth, :username, :password, :date_joined, :park_id, :contact_number, :person_type_id, :admin, :street_number, :street_name, :suburb, :state, :postcode)
+    		params.require(:user).permit(:employee_id, :name, :email, :date_of_birth, :username, :password, :date_joined, :park_id, :contact_number, :person_type_id, :admin, :street_number, :street_name, :suburb, :state, :postcode, :avatar)
   		end
 		def verify_is_admin
 			(current_user.nil?) ? redirect_to(root_path) : (redirect_to(root_path) unless current_user.admin?)
