@@ -49,7 +49,7 @@ class PestsController < ApplicationController
 
 		if @pest.update(params[:pest].permit(:name, :source_id, :tracker_id, :pest_type_id, :characteristics, {:marking_ids => []}, :colour_id, :size))
 			flash[:notice] = "Awesome - pest successfully updated!"
-			redirect_to @pest
+			redirect_to pests_path
 		else
 			render 'edit'
 		end

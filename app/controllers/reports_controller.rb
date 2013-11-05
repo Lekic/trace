@@ -26,8 +26,7 @@ class ReportsController < ApplicationController
 	def show
 		@report = Report.find(params[:id])
 		@sightings = Sighting.find(:all, :conditions => [" created_at between ? and ?",
-         report.start_date, report.end_date])
-		@sightings = Sighting.find(:all, :conditions => ["DATE(created_at) = DATE(?)", Time.now])
+         @report.start_date-1, @report.end_date+1])
 	end
 
 	def edit
