@@ -12,7 +12,7 @@
 				= image_tag("temp-pest.jpg")
 				%p
 					Pest:
-					= sighting.pest.name
+					= link_to sighting.pest.name, sighting_path(@sighting)
 				%p
 					Pest Type:
 					= sighting.pest.pest_type.name
