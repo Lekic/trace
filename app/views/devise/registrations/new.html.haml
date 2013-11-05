@@ -22,11 +22,7 @@
 				= f.label :password, :class => "col-lg-2 control-label"
 				.col-lg-10
 					= f.password_field :password, :class => "form-control", :required => "required"
-			.form-group
-				= f.label :admin, :class => "col-lg-2 control-label"
-				.col-lg-10
-					= f.check_box :admin, :class => "form-control"
-
+					
 			= f.submit "Sign up", :class => "btn pull-right"
 
 		-#= render "devise/shared/links"
