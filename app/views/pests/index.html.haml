@@ -10,7 +10,7 @@
 		= link_to "Create New Pest", new_pest_path, :class => "btn btn-primary"
 .isotope
 	- @pests.each do |pest|
-		.col-md-3{ :class => " type-" + pest.pest_type.name.downcase.squish.gsub( /\s/, '_' )}
+		.col-md-3{ :class => " type-" + pest.pest_type.name.downcase.squish.gsub( /\s/, '_' ) }
 			.isotope-item-wrapper
 				.image-wrapper{:style => "background: " + image_path("temp-pest.jpg")}
 				.overlay
