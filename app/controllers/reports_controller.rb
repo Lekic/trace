@@ -1,10 +1,10 @@
 class ReportsController < ApplicationController
 	def index
 	    if current_user.try(:admin?)
-			  @reports = Report.all
+			@reports = Report.all
 	    else
-	      flash[:alert] = "Sorry, no can do. Come back when you're a system administrator!"
-	      redirect_to index_path
+			flash[:alert] = "Sorry, no can do. Come back when you're a system administrator!"
+			redirect_to index_path
 	    end
 	end
 
@@ -25,11 +25,12 @@ class ReportsController < ApplicationController
 
 	def show
 		@report = Report.find(params[:id])
-		#@sightings = 
+		@sightings = Sighting.find(:all, )
+		@sightings = Sighting.find(:all, :conditions => ["DATE(created_at) = DATE(?)", Time.now])
 	end
 
 	def edit
-		@report = report_params.find(params[:id])
+		@report = Report.find(params[:id])
 	end
 
 	def update
@@ -46,11 +47,11 @@ class ReportsController < ApplicationController
 		@report = Report.find(params[:id])
 		@report.destroy
 
-		redirect_to reports_path #check if you can reuse code
+		redirect_to reports_path
 	end
 
 	private
       def report_params
-        params.require(:report).permit(:start_date, :end_date, {:area_ids => []}) #change params
+        params.require(:report).permit(:start_date, :end_date, {:area_ids => []})
       end
 end

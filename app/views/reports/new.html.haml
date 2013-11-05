@@ -1,21 +1,3 @@
 %h1 Generate Report
 
-- if @report.errors.any?
-	.alert.alert-danger
-		%h2
-			=pluralize(@report.errors.count, "error")
-			prohibited this post from being saved:
-		%ul
-			- @report.errors.full_messages.each do |msg|
-				%li= msg
-
-
-= semantic_form_for @report do |f|
-	= f.inputs do
-		%h3 Input Date Range
-		= f.input :start_date
-		= f.input :end_date
-		= f.input :areas, :as => :check_boxes
-	= f.actions do
-		= f.action :submit, :as => :button, :label => "Submit"
-		= f.action :cancel, :as => :link, :label => "Go Back"
+= render 'report_form'
