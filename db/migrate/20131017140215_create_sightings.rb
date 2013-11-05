@@ -3,6 +3,7 @@ class CreateSightings < ActiveRecord::Migration
     #drop_table :sightings this line resets the table
     create_table :sightings do |t|
       t.references :pest, index: true
+      t.integer :quantity
       t.decimal :latitude
       t.decimal :longitude
       t.references :park, index: true
