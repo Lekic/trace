@@ -1,14 +1,16 @@
 # @author Daniel Lekic
 class SightingsController < ApplicationController
 	
-  # GET /sightings
-  # Access level: Anyone (no sign-in)
+  # Handles a GET request to /sightings
+  # Accessible to anyone (no sign-in)
+  # @return [Sighing] all the sightings in the system
   def index
 		@sightings = Sighting.all
 	end
 
-  # GET /sightings/new
-  # Access level: Signed-in user
+  # Handles a GET request to /sightings/new
+  # Accessible to signed-in users
+  # @returns [Sighting] a new sighting object
 	def new
     if user_signed_in?
 		  @sighting = Sighting.new
@@ -18,8 +20,9 @@ class SightingsController < ApplicationController
     end
 	end
 
-  # POST /sightings
-  # Access level: Signed-in user
+  # Handles a POST request to /sightings/new
+  # Accessible to signed-in users
+  # @returns [Path] to the following page (sighting or new form)
 	def create
 		@sighting = Sighting.new(sighting_params)
     @sighting.user = current_user
@@ -31,14 +34,16 @@ class SightingsController < ApplicationController
 		end
 	end
 
-  # GET /sightings/1
-  # Access level: Anyone (no sign-in)
+  # Handles a GET request to /sightings/{id}
+  # Accessible to anyone (no sign-in)
+  # @returns [Sighting] a single sighting
 	def show
 		@sighting = Sighting.find(params[:id])
 	end
 
-  # GET /sightings/1/edit
-  # Access level: Admin or article creator
+  # Handles a GET request to /sightings/{id}/edit
+  # Accessible to administrators or sighting creators
+  # @returns [Path] to the sighting page
 	def edit
 		@sighting = Sighting.find(params[:id])
     if !current_user.try(:admin?) && !current_user.id == @sighting.user_id
@@ -47,8 +52,9 @@ class SightingsController < ApplicationController
     end
 	end
 
-  # PUT /sightings/1
-  # Access level: Admin or article creator
+  # Handles a PUT request to /sightings/{id}
+  # Accessible to administrators and sighting creators
+  # @returns [Path] to the following page (sighting or edit form)
 	def update
 	@sighting = Sighting.find(params[:id])
   	if @sighting.update(params[:sighting].permit(:pest_id, :park_id, :quantity, :time_sighted, :information))
@@ -59,8 +65,9 @@ class SightingsController < ApplicationController
   	end
 	end
 
-  # DELETE /sightings/1
-  # Access level: Admin or article creator
+  # Handles a DELETE request to /sightings/{id}
+  # Accessible to administrators and sighting creators
+  # @returns [Path] to the sightings page
 	def destroy
 		@sighting = Sighting.find(params[:id])
     if current_user.try(:admin?) || current_user.id == @sighting.user_id

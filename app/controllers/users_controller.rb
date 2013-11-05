@@ -1,6 +1,9 @@
+# @author Daniel Lekic
 class UsersController < ApplicationController
 
-	# GET /users
+	# Handles a GET request to /users
+	# Administrator access level
+	# @return [User] all the users in the system
 	def index
 		if current_user.try(:admin?)
 			@users = User.all.order(:name)
@@ -10,11 +13,16 @@ class UsersController < ApplicationController
 		end
 	end
 	
-	# GET /users/new
+	# Handles a GET request to /users/new
+	# Accessible to anyone (no sign-in)
+	# @returns [User] a a new user
 	def new
 		@user = User.new
 	end
 
+	# Handles a POST request to /users/new
+ 	# Accessible to anyone (no sign-in)
+  	# @returns [Path] to the following page (user or new form)
 	def create
  		@user = User.new(user_params)
 		if @user.save	
@@ -24,11 +32,17 @@ class UsersController < ApplicationController
   		end
 	end
 
+	# Handles a GET request to /users/{id}
+  	# Accessible to anyone (no sign-in)
+  	# @returns [User] a single user
 	def show
 		@user = User.find(params[:id])
 		@sightings = Sighting.where(:user_id => params[:id])
 	end
 
+	# Handles a GET request to /sightings/{id}/edit
+  	# Accessible to administrator or account holder
+  	# @returns [Path] to the users page
 	def edit
 		if current_user.try(:admin?)
 			@user = User.find(params[:id])
@@ -38,6 +52,9 @@ class UsersController < ApplicationController
 		end
 	end
 
+	# Handles a PUT request to /users/{id}
+  	# Accessible to administrators and account holder
+  	# @returns [Path] to the following page (user or edit form)
 	def update
 		@user = User.find(params[:id])
 
@@ -49,6 +66,9 @@ class UsersController < ApplicationController
 		end
 	end
 
+	# Handles a DELETE request to /users/{id}
+  	# Accessible to administrators and account holder
+  	# @returns [Path] to the users page
 	def destroy
 		if current_user.try(:admin?)
 			@user = User.find(params[:id])
@@ -60,14 +80,14 @@ class UsersController < ApplicationController
 		redirect_to users_path
 	end
 
+	# Retrieves all phones owned by the user
+	# Accessible to everyone
+	# @returns [Phone] all phones owned by the user
 	def phones
-		Phones.where(:user_id => @user.id).order('id').all
+		@phones = Phone.where(:user_id => @user.id).order('id').all
 	end
 
-	def has_sighting?(sighting)
-  		self.sighting.exists?(id: sighting.id)
-	end
-
+	# Permitted parameters when creating a user
 	private
   		def user_params
     		params.require(:user).permit(:employee_id, :name, :email, :date_of_birth, :username, :password, :date_joined, :park_id, :contact_number, :person_type_id, :admin, :street_number, :street_name, :suburb, :state, :postcode)
