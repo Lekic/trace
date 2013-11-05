@@ -1,4 +1,8 @@
+# @author Daniel Lekic
 class PestsController < ApplicationController
+	
+	# GET /pests
+ 	# Access level: Anyone (no sign-in)
 	def index
 		@pests = Pest.all
 		@types = PestType.all
@@ -6,13 +10,21 @@ class PestsController < ApplicationController
 		@sources = Source.all
 	end
 
+	# GET /pests/new
+  	# Access level: Signed-in user
 	def new
-		@pest = Pest.new
+		if user_signed_in?
+		  @pest = Pest.new
+	    else
+	      flash[:alert] = "You must be signed in to register pests."
+	      redirect_to sightings_path
+	    end
 	end
 
 	def create
  		@pest = Pest.new(pest_params)
-		if @pest.save	
+		if @pest.save
+			flash[:notice] = "Pest created succesfully."	
   			redirect_to @pest
   		else
   			render 'new'
@@ -24,10 +36,10 @@ class PestsController < ApplicationController
 	end
 
 	def edit
-		if user_signed_in?
+		if current_user.try(:admin?)
 			@pest = Pest.find(params[:id])
 		else
-			flash[:alert] = "You must be signed in to edit pests"
+			flash[:alert] = "You must be an administrator to edit pests"
 			redirect_to :back
 		end
 	end

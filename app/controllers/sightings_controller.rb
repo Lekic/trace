@@ -1,3 +1,4 @@
+# @author Daniel Lekic
 class SightingsController < ApplicationController
 	
   # GET /sightings
