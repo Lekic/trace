@@ -1,5 +1,5 @@
 - if @pest.errors.any?
-	#errorExplanation
+	.alert.alert-danger
 		%h2
 			=pluralize(@pest.errors.count, "error")
 			prohibited this post from being saved:
