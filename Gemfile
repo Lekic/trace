@@ -39,6 +39,9 @@ gem 'devise'
 # Paperclip for image handling
 gem "paperclip", :git => "git://github.com/thoughtbot/paperclip.git"
 
+# Heroku dependency for paperclip
+gem 'rmagick'
+
 # Formtastic for high-performance form creation with relational implementation
 gem 'formtastic-bootstrap'
 
