@@ -19,7 +19,6 @@ class SightingsController < ApplicationController
 	def create
 		@sighting = Sighting.new(sighting_params)
     @sighting.user = current_user
-    current_user.sightings.add(@sighting)
     if @sighting.save	
       flash[:notice] = "Sighting created successfully."
 			redirect_to @sighting
