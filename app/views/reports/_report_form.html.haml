@@ -7,14 +7,13 @@
 			- @report.errors.full_messages.each do |msg|
 				%li= msg
 
-
 = semantic_form_for @report do |f|
 	= f.inputs do
-		%h3 Input Date Range
-		= f.input :name, label: "Report Name"
-		= f.input :start_date
-		= f.input :end_date
+		= f.input :name, label: "Report Name", :input_html => { :class => "form-control" }
+		= f.input :start_date, :input_html => { :class => "chosen-select" }
+		= f.input :end_date, :input_html => { :class => "chosen-select" }
 		= f.input :areas, :as => :check_boxes
 	= f.actions do
-		= f.action :submit, :as => :button, :label => "Submit"
-		= f.action :cancel, :as => :link, :label => "Go Back"
+		.pull-right
+			= f.action :cancel, :as => :link, :label => "Cancel", :button_html => { :class => "btn btn-default" }
+			= f.action :submit, :as => :button, :label => "Submit", :button_html => { :class => "btn btn-success" }
