@@ -11,8 +11,20 @@
 			.item
 				= image_tag("temp-pest.jpg")
 				%p
-					Latitude:
-					= sighting.latitude
+					Pest:
+					= sighting.pest.name
 				%p
-					Longitude:
-					=sighting.longitude
+					Quantity:
+					= sighting.quantity
+				%p
+					Location:
+					= sighting.park.name
+				%p
+					Sighting Time:
+					= sighting.time_sighted
+				%p
+					Further Information:
+					= sighting.information
+				%p
+					Created By:
+					= sighting.user.name

@@ -1,7 +1,7 @@
 %h1 Create Sighting
 
 - if @sighting.errors.any?
-	#errorExplanation
+	.alert.alert-danger
 		%h2
 			=pluralize(@sighting.errors.count, "error")
 			prohibited this post from being saved:
@@ -14,7 +14,7 @@
 	= f.inputs do
 		= f.input :pest
 		= f.input :park, label: "Park Location"
-		= f.input :user_id, value: current_user.id
+		= f.input :user_id, as: :hidden, value: current_user.id
 		= f.input :quantity, label: "Number of pests sighted"
 		= f.input :latitude
 		= f.input :longitude

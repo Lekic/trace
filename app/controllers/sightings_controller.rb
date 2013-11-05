@@ -1,44 +1,67 @@
 class SightingsController < ApplicationController
-	def index
+	
+  # GET /sightings
+  def index
 		@sightings = Sighting.all
-  	end
-
-  	def new
-  		@sighting = Sighting.new
-  	end
-
-  	def create
-  		@sighting = Sighting.new(sighting_params)
-		if @sighting.save	
-  			redirect_to @sighting
-  		else
-  			render 'new'
-  		end
 	end
 
-  	def show
-  		@sighting = Sighting.find(params[:id])
-  	end
+  # GET /sightings/new
+	def new
+    if user_signed_in?
+		  @sighting = Sighting.new
+    else
+      flash[:alert] = "You must be signed in to create a sighting."
+      redirect_to sightings_path
+    end
+	end
 
-  	def edit
-  		@sighting = Sighting_params.find(params[:id])
-  	end
-
-  	def update
-		@sighting = Sighting.find(params[:id])
-
-		if @sighting.update(params[:sighting].permit(:latitude, :longitude))
+  # POST /sightings
+	def create
+		@sighting = Sighting.new(sighting_params)
+    @sighting.user = current_user
+    if @sighting.save	
+      flash[:notice] = "Sighting created successfully."
 			redirect_to @sighting
 		else
-			render 'edit'
+			render 'new'
 		end
 	end
 
-	def destroy
+  # GET /sightings/1
+	def show
 		@sighting = Sighting.find(params[:id])
-		@sighting.destroy
+	end
 
-		redirect_to sightings_path #check if you can reuse code
+  # GET /sightings/1/edit
+	def edit
+    if current_user.try(:admin?) || current_user.has_sighting?(@sighting)
+		  @sighting = Sighting_params.find(params[:id])
+    else
+      flash[:alert] = "You can't edit a sighting that is not yours."
+      redirect_to @sighting
+    end
+	end
+
+  # PUT /sightings/1
+	def update
+	@sighting = Sighting.find(params[:id])
+  	if @sighting.update(params[:sighting].permit(:latitude, :longitude))
+      flash[:notice] = "Sighting updated successfully."
+  		redirect_to @sighting
+  	else
+  		render 'edit'
+  	end
+	end
+
+  # DELETE /sightings/1
+	def destroy
+    if current_user.try(:admin?) || current_user.has_sighting?(@sighting)
+  		@sighting = Sighting.find(params[:id])
+  		@sighting.destroy
+    else
+      flash[:alert] = "You cannot delete a sighting without correct privledges."
+    end
+		redirect_to sightings_path
 	end
 
 	private
