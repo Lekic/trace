@@ -23,10 +23,15 @@ $(document).ready(function() {
 	$isotope.imagesLoaded(function(){
 		$isotope.isotope();
 	});
-	$('.chosen-select').chosen({
+	$('.isotope-header .chosen-select').chosen({
 		allow_single_deselect: true,
 		no_results_text: 'No results matched',
-		width: '160px'
+		width: "160px"
+	});
+	$('.formtastic .chosen-select').chosen({
+		allow_single_deselect: true,
+		no_results_text: 'No results matched',
+		width: "100%"
 	});
 	$("#pest-filter").chosen().change(function(e, params) {
 		var parameter = params.selected.toLowerCase();
