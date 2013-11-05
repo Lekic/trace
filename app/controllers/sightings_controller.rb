@@ -35,7 +35,7 @@ class SightingsController < ApplicationController
   # GET /sightings/1/edit
 	def edit
     if current_user.try(:admin?) || current_user.has_sighting?(@sighting)
-		  @sighting = Sighting_params.find(params[:id])
+		  @sighting = Sighting.find(params[:id])
     else
       flash[:alert] = "You can't edit a sighting that is not yours."
       redirect_to @sighting
@@ -45,7 +45,7 @@ class SightingsController < ApplicationController
   # PUT /sightings/1
 	def update
 	@sighting = Sighting.find(params[:id])
-  	if @sighting.update(params[:sighting].permit(:latitude, :longitude))
+  	if @sighting.update(params[:sighting].permit(:pest_id, :park_id, :quantity, :time_sighted, :information))
       flash[:notice] = "Sighting updated successfully."
   		redirect_to @sighting
   	else
@@ -66,7 +66,7 @@ class SightingsController < ApplicationController
 
 	private
   		def sighting_params
-    		params.require(:sighting).permit(:latitude, :longitude) #change params
+    		params.require(:sighting).permit(:pest_id, :park_id, :quantity, :time_sighted, :information) #change params
   		end
   		
 end
