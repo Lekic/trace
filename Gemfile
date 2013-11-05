@@ -51,6 +51,9 @@ gem "markdown-rails"
 # Phone number validation
 gem "validates_phone_number"
 
+# Enhanced date validation
+gem 'validates_timeliness', '~> 3.0'
+
 # Fancybox for Documentation
 gem "fancybox-rails"
 
