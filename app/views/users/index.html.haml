@@ -12,5 +12,5 @@
 			%td= user.email
 			%td= "@" + user.username
 			%td= user.admin
-			%td= user.created_at
+			%td= user.created_at.strftime("%m/%d/%Y")
 			%td= link_to "Edit", edit_user_path(user)
