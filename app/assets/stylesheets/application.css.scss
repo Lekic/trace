@@ -248,6 +248,16 @@ footer {
 	p {
 		margin: 0;
 	}
+	@media (max-width: 768px) {
+		text-align:center;
+		font-size: 11px;
+		.pull-right, .pull-left {
+			float: none !important;
+		}
+		p {
+			margin-bottom: 10px;
+		}
+	}
 }
 
 h1, h2, h3, h4, h5, h6, body, input, textarea {
