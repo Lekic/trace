@@ -42,4 +42,10 @@ $(document).ready(function() {
 		}, 500);
 		return false;
 	});*/
+	$(".isotope-item").click(function(e) {
+		e.preventDefault();
+		$(".meta").hide();
+		$(".meta", this).show();
+		$isotope.isotope('reLayout');
+	});
 });

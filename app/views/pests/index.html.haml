@@ -14,37 +14,36 @@
 			.isotope-item-wrapper
 				.image-wrapper{:style => "background: " + image_path("temp-pest.jpg")}
 				.overlay
-					%h3
-						Name:
-						= pest.name
-				%p
-					Pest type:
-					= pest.pest_type.name
-				%p
-					Source:
-					= pest.source.name
-				%p
-					Tracker ID:
-					- if !pest.tracker_id.nil?
-						= pest.tracker_id
-					- else
-						= "None"
-				%p
-					Size:
-					= pest.size
-				%p
-					Colour:
-					= pest.colour.name
-				%p
-					Markings:
-					- if !pest.markings.empty?
-						- pest.markings.each do |marking|
-							= Marking.find(marking).name
-					- else
-						= "None"
-				%p
-					Characteristics:
-					- if !pest.characteristics.nil?
-						= pest.characteristics
-					- else
-						= "None"
+					%h3= pest.name
+				.meta
+					%p
+						Pest type:
+						= pest.pest_type.name
+					%p
+						Source:
+						= pest.source.name
+					%p
+						Tracker ID:
+						- if !pest.tracker_id.nil?
+							= pest.tracker_id
+						- else
+							= "None"
+					%p
+						Size:
+						= pest.size
+					%p
+						Colour:
+						= pest.colour.name
+					%p
+						Markings:
+						- if !pest.markings.empty?
+							- pest.markings.each do |marking|
+								= Marking.find(marking).name
+						- else
+							= "None"
+					%p
+						Characteristics:
+						- if !pest.characteristics.nil?
+							= pest.characteristics
+						- else
+							= "None"
