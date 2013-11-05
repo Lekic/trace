@@ -26,6 +26,7 @@ class UsersController < ApplicationController
 
 	def show
 		@user = User.find(params[:id])
+		@sightings = Sighting.where(:user_id => params[:id])
 	end
 
 	def edit

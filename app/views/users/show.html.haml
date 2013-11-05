@@ -17,11 +17,9 @@
 %p
 	%strong Date of Birth:
 	= @user.date_of_birth
-
 %p
 	%strong Date Joined:
 	= @user.date_joined
-
 %p
 	%strong Contact Number:
 	= @user.contact_number
@@ -44,7 +42,13 @@
 		= @user.suburb
 		= @user.state
 		= @user.postcode
-	
+
+%h3 My Sightings
+- @sightings.each do |sighting|
+	%br
+	= link_to sighting.pest.name + " spotted at " + sighting.park.name, sighting_path(sighting)
+
+%p	
 = link_to "Edit", edit_user_path(@user)
 - if current_user.try(:admin?)
 	= link_to "Delete", user_path(@user), method: :delete, data: { confirm: "Are you sure you want to delete this entry?" }
