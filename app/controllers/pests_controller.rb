@@ -16,7 +16,7 @@ class PestsController < ApplicationController
 		if user_signed_in?
 		  @pest = Pest.new
 	    else
-	      flash[:alert] = "You must be signed in to register pests."
+	      flash[:alert] = "Sorry, you've gotta sign in to register pests!"
 	      redirect_to pests_path
 	    end
 	end
@@ -24,7 +24,7 @@ class PestsController < ApplicationController
 	def create
  		@pest = Pest.new(pest_params)
 		if @pest.save
-			flash[:notice] = "Pest created succesfully."	
+			flash[:notice] = "Awesome - pest successfully created!"	
   			redirect_to @pest
   		else
   			render 'new'
@@ -39,7 +39,7 @@ class PestsController < ApplicationController
 		if current_user.try(:admin?)
 			@pest = Pest.find(params[:id])
 		else
-			flash[:alert] = "You must be an administrator to edit pests"
+			flash[:alert] = "Sorry, you don't have the right privileges to edit a pest."
 			redirect_to :back
 		end
 	end
@@ -48,7 +48,7 @@ class PestsController < ApplicationController
 		@pest = Pest.find(params[:id])
 
 		if @pest.update(params[:pest].permit(:name, :source_id, :tracker_id, :pest_type_id, :characteristics, {:marking_ids => []}, :colour_id, :size))
-			flash[:notice] = "Pest updated successfully."
+			flash[:notice] = "Awesome - pest successfully updated!"
 			redirect_to @pest
 		else
 			render 'edit'
@@ -59,9 +59,9 @@ class PestsController < ApplicationController
 		if current_user.try(:admin?)
 			@pest = Pest.find(params[:id])
 			@pest.destroy
-			flash[:notice] = "Pest successfully deleted."
+			flash[:notice] = "BZZT - pest successfully deleted!"
 		else
-			flash[:alert] = "You cannot delete a pest without admin rights."
+			flash[:alert] = "Sorry, you don't have the right privileges to delete a pest."
 		end
 		redirect_to pests_path
 	end

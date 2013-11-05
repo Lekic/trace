@@ -15,7 +15,7 @@ class SightingsController < ApplicationController
     if user_signed_in?
 		  @sighting = Sighting.new
     else
-      flash[:alert] = "You must be signed in to create a sighting."
+      flash[:alert] = "Sorry, you've gotta sign in to register sightings!"
       redirect_to sightings_path
     end
 	end
@@ -27,7 +27,7 @@ class SightingsController < ApplicationController
 		@sighting = Sighting.new(sighting_params)
     @sighting.user = current_user
     if @sighting.save	
-      flash[:notice] = "Sighting created successfully."
+      flash[:notice] = "Awesome - sighting successfully created!" 
 			redirect_to @sighting
 		else
 			render 'new'
@@ -47,7 +47,7 @@ class SightingsController < ApplicationController
 	def edit
 		@sighting = Sighting.find(params[:id])
     if !current_user.try(:admin?) && !current_user.id == @sighting.user_id
-      flash[:alert] = "You can't edit a sighting that is not yours."
+      flash[:alert] = "Oi, edit your own sightings!"
       redirect_to @sighting
     end
 	end
@@ -58,7 +58,7 @@ class SightingsController < ApplicationController
 	def update
 	@sighting = Sighting.find(params[:id])
   	if @sighting.update(params[:sighting].permit(:pest_id, :park_id, :quantity, :time_sighted, :information))
-      flash[:notice] = "Sighting updated successfully."
+      flash[:notice] = "Awesome - pest successfully updated!"
   		redirect_to @sighting
   	else
   		render 'edit'
@@ -73,7 +73,7 @@ class SightingsController < ApplicationController
     if current_user.try(:admin?) || current_user.id == @sighting.user_id
   		@sighting.destroy
     else
-      flash[:alert] = "You cannot delete a sighting without correct privledges."
+      flash[:alert] = "BZZT - sighting successfully deleted!"
     end
 		redirect_to sightings_path
 	end

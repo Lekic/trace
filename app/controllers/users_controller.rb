@@ -8,7 +8,7 @@ class UsersController < ApplicationController
 		if current_user.try(:admin?)
 			@users = User.all.order(:name)
 		else
-			flash[:alert] = "Only admins can access the users page."
+			flash[:alert] = "Sorry, no can do. Come back when you're a system administrator!"
 			redirect_to index_path
 		end
 	end
@@ -47,7 +47,7 @@ class UsersController < ApplicationController
 		if current_user.try(:admin?)
 			@user = User.find(params[:id])
 		else
-			flash[:alert] = "Only admins can edit users."
+			flash[:alert] = "Sorry, you don't have the right privileges to edit a pest."
 			redirect_to users_path
 		end
 	end
@@ -59,7 +59,7 @@ class UsersController < ApplicationController
 		@user = User.find(params[:id])
 
 		if @user.update(params[:user].permit(:employee_id, :name, :email, :date_of_birth, :username, :password, :date_joined, :park_id, :contact_number, :person_type_id, :admin, :street_number, :street_name, :suburb, :state, :postcode))
-			flash[:notice] = "User updated successfully."
+			flash[:notice] = "Awesome - profile successfully updated!"
 			redirect_to @user
 		else
 			render 'edit'
@@ -73,9 +73,9 @@ class UsersController < ApplicationController
 		if current_user.try(:admin?)
 			@user = User.find(params[:id])
 			@user.destroy
-			flash[:notice] = "User successfully deleted."
+			flash[:notice] = "BLAM - user was destroyed!"
 		else
-			flash[:alert] = "You cannot delete a user without admin rights."
+			flash[:alert] = "Sorry, only admins can delete users."
 		end
 		redirect_to users_path
 	end
