@@ -3,7 +3,6 @@ class Sighting < ActiveRecord::Base
   has_and_belongs_to_many :reports
   belongs_to :park, inverse_of: :sightings
   belongs_to :user, inverse_of: :sightings
-  #belongs_to :reporter, class_name: "User"
   
   validates :pest, presence: true
   validates :quantity, inclusion: { :in => 1..100 }, allow_nil: true
