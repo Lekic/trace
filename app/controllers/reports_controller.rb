@@ -1,11 +1,11 @@
 class ReportsController < ApplicationController
 	def index
-    if current_user.try(:admin?)
-		  @reports = Report.all
-    else
-      flash[:alert] = "Sorry, no can do. Come back when you're a system administrator!"
-      redirect_to index_path
-    end
+	    if current_user.try(:admin?)
+			  @reports = Report.all
+	    else
+	      flash[:alert] = "Sorry, no can do. Come back when you're a system administrator!"
+	      redirect_to index_path
+	    end
 	end
 
 	def new
@@ -14,7 +14,9 @@ class ReportsController < ApplicationController
 
 	def create
 		@report = Report.new(report_params)
-    if @report.save	
+		@report.user = current_user
+    	if @report.save
+    		flash[:notice] = "Report successfully created."
 			redirect_to @report
 		else
 			render 'new'
@@ -23,6 +25,7 @@ class ReportsController < ApplicationController
 
 	def show
 		@report = Report.find(params[:id])
+		#@sightings = 
 	end
 
 	def edit
@@ -32,7 +35,7 @@ class ReportsController < ApplicationController
 	def update
     @report = Report.find(params[:id])
 
-		if @report.update(params[:report].permit(:date_created))
+		if @report.update(params[:report].permit(:start_date, :end_date))
 			redirect_to @report
 		else
 			render 'edit'
@@ -48,6 +51,6 @@ class ReportsController < ApplicationController
 
 	private
       def report_params
-        params.require(:report).permit(:date_created) #change params
+        params.require(:report).permit(:start_date, :end_date) #change params
       end
 end
