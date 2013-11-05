@@ -4,8 +4,9 @@ class Pest < ActiveRecord::Base
   has_and_belongs_to_many :markings
   belongs_to :source, inverse_of: :pests
   has_many :sightings, inverse_of: :pest
-  #may not work
   has_many :reports, through: :sightings
+
+  has_attached_file :avatar, styles: { medium: "300x300>", thumb: "100x100>" }, default_irl: "/images/:style/missing.png"
 
   # add any other characters you'd like to disallow inside the [ brackets ]
   # metacharacters [, \, ^, $, ., |, ?, *, +, (, and ) need to be escaped with a \
