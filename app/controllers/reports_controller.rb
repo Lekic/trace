@@ -30,8 +30,9 @@ class ReportsController < ApplicationController
 
 	def show
 		if current_user.try(:admin?)
+			@report = Report.find(params[:id])
 			@sightings = Sighting.find(:all, :conditions => ["created_at between ? and ?",
-		     @report.start_date-1, @report.end_date+1])
+	         @report.start_date-1, @report.end_date+1])
 			@final = []
 			@sightings.each do |sighting|
 				@report.area_ids.each do |area|
@@ -42,7 +43,6 @@ class ReportsController < ApplicationController
 			flash[:alert] = "Sorry, no can do. Come back when you're a system administrator!"
 			redirect_to index_path
 		end
-		
 	end
 
 	def edit
