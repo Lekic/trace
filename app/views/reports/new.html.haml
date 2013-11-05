@@ -11,7 +11,11 @@
 
 
 = semantic_form_for @report do |f|
-	= f.inputs
+	= f.inputs do
+		%h3 Input Date Range
+		= f.input :start_date
+		= f.input :end_date
+		= f.input :areas, :as => :check_boxes
 	= f.actions do
 		= f.action :submit, :as => :button, :label => "Submit"
 		= f.action :cancel, :as => :link, :label => "Go Back"

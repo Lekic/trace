@@ -63,7 +63,7 @@ Sighting.create(pest_id: '1', quantity: '5', park_id: '4', time_sighted: '2013-1
 
 # Test reports
 Report.delete_all
-Report.create()
+Report.create(start_date: '2013-11-01', end_date: '2013-11-05', user_id: '1')
 
 # Person Types
 PersonType.delete_all

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131029043729) do
+ActiveRecord::Schema.define(version: 20131105110958) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -21,6 +21,16 @@ ActiveRecord::Schema.define(version: 20131029043729) do
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  create_table "areas_reports", force: true do |t|
+    t.integer  "area_id"
+    t.integer  "report_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "areas_reports", ["area_id"], name: "index_areas_reports_on_area_id", using: :btree
+  add_index "areas_reports", ["report_id"], name: "index_areas_reports_on_report_id", using: :btree
 
   create_table "colours", force: true do |t|
     t.string   "name"
@@ -101,7 +111,8 @@ ActiveRecord::Schema.define(version: 20131029043729) do
   add_index "phones", ["user_id"], name: "index_phones_on_user_id", using: :btree
 
   create_table "reports", force: true do |t|
-    t.date     "date_created"
+    t.date     "start_date"
+    t.date     "end_date"
     t.integer  "user_id"
     t.datetime "created_at"
     t.datetime "updated_at"
