@@ -251,7 +251,7 @@
 
 		%hr
 		
-		%h1 User Interface
+		%h1 User Interface Design
 		#wireframes
 			= image_tag "documentation/wireframes/account.png"
 			.caption Wireframe: Account Management
@@ -272,5 +272,14 @@
 		#elements= render 'elements'
 		#accessibility= render 'accessibility'
 		#heuristics= render 'heuristics'
+
+		%hr
+
+		%h1 Database Design
+		#dictionary= render 'dictionary'
+		#schema=render 'schema'
+		#dependencies=render 'dependencies'
+		#normalisation=render 'normalisation'
+		#relational=render 'relational'
 
 		-#userdocumentation= render 'userdocumentation'
