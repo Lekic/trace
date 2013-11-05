@@ -25,11 +25,11 @@ class ApplicationController < ActionController::Base
 
   helper_method :resource, :resource_name, :devise_mapping
 
-  before_filter :configure_permitted_parameters, if: :devise_controller?
+  before_filter :configure_devise_params, if: :devise_controller?
 
   protected
 
-  def configure_permitted_parameters
+  def configure_devise_params
     devise_parameter_sanitizer.for(:sign_up) do |u|
       u.permit(:username, :name, :email, :password, :password_confirmation, :admin, :date_of_birth)
     end
