@@ -1,4 +1,4 @@
-## Interface Thesis
+## Interface Design Thesis
 
 ### Introduction
 Design is so much more to us than just the styling of buttons, typography or the elements you interact with. Design is the system as a whole, it’s simplicity, it’s ease of use and it’s structure. Most importantly, design is how the system makes you feel when you use it. With this system, we’re approaching design with two main elements of focus: simplicity and intuitiveness. These may seem like trivial key points to focus on - simplicity typically defined as the absence of clutter and only using two to three colours. 
