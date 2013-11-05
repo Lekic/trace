@@ -38,6 +38,7 @@ class UsersController < ApplicationController
   	# @returns [User] a single user
 	def show
 		@user = User.find(params[:id])
+		@types = PestType.all
 		@sightings = Sighting.where(:user_id => params[:id])
 	end
 
