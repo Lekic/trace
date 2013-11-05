@@ -111,6 +111,7 @@ ActiveRecord::Schema.define(version: 20131105110958) do
   add_index "phones", ["user_id"], name: "index_phones_on_user_id", using: :btree
 
   create_table "reports", force: true do |t|
+    t.string   "name"
     t.date     "start_date"
     t.date     "end_date"
     t.integer  "user_id"

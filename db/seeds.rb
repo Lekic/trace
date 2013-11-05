@@ -63,7 +63,7 @@ Sighting.create(pest_id: '1', quantity: '5', park_id: '4', time_sighted: '2013-1
 
 # Test reports
 Report.delete_all
-Report.create(start_date: '2013-11-01', end_date: '2013-11-05', user_id: '1')
+Report.create(name: 'Sightings in Central NSW week of Nov. 4', start_date: '2013-11-04', end_date: '2013-11-10', user_id: '1')
 
 # Person Types
 PersonType.delete_all
