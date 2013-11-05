@@ -1,7 +1,7 @@
 %h1 Generate Report
 
 - if @report.errors.any?
-	#errorExplanation
+	.alert.alert-danger
 		%h2
 			=pluralize(@report.errors.count, "error")
 			prohibited this post from being saved:

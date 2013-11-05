@@ -35,7 +35,7 @@ class ReportsController < ApplicationController
 	def update
     @report = Report.find(params[:id])
 
-		if @report.update(params[:report].permit(:start_date, :end_date))
+		if @report.update(params[:report].permit(:start_date, :end_date, {:area_ids => []}))
 			redirect_to @report
 		else
 			render 'edit'
@@ -51,6 +51,6 @@ class ReportsController < ApplicationController
 
 	private
       def report_params
-        params.require(:report).permit(:start_date, :end_date) #change params
+        params.require(:report).permit(:start_date, :end_date, {:area_ids => []}) #change params
       end
 end
