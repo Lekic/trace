@@ -1,4 +1,6 @@
 class UsersController < ApplicationController
+
+	# GET /users
 	def index
 		if current_user.try(:admin?)
 			@users = User.all.order(:name)
@@ -8,6 +10,7 @@ class UsersController < ApplicationController
 		end
 	end
 	
+	# GET /users/new
 	def new
 		@user = User.new
 	end
@@ -58,6 +61,10 @@ class UsersController < ApplicationController
 
 	def phones
 		Phones.where(:user_id => @user.id).order('id').all
+	end
+
+	def has_sighting?(sighting)
+  		self.sighting.exists?(id: sighting.id)
 	end
 
 	private
