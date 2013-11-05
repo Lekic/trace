@@ -1,25 +1,3 @@
 %h1 Create Sighting
 
-- if @sighting.errors.any?
-	.alert.alert-danger
-		%h2
-			=pluralize(@sighting.errors.count, "error")
-			prohibited this post from being saved:
-		%ul
-			- @sighting.errors.full_messages.each do |msg|
-				%li= msg
-
-
-= semantic_form_for @sighting do |f|
-	= f.inputs do
-		= f.input :pest
-		= f.input :park, label: "Park Location"
-		= f.input :user_id, as: :hidden, value: current_user.id
-		= f.input :quantity, label: "Number of pests sighted"
-		= f.input :latitude
-		= f.input :longitude
-		= f.input :time_sighted
-		= f.input :information, label: "Sighting information"
-	= f.actions do
-		= f.action :submit, :as => :button, :label => "Submit"
-		= f.action :cancel, :as => :link, :label => "Go Back"
+= render 'sighting_form'
