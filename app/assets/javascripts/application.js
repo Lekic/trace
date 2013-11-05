@@ -18,21 +18,33 @@
 //= require isotope.min.js
 
 $(document).ready(function() {
+
+	/* Initiate FancyBox */
 	$("#documentation-content img").fancybox();
+
+	/* Set Isotope container */
 	$isotope = $('.isotope');
+
+	/* When images are loaded, fire Isotope */
 	$isotope.imagesLoaded(function(){
 		$isotope.isotope();
 	});
+
+	/* Initiate the Isotope Chosen filter */
 	$('.isotope-header .chosen-select').chosen({
 		allow_single_deselect: true,
 		no_results_text: 'No results matched',
 		width: "160px"
 	});
+
+	/* Initiate the form Chosen selects */
 	$('.formtastic .chosen-select').chosen({
 		allow_single_deselect: true,
 		no_results_text: 'No results matched',
 		width: "100%"
 	});
+	
+	/* When a pest filter is chosen... */
 	$("#pest-filter").chosen().change(function(e, params) {
 		var parameter = params.selected.toLowerCase();
 		if (parameter == "all")
@@ -42,33 +54,4 @@ $(document).ready(function() {
 		$isotope.isotope({ filter: selector });
 		return false;
 	});
-	/*$("#documentation-nav a").click(function() {
-		$('html, body').animate({
-			scrollTop: $( $.attr(this, 'href') ).offset().top
-		}, 500);
-		return false;
-	});*/
-	$(".isotope-item").click(function(e) {
-
-		/* Prevent default action */
-		e.preventDefault();
-
-		/* Give this meta a variable name */
-		$meta = $(".meta", this);
-
-		/* If it's already open, close it, otherwise, open it! */
-		if ($meta.hasClass("open")) {
-			$(".meta").removeClass("open");
-		}
-		else {
-			$(".meta").removeClass("open");
-			$meta.addClass("open");
-		}
-
-		/* Relayout */
-		$isotope.isotope('reLayout');
-	});
-	$('.isotope-item .meta a').click(function(e) {
-        e.stopPropagation();
-    });
 });
