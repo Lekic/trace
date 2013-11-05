@@ -16,6 +16,7 @@ Colour.create(name: 'Orange')
 Colour.create(name: 'Pink')
 Colour.create(name: 'Purple')
 Colour.create(name: 'Brown')
+Colour.create(name: 'Beige')
 Colour.create(name: 'Black')
 
 # Pest Marking Types
@@ -44,14 +45,17 @@ Source.create(name: 'Visual Sighting')
 
 # Test pests
 Pest.delete_all
-Pest.create(name: 'Brown Fox #1927', pest_type_id: '3', source_id: '1', characteristics: 'Tall, brown unit.', colour_id: '8', size:'84')
-Pest.create(name: 'Red Dog #1291', pest_type_id: '1', source_id: '3', characteristics: 'This bloke hurt. Characteristic field', colour_id: '1', size:'92')
-Pest.create(name: 'Brown Fox #1927', pest_type_id: '3', source_id: '1', characteristics: 'Tall, brown unit.', colour_id: '8', size:'84')
-Pest.create(name: 'Red Dog #1291', pest_type_id: '1', source_id: '3', characteristics: 'This bloke hurt. Characteristic field', colour_id: '1', size:'92')
-Pest.create(name: 'Fat Cat #481', pest_type_id: '2', source_id: '2', characteristics: 'Mint as fuck cat.', colour_id: '2', size:'104')
-Pest.create(name: 'Bugs Bunny', pest_type_id: '5', source_id: '3', characteristics: 'Ermmmm, whats up doc?', colour_id: '4', size:'128')
-Pest.create(name: 'Snoop doggy dog', pest_type_id: '1', source_id: '2', characteristics: 'Rapper come reggaeton come dj flop.', colour_id: '9', size:'104')
-Pest.create(name: 'Hayden', pest_type_id: '2', source_id: '2', characteristics: 'Swagginnnn collared pussy ;)', colour_id: '3', size:'62')
+Pest.create(name: 'Brown Fox', pest_type_id: '3', source_id: '1', tracker_id: '1927', characteristics: 'Tall, brown unit.', colour_id: '8', size:'84')
+Pest.create(name: 'Border Collie', pest_type_id: '1', source_id: '3', tracker_id: '1291', characteristics: 'This bloke hurt. Characteristic field', colour_id: '9', size:'92')
+Pest.create(name: 'Brown Fox', pest_type_id: '3', source_id: '1', tracker_id: '8041', characteristics: 'Tall, brown unit.', colour_id: '8', size:'84')
+Pest.create(name: 'Red Dog #1291', pest_type_id: '1', source_id: '3', tracker_id: '58402', characteristics: 'This bloke hurt. Characteristic field', colour_id: '1', size:'92')
+Pest.create(name: 'Garfield', pest_type_id: '2', source_id: '2', tracker_id: '481', characteristics: 'Mint as fuck cat.', colour_id: '5', size:'104')
+Pest.create(name: 'Bugs Bunny', pest_type_id: '5', source_id: '3', tracker_id: '1337', characteristics: 'Ermmmm, whats up doc?', colour_id: '4', size:'128')
+Pest.create(name: 'Snoop doggy dog', pest_type_id: '1', source_id: '2', tracker_id: '420', characteristics: 'Rapper come reggaeton come dj flop.', colour_id: '10', size:'185')
+Pest.create(name: 'Hayden', pest_type_id: '2', source_id: '2', tracker_id: '69', characteristics: 'Swagginnnn collared pussy ;)', colour_id: '3', size:'178')
+Pest.create(name: 'Ratata', pest_type_id: '4', source_id: '3', tracker_id: '283', colour_id: '7', size: '10')
+Pest.create(name: 'Greninja', pest_type_id: '7', source_id: '2', tracker_id: '104', characteristics: 'Final evolution of Frogadier', colour_id: '2', size: '194')
+
 
 # Test sightings
 Sighting.delete_all

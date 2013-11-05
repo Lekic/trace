@@ -6,4 +6,16 @@ class Pest < ActiveRecord::Base
   has_many :sightings, inverse_of: :pest
   #may not work
   has_many :reports, through: :sightings
+
+  # add any other characters you'd like to disallow inside the [ brackets ]
+  # metacharacters [, \, ^, $, ., |, ?, *, +, (, and ) need to be escaped with a \
+  NAME_CASE_REGEX = /\A[^0-9`!@#\$%\^&*+_=]+\z/
+
+  validates :name, presence: true, uniqueness: true, length: { minimum: 5, maximum: 30}, format: { with: NAME_CASE_REGEX }
+  validates :tracker_id, uniqueness: true, inclusion: { :in => 0..99999 }
+  validates :pest_type, presence: true
+  validates :source, presence: true
+  validates :characteristics, length: { maximum: 1000 }
+  validates :size, presence: true, numericality: { less_than: 200 }
+  validates :colour_id, presence: true
 end
