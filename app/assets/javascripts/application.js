@@ -13,7 +13,7 @@
 //= require jquery
 //= require jquery_ujs
 //= require bootstrap
-//= require dropzone
+//= require fancybox
 //= require chosen-jquery
 //= require isotope.min.js
 
