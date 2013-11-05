@@ -103,6 +103,7 @@
 			%li.dropdown
 				= link_to 'Support Documentation', "#", "data-toggle" => "dropdown", :class => "dropdown-toggle"
 				%ul.dropdown-menu
+					%li= link_to 'Support Thesis', '#support'
 					%li= link_to 'FAQ', '#faq'
 					%li= link_to 'Installation Guide', '#installation'
 					%li= link_to 'Help and Support', '#help'
@@ -325,6 +326,7 @@
 		%hr
 
 		%h1 Support Documentation
+		#support=render 'support'
 		#faq=render 'faq'
 		#installation=render 'installation'
 		#help=render 'help'
