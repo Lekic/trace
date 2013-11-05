@@ -109,16 +109,26 @@ img {
 		width: 80%;
 		float: left;
 	}
-	.control-group:before, .control-group:after {
+	.choice {
+		font-weight: normal;
+	}
+	.control-group:before,
+	.control-group:after,
+	.form-actions:before,
+	.form-actions:after {
 		content: " ";
 		display: table;
 	}
-	.control-group:after {
+	.control-group:after,
+	.form-actions:after {
 		clear: both;
 	}
-	.control-group {
+	.control-group, .form-actions {
 		*zoom: 1;
 		margin-bottom: 10px;
+	}
+	.form-actions {
+		margin-top: 50px;
 	}
 	@media (max-width: 768px) {
 		.control-label, .controls {
