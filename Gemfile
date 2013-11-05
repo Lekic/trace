@@ -36,8 +36,8 @@ gem 'bootstrap-sass', github: 'thomas-mcdonald/bootstrap-sass'
 # Devise for secure login authentication and email confirmation
 gem 'devise'
 
-#Attr_accessible support for devise
-#gem 'protected_attributes'
+# Paperclip for image handling
+gem "paperclip", :git => "git://github.com/thoughtbot/paperclip.git"
 
 # Formtastic for high-performance form creation with relational implementation
 gem 'formtastic-bootstrap'

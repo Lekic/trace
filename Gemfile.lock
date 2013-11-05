@@ -12,6 +12,16 @@ GIT
     bootstrap-sass (3.0.1.0.rc)
       sass (~> 3.2)
 
+GIT
+  remote: git://github.com/thoughtbot/paperclip.git
+  revision: a01677f58762394c2915eb512fe2f69aec6fbcf5
+  specs:
+    paperclip (3.5.2)
+      activemodel (>= 3.0.0)
+      activesupport (>= 3.0.0)
+      cocaine (~> 0.5.3)
+      mime-types
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -49,6 +59,10 @@ GEM
       railties (>= 3.0)
       sass-rails (>= 3.2)
     chunky_png (1.2.9)
+    climate_control (0.0.3)
+      activesupport (>= 3.0)
+    cocaine (0.5.3)
+      climate_control (>= 0.0.3, < 1.0)
     coffee-rails (4.0.1)
       coffee-script (>= 2.2.0)
       railties (>= 4.0.0, < 5.0)
@@ -180,6 +194,7 @@ DEPENDENCIES
   jbuilder (~> 1.2)
   jquery-rails
   markdown-rails
+  paperclip!
   pg
   rails (= 4.0.0)
   rails_12factor
