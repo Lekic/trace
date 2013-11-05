@@ -11,6 +11,9 @@
 			%td= user.name
 			%td= user.email
 			%td= "@" + user.username
-			%td= user.admin
+			- if user.admin
+				%td Yes
+			- else
+				%td No
 			%td= user.created_at.strftime("%m/%d/%Y")
 			%td.text-center= link_to "Edit", edit_user_path(user)
