@@ -18,16 +18,25 @@
 					= sighting.pest.pest_type.name
 				%p
 					Quantity:
-					= sighting.quantity
+					- if !sighting.quantity.nil?
+						= sighting.quantity
+					- else
+						= "Not specified"
 				%p
 					Location:
 					= sighting.park.name
 				%p
 					Sighting Time:
-					= sighting.time_sighted
+					- if !sighting.time_sighted.nil?
+						= sighting.time_sighted
+					- else
+						= "Not specified"
 				%p
 					Further Information:
-					= sighting.information
+					- if !sighting.information.empty?
+						= sighting.information
+					- else
+						= "Not specified"
 				%p
 					Created By:
 					= sighting.user.name
