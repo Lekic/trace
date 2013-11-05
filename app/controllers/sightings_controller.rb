@@ -27,6 +27,7 @@ class SightingsController < ApplicationController
 	def create
 		@sighting = Sighting.new(sighting_params)
     @sighting.user = current_user
+    @sighting.area = @sighting.park.area
     if @sighting.save	
       flash[:notice] = "Yay - sighting successfully created!" 
 			redirect_to sightings_path

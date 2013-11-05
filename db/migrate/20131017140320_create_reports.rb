@@ -5,7 +5,6 @@ class CreateReports < ActiveRecord::Migration
       t.date :start_date
       t.date :end_date
       t.references :user, index: true
-      #t.references :sighting, index: true
 
       t.timestamps
     end

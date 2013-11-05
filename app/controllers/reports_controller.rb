@@ -25,8 +25,10 @@ class ReportsController < ApplicationController
 
 	def show
 		@report = Report.find(params[:id])
-		@sightings = Sighting.find(:all, :conditions => ["created_at between ? and ? AND area_id in ?",
-         @report.start_date-1, @report.end_date+1, @report.areas])
+		@sightings = Sighting.find(:all, :conditions => ["created_at between ? and ?",
+         @report.start_date-1, @report.end_date+1])
+		#@final = @sightings.find_by 
+		
 	end
 
 	def edit
@@ -34,8 +36,7 @@ class ReportsController < ApplicationController
 	end
 
 	def update
-    @report = Report.find(params[:id])
-
+    	@report = Report.find(params[:id])
 		if @report.update(params[:report].permit(:start_date, :end_date, {:area_ids => []}))
 			redirect_to @report
 		else
