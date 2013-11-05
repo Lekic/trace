@@ -11,7 +11,15 @@
 
 
 = semantic_form_for @sighting do |f|
-	= f.inputs
+	= f.inputs do
+		= f.input :pest
+		= f.input :park, label: "Park Location"
+		= f.input :user_id, value: current_user.id
+		= f.input :quantity, label: "Number of pests sighted"
+		= f.input :latitude
+		= f.input :longitude
+		= f.input :time_sighted
+		= f.input :information, label: "Sighting information"
 	= f.actions do
 		= f.action :submit, :as => :button, :label => "Submit"
 		= f.action :cancel, :as => :link, :label => "Go Back"
