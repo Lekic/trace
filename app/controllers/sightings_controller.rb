@@ -19,6 +19,7 @@ class SightingsController < ApplicationController
 	def create
 		@sighting = Sighting.new(sighting_params)
     @sighting.user = current_user
+    current_user.sightings.add(@sighting)
     if @sighting.save	
       flash[:notice] = "Sighting created successfully."
 			redirect_to @sighting
@@ -34,9 +35,9 @@ class SightingsController < ApplicationController
 
   # GET /sightings/1/edit
 	def edit
-    if current_user.try(:admin?) || current_user.has_sighting?(@sighting)
-		  @sighting = Sighting.find(params[:id])
-    else
+    # || @sighting.has(:user_id?)
+		@sighting = Sighting.find(params[:id])
+    if !current_user.try(:admin?) && !current_user.id == @sighting.user_id
       flash[:alert] = "You can't edit a sighting that is not yours."
       redirect_to @sighting
     end
@@ -55,8 +56,8 @@ class SightingsController < ApplicationController
 
   # DELETE /sightings/1
 	def destroy
-    if current_user.try(:admin?) || current_user.has_sighting?(@sighting)
-  		@sighting = Sighting.find(params[:id])
+		@sighting = Sighting.find(params[:id])
+    if current_user.try(:admin?) || current_user.id == @sighting.user_id
   		@sighting.destroy
     else
       flash[:alert] = "You cannot delete a sighting without correct privledges."
