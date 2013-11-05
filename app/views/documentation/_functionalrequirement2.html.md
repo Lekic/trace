@@ -2,7 +2,7 @@
 
 ### Preconditions
 
-The user is logged in and has the necessary permissions to create, read, update and delete feral pest sightings. The user has opted to create a new entry. The user has captured feral pest data (images, video, etc.) and it’s currently stored on the device.
+The user is logged in and has the necessary permissions to create, read, update and delete feral pest sightings. The user has opted to create a new entry. The user has captured feral pest data (images, video, etc.) and it's currently stored on the device.
 
 ### Required for
 
@@ -28,7 +28,7 @@ Data is stored on the web server and applied to the relevant sighting.
 
 ### Exceptions
 
-The user has not collected any data relevant to the system. The user tries to upload files of illegal extension or type. The file upload fails on account of a bad connection. The user’s data is too large to upload for a single sighting.
+The user has not collected any data relevant to the system. The user tries to upload files of illegal extension or type. The file upload fails on account of a bad connection. The user's data is too large to upload for a single sighting.
 
 ### Scope
 
@@ -36,7 +36,7 @@ The storage of various data types plays an important role in creating accurate i
 
 ### Technical Issues
 
-There are many technical issues to consider for accepting various file types. The first and foremost is viruses - the range of data types must be limited in an attempt to prevent the introduction of viruses into the system. The second is file size - as the user may be uploading from a mobile device on a cellular data network, image compression or zipping may be necessary to upload large quantities of data to the system. The third technical issue is connection reliability - the system must be able to store data locally in case of a connection interruption so the user’s data is not lost.
+There are many technical issues to consider for accepting various file types. The first and foremost is viruses - the range of data types must be limited in an attempt to prevent the introduction of viruses into the system. The second is file size - as the user may be uploading from a mobile device on a cellular data network, image compression or zipping may be necessary to upload large quantities of data to the system. The third technical issue is connection reliability - the system must be able to store data locally in case of a connection interruption so the user's data is not lost.
 
 ### Risks
 

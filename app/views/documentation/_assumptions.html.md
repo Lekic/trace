@@ -8,7 +8,7 @@
 
 ### Data Assumptions
 
-* A user is either assigned to a park if they are staff, or not if they aren’t. Hence, the park field can be null.
+* A user is either assigned to a park if they are staff, or not if they aren't. Hence, the park field can be null.
 * A user can only be assigned to one park. Hence the 0 to 1 relationship.
 * A user may only have one phone, but many addresses.
 * The user must supply a phone and address.
@@ -17,6 +17,9 @@
 
 ### System Dependencies
 
+These are the base dependencies to run the application locally or on a server. Check the installation guide for a better view into dependencies.
+
 * Ruby
 * Rails framework for Ruby (Ruby on Rails)
 * Git
+* PostgreSQL

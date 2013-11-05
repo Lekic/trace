@@ -1,3 +1,3 @@
 ## Management
 
-The Project Manager became responsible for managing the entire project and sprints. Evidence of activity including task progression, task management and allocation are all available in the Trello activity log. Completed tasks are left in the “completed” list for the sprint and the board is closed, preventing any further edits. Any unfinished tasks are moved to the next sprint and marked as important.
+The Project Manager became responsible for managing the entire project and sprints. Evidence of activity including task progression, task management and allocation are all available in the Trello activity log. Completed tasks are left in the "completed" list for the sprint and the board is closed, preventing any further edits. Any unfinished tasks are moved to the next sprint and marked as important.

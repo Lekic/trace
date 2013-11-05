@@ -12,8 +12,8 @@ These concerns may affect the users of the system. However due to the fact the s
 
 ### Technical Issues
 
-Because of the different types of account restrictions, the only people who can exploit the system are admins to the system. Due to the nature of admins (Park rangers etc.) this kind of exploitation is highly unlikely.
+Because of the different types of account restrictions, the only people who can exploit the system are administrators to the system. Due to the nature of administrators (Park rangers etc.) this kind of exploitation is highly unlikely.
 
 ### Risks
 
-Hunting in Australia is already inhibited by reasonable strict laws, including requiring a permit from the game council. As of October 2012 a no-hunting program has been scheduled to begin in a number of national parks in Australia, which may inhibit the game culture. Should any hunters wish to find a place where they may hunt certain pests, the system could potentially be used to find places they exist in which are not covered by the new hunting laws. Furthermore, from a user’s perspective, if the staff reject the new system, it will be deprecated and result in a decrease in productivity.
+Hunting in Australia is already inhibited by reasonable strict laws, including requiring a permit from the game council. As of October 2012 a no-hunting program has been scheduled to begin in a number of national parks in Australia, which may inhibit the game culture. Should any hunters wish to find a place where they may hunt certain pests, the system could potentially be used to find places they exist in which are not covered by the new hunting laws. Furthermore, from a user's perspective, if the staff reject the new system, it will be deprecated and result in a decrease in productivity.

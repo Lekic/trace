@@ -26,7 +26,7 @@ A new sighting has been created, or an existing sighting has been modified or de
 
 ### Exceptions
 
-The user submits a change request, but it is not approved. The user doesn’t click the “submit” button to finalise changes. The user discards their changes to an existing sighting.
+The user submits a change request, but it is not approved. The user doesn't click the "submit" button to finalise changes. The user discards their changes to an existing sighting.
 
 ### Scope
 

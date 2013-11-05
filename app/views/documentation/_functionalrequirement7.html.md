@@ -34,8 +34,8 @@ The ability to create, update and delete accounts on the fly is a primary part o
 
 ### Technical issues
 
-Making sure that the user has the permissions to create, update or delete their own account and not anyone else’s is a major implementation issue that must be ensured. Giving Administrator’s access to people’s accounts (but limiting sensitive data like email or password) is also important to maintain privacy.
+Making sure that the user has the permissions to create, update or delete their own account and not anyone else's is a major implementation issue that must be ensured. Giving Administrator's access to people's accounts (but limiting sensitive data like email or password) is also important to maintain privacy.
 
 ### Risks
 
-The primary risk is an unauthorised user having access to another user’s account settings, or a user finding a loophole to create an Administrator account to control other accounts.
+The primary risk is an unauthorised user having access to another user's account settings, or a user finding a loophole to create an Administrator account to control other accounts.

@@ -28,4 +28,4 @@ With any project, the customer and stakeholders are the focal point, and this is
 
 Our system is designed to be integrated into the current infrastructure, not as a replacement. This system accommodates to flexible pest and pest sighting entry through various methods such as text descriptions, pest details, tracking IDs and images. Our architecture also allows for report generation through a set of queries required by the Parks and Wildlife User.
 
-The system doesnít only have to work, it also has to work properly. We're implementing a responsive design that is compatible on multiple platforms, alleviating the need for porting.
+The system doesn't only have to work, it also has to work properly. We're implementing a responsive design that is compatible on multiple platforms, alleviating the need for porting.

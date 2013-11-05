@@ -1,3 +1,3 @@
 ## Accessibility
 
-Clear distinction between colours allows for colour-blindness, semantic elements with attributes allow for blindness. Bootstrap's mobile-first design allows for mobile accessibility, while the clear and readable Helvetica with above-average font size allows for easy reading.
+Clear distinction between colours allows for colour-blindness, semantic elements with attributes allow for blindness. Bootstrap's mobile-first design allows for mobile accessibility, while the clear and readable Helvetica with above-average font size allows for easy reading. Colour distinction tests were performed by running the site through [Colour Filter](http://colorfilter.wickline.org/) and sight accessibility tests were performed using the [WebbIE Browser](http://www.webbie.org.uk/).

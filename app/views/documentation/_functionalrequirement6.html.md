@@ -18,7 +18,7 @@ Raw data that is to be uploaded to the system automatically from tracking device
 
 ### Process
 
-If a pest is tracked or sighted on camera, data describing the pest’s location is uploaded to the system automatically. If pest is manually sighted, the sighting is either reported over the phone or the user opts to report the sighting themselves using the web system interface.
+If a pest is tracked or sighted on camera, data describing the pest's location is uploaded to the system automatically. If pest is manually sighted, the sighting is either reported over the phone or the user opts to report the sighting themselves using the web system interface.
 
 ### Output
 
@@ -26,11 +26,11 @@ Pest sightings are recorded into the system from different types of sources.
 
 ### Exceptions
 
-On a fairly low probability, the user wants to create a pest sighting using a medium that is not offered by the interface. However, it’s likely that most mediums will fall under the general category of “manually reported user sightings”.
+On a fairly low probability, the user wants to create a pest sighting using a medium that is not offered by the interface. However, it's likely that most mediums will fall under the general category of "manually reported user sightings".
 
 ### Scope
 
-The system’s capability to accept sightings and reports from various mediums and sources is one of the most fundamental aspects of the system. It is imperative that the system is able to work seamlessly with the existing methods of pest tracking so that the workflow of Parks & Wildlife is not disrupted. This means that users of the existing manual system must be able to incorporate this new web system into their workflow.
+The system's capability to accept sightings and reports from various mediums and sources is one of the most fundamental aspects of the system. It is imperative that the system is able to work seamlessly with the existing methods of pest tracking so that the workflow of Parks & Wildlife is not disrupted. This means that users of the existing manual system must be able to incorporate this new web system into their workflow.
 
 ### Technical issues
 

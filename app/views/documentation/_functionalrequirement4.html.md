@@ -20,7 +20,7 @@ Username and encrypted password combination (most permission allocations occur d
 
 ### Process
 
-The username and encrypted password are validated. If the account has been created by an administrator, or someone with administrative clearance outside the system, the new account is granted administrative permissions. Alternatively, if the account already exists, a system administrator boosts the user’s permission level to Administrator or the equivalent.
+The username and encrypted password are validated. If the account has been created by an administrator, or someone with administrative clearance outside the system, the new account is granted administrative permissions. Alternatively, if the account already exists, a system administrator boosts the user's permission level to Administrator or the equivalent.
 
 ### Output
 
@@ -36,7 +36,7 @@ The differentiation between users is a primary factor of this, or any other larg
 
 ### Technical issues
 
-The only technical issue for this requirement is making sure the permission levels are scalable and not “hard-coded” to create new types of accounts later.
+The only technical issue for this requirement is making sure the permission levels are scalable and not "hard-coded" to create new types of accounts later.
 
 ### Risks
 

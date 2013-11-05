@@ -4,7 +4,7 @@
 
 As the system is web-based, our aim is to create a system that runs smoothly regardless of platform. In order to reach a frame rate, transfer or otherwise speed target, we must rigorously test the system on a range of different devices, browsers, operating systems and firmware. The main concern for this requirement is response time in the fact that many people are using different hardware components or browsers. Slow page rendering may result from bad programming practices or complicated functions, however modern browsers (even on mobile devices) have the ability to route this processing to the GPU.
 
-We have decided the performance of the system as one of main non-functional requirements because we want to build a system that can support all of different users’ situation and we want users to feel in our system that can run perfectly and smoothly even users’ internet speed in peak time or users have slow speed internet, and we also concerned that even users use old generation of devices, the system must have the ability to handle on it. 
+We have decided the performance of the system as one of main non-functional requirements because we want to build a system that can support all of different users' situation and we want users to feel in our system that can run perfectly and smoothly even users' internet speed in peak time or users have slow speed internet, and we also concerned that even users use old generation of devices, the system must have the ability to handle on it. 
 
 Technical features aside, the system should provide the average response time. For example: 
 

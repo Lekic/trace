@@ -1,21 +1,19 @@
-## Heuristic Evaluation (Not edited)
+## Heuristic Evaluation
 
-* Visibility of system status: The system should always keep users informed about what is going on, through appropriate feedback within reasonable time.
+* Visibility of system status: The system has been designed to return notice and error messages after task completion and show progression status during long load periods to keep users informed of the system's status.
  
-* Match between system and the real world: The system should speak the users' language, with words, phrases and concepts familiar to the user, rather than system-oriented terms. Follow real-world conventions, making information appear in a natural and logical order.
+* Match between system and the real world: The system has been designed with very colloquial notices and error messages that still stick to standards but carry a very young and fresh vibe. No system-oriented language or terms are shown to the user and all content appears in a logical, natural order.
+
+* User control and freedom: Users are given limited control over the system to prevent them from making disastrous mistakes, but also gives them the flexibility to control the system within their privileges. Dangerous functions are marked with red backgrounds or labels (e.g. delete buttons) and have warning dialogues to support intention.
  
-* User control and freedom: Users often choose system functions by mistake and will need a clearly marked "emergency exit" to leave the unwanted state without having to go through an extended dialogue. Support undo and redo.
+* Consistency and standards: Using Bootstrap's predefined semantic colour and image scheming, the system has been defined to associate words semantically with actions to follow conventions and standards and reduce possible confusion.
  
-* Consistency and standards: Users should not have to wonder whether different words, situations, or actions mean the same thing. Follow platform conventions.
- 
-* Error prevention: Even better than good error messages is a careful design which prevents a problem from occurring in the first place. Either eliminate error-prone conditions or check for them and present users with a confirmation option before they commit to the action.
+* Error prevention: The system attempts error prevention by marking dangerous zones in red, alerting the user before committing a dangerous actions and insisting on a neat page layout to prevent accidental errors or dangerous actions.
 
-* Recognition rather than recall: Minimize the user's memory load by making objects, actions, and options visible. The user should not have to remember information from one part of the dialogue to another. Instructions for use of the system should be visible or easily retrievable whenever appropriate.
+* Recognition rather than recall: Visual design consistency across all pages as well as heading sizes and semantic element features allows for the user to have a sense of recognition when using the system rather than recall.
 
-* Flexibility and efficiency of use: Accelerators -- unseen by the novice user -- may often speed up the interaction for the expert user such that the system can cater to both inexperienced and experienced users. Allow users to tailor frequent actions.
+* Flexibility and efficiency of use: Common buttons, actions and elements are situated in appropriate and easy-to-find places, supported by the clean page layout.
 
-* Aesthetic and minimalist design: Dialogues should not contain information which is irrelevant or rarely needed. Every extra unit of information in a dialogue competes with the relevant units of information and diminishes their relative visibility.
+* Aesthetic and minimalist design: Elements are shown when they are necessary and appropriate. The interface has been stripped back to encourage minimalism, combined with simple colours and elegance to invoke a sense of aesthetic pleasure.
 
-* Help users recognize, diagnose, and recover from errors: Error messages should be expressed in plain language (no codes), precisely indicate the problem, and constructively suggest a solution.
-
-* Help and documentation: Even though it is better if the system can be used without documentation, it may be necessary to provide help and documentation. Any such information should be easy to search, focused on the user's task, list concrete steps to be carried out, and not be too large.
+* Help users recognize, diagnose, and recover from errors: Error messages are colloquial and supported by background colours appropriate to the error type.

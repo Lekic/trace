@@ -73,7 +73,6 @@
 					%li= link_to 'Typography', '#typography'
 					%li= link_to 'Colour', '#colour'
 					%li= link_to 'Layout', '#layout'
-					%li= link_to 'Icons', '#icons'
 					%li= link_to 'Visual Elements', '#elements'
 					%li= link_to 'Accessibility', '#accessibility'
 					%li= link_to 'Heuristic Evaluation', '#heuristics'
@@ -88,7 +87,6 @@
 			%li.dropdown
 				= link_to 'Database Design', "#", "data-toggle" => "dropdown", :class => "dropdown-toggle"
 				%ul.dropdown-menu
-					%li= link_to 'Database Thesis', '#database'
 					%li= link_to 'Data Dictionary', '#dictionary'
 					%li= link_to 'Schema', '#schema'
 					%li= link_to 'Functional Dependencies', '#dependencies'
@@ -295,7 +293,6 @@
 		#typography= render 'typography'
 		#colour= render 'colour'
 		#layout= render 'layout'
-		#icons= render 'icons'
 		#elements= render 'elements'
 		#accessibility= render 'accessibility'
 		#heuristics= render 'heuristics'
@@ -312,7 +309,6 @@
 		%hr
 
 		%h1 Database Design
-		#database= render 'database'
 		#dictionary= render 'dictionary'
 		#schema=render 'schema'
 		#dependencies=render 'dependencies'

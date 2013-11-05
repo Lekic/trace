@@ -1,3 +1,3 @@
 ## Colour Scheme
 
-Mostly white with blue highlights. Clean and simple UI. Flat, no gradients or drop shadows.
+The system's colour scheme relies heavily on flat, solid colours to create a sense of simplicity and usability. The primary colour for body text is dark grey (##333333) to contrast the plain white background. All "interaction" features and actions such as highlighting elements, hovering on links and button states are blue (#428bca) with shade variants for hover effects or borders. The navigation bar is in light grey (#f8f8f8) to keep the theme of lightness but also to make the header distinctively separate from the body. All layout construction elements are surrounded by simple 1 pixel light borders.

@@ -12,7 +12,7 @@ Handling and organising different types of pests and pest sighting creation.
 
 Whilst the user is in the process of creating a feral pest sighting, they are prompted to select a feral pest type. Initially the system will only have the functionality for the reporting of feral dog sightings, however this should be able to be expanded as needed to allow for a variety of different types of pest sightings to be reported. As the user may not know the exact pest type, this section ties in closely with usability and the intuitiveness of the system. Providing an alternative method of identifying the pest type based on colour, size and other attributes may prove easier in some cases than simply providing a list.
 
-We have identified this as a requirement because to keep an accurate track of pests users will need to be able to specifically select what type of pest they saw. This is an important requirement because the system is required to keep track of a wide array of pests and provide detailed reports on their whereabouts and behaviour. Without this feature users will be therefore the system’s ability to accommodate for different pest types is essential to meeting this requirement.
+We have identified this as a requirement because to keep an accurate track of pests users will need to be able to specifically select what type of pest they saw. This is an important requirement because the system is required to keep track of a wide array of pests and provide detailed reports on their whereabouts and behaviour. Without this feature users will be therefore the system's ability to accommodate for different pest types is essential to meeting this requirement.
 
 ### Inputs
 
@@ -20,7 +20,7 @@ Choice of feral pest type.
 
 ### Process
 
-User opts to create feral pest sighting. User fills out the required fields before reaching the “pest type” attribute.
+User opts to create feral pest sighting. User fills out the required fields before reaching the "pest type" attribute.
 
 ### Output
 
@@ -28,7 +28,7 @@ The sighting is entered into the system under the appropriate pest type.
 
 ### Exceptions
 
-Primarily, if the user wants to report a pest that isn’t already in the system. Alternatively, the user may not know the exact pest type.
+Primarily, if the user wants to report a pest that isn't already in the system. Alternatively, the user may not know the exact pest type.
 
 ### Scope
 
