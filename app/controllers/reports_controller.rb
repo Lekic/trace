@@ -27,8 +27,12 @@ class ReportsController < ApplicationController
 		@report = Report.find(params[:id])
 		@sightings = Sighting.find(:all, :conditions => ["created_at between ? and ?",
          @report.start_date-1, @report.end_date+1])
-		#@final = @sightings.find_by 
-		
+		@final = []
+		@sightings.each do |sighting|
+			@report.area_ids.each do |area|
+				@final << sighting if sighting.park.area_id == area
+			end
+		end
 	end
 
 	def edit

@@ -6,7 +6,6 @@ class CreateSightings < ActiveRecord::Migration
       #t.decimal :latitude
       #t.decimal :longitude
       t.references :park, index: true
-      t.references :area
       t.datetime :time_sighted
       t.string :information
       t.references :user, index: true

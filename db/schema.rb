@@ -136,7 +136,6 @@ ActiveRecord::Schema.define(version: 20131105144446) do
     t.integer  "pest_id"
     t.integer  "quantity"
     t.integer  "park_id"
-    t.integer  "area_id"
     t.datetime "time_sighted"
     t.string   "information"
     t.integer  "user_id"
