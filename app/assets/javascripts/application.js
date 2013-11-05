@@ -18,6 +18,7 @@
 //= require isotope.min.js
 
 $(document).ready(function() {
+	$("#documentation-content img").fancybox();
 	$isotope = $('.isotope');
 	$isotope.imagesLoaded(function(){
 		$isotope.isotope();
