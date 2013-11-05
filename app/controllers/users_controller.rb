@@ -27,18 +27,10 @@ class UsersController < ApplicationController
  		@user = User.new(user_params)
  		@user.admin = false
 		if @user.save
-  			redirect_to @user
+  			redirect_to @users_path
   		else
   			render 'new'
   		end
-	end
-
-	# Handles a GET request to /users/{id}
-  	# Accessible to anyone (no sign-in)
-  	# @returns [User] a single user
-	def show
-		@user = User.find(params[:id])
-		@sightings = Sighting.where(:user_id => params[:id])
 	end
 
 	# Handles a GET request to /sightings/{id}/edit
@@ -61,7 +53,7 @@ class UsersController < ApplicationController
 
 		if @user.update(params[:user].permit(:employee_id, :name, :email, :date_of_birth, :username, :password, :date_joined, :park_id, :contact_number, :person_type_id, :admin, :street_number, :street_name, :suburb, :state, :postcode, :avatar))
 			flash[:notice] = "Yay - profile successfully updated!"
-			redirect_to @user
+			redirect_to @users_path
 		else
 			render 'edit'
 		end

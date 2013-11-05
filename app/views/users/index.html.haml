@@ -5,7 +5,7 @@
 		%th Username
 		%th Admin
 		%th Date Joined
-		%th Edit User
+		%th.text-center Edit User
 	- @users.each do |user|
 		%tr
 			%td= user.name
@@ -13,4 +13,4 @@
 			%td= "@" + user.username
 			%td= user.admin
 			%td= user.created_at.strftime("%m/%d/%Y")
-			%td= link_to "Edit", edit_user_path(user)
+			%td.text-center= link_to "Edit", edit_user_path(user)
