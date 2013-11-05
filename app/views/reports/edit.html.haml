@@ -1,5 +1,6 @@
 .row
 	.col-xs-10.col-xs-offset-1
-		%h2 Create Pest
+		%h2 Edit Report
 		%hr
+		= link_to "Delete", report_path(@report), method: :delete, data: { confirm: "Are you sure you want to delete this entry?" }, :class => "btn btn-danger"
 		= render 'report_form'
