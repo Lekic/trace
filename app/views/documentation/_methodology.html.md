@@ -1,0 +1,9 @@
+## Methodology
+
+For our development methodology, we used Agile. Each week is equivalent to one sprint and each sprint have their own tasks. Organization of this was done through the Trello Project Management tool. Tasks had their own cards which contained information about the task which each member can contribute towards. These cards were assigned members and start off in the Backlog column of that sprint. 
+
+Once started, they are moved to the Development column to be completed by the members. Notes and changes about the task can be written on the cards in order to get the member's input. Cards are subsequently moved to Testing for the project leads to double-check for any errors which are rectified and lastly moved to Finished. Any uncompleted tasks are marked to be Urgent and completed in the beginning of the next sprint.
+
+We selected Agile because of the rapid delivery that provides customer satisfaction. It also welcomes changing requirements even at later stages of the project which allows for regular adaption to various circumstances. Furthermore, because of the way we have divided the group, we can be productive by playing our strengths at every sprint with every aspect of the project with Agile Method's self-organizing nature. And lastly, we meet with our Tutor, who is also our customer and we are able to have close communication with him to constantly verify that we are in the right direction and he is satisfied with our deliverables.
+
+ We opted to start with documentation instead of diving straight into development because we decided that a thorough understanding of the system was necessary in order to save time and resources. It is easier and faster  to redraw designs instead of having to re-code functions. We also wanted to perfect the UI. A few sprints in, the general consensus was that each member had a better understanding of the task at hand.

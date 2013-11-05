@@ -23,3 +23,9 @@ The user classes are adapted from the provided data base schema, and categorised
 The first iteration of the system will contain these classes. The variety will not be expanded at this time for ease of use, and all users who do not fit directly into one of the categories are considered volunteers.
 
 It is most important that the system satisfies all users in direct contact with the Parks and Wildlife Service, while also satisfying the needs of all other users.
+
+With any project, the customer and stakeholders are the focal point, and this is reflected in our development approach and project considerations. Simplicity and intuitiveness are our main objectives we have the customer first in our minds. We want a system that reaches users from every technical background, from novices to those who are tech-savvy. 
+
+Our system is designed to be integrated into the current infrastructure, not as a replacement. This system accommodates to flexible pest and pest sighting entry through various methods such as text descriptions, pest details, tracking IDs and images. Our architecture also allows for report generation through a set of queries required by the Parks and Wildlife User.
+
+The system doesnít only have to work, it also has to work properly. We're implementing a responsive design that is compatible on multiple platforms, alleviating the need for porting.
