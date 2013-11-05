@@ -17,7 +17,7 @@ class PestsController < ApplicationController
 		  @pest = Pest.new
 	    else
 	      flash[:alert] = "You must be signed in to register pests."
-	      redirect_to sightings_path
+	      redirect_to pests_path
 	    end
 	end
 
