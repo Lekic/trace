@@ -3,8 +3,8 @@ production:
   encoding: unicode
   database: d13f3a99cjceic
   pool: 5
-  username: lcixcopdpeqtsg
-  password: d16vJ48I13VihY_E9DmiGR7giW
+  #username: lcixcopdpeqtsg
+  #password: d16vJ48I13VihY_E9DmiGR7giW
 
 
 development:
