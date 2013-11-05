@@ -16,7 +16,7 @@ class SightingsController < ApplicationController
     if user_signed_in?
 		  @sighting = Sighting.new
     else
-      flash[:alert] = "Sorry, you've gotta sign in to register sightings!"
+      flash[:alert] = "Sorry, you have to sign in to register sightings!"
       redirect_to sightings_path
     end
 	end
