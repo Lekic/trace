@@ -33,9 +33,6 @@ gem 'yard'
 # Bootstrap 3 for scalable front-end architecture
 gem 'bootstrap-sass', github: 'thomas-mcdonald/bootstrap-sass'
 
-# Dropzone for drag-to-send image file uploads
-gem 'dropzonejs-rails'
-
 # Devise for secure login authentication and email confirmation
 gem 'devise'
 
@@ -45,20 +42,17 @@ gem 'devise'
 # Formtastic for high-performance form creation with relational implementation
 gem 'formtastic-bootstrap'
 
-# Google Maps
-gem "gmaps4rails"
-
 # Chosen
 gem "chosen-rails"
-
-# iCheck
-gem "icheck-rails"
 
 # Markdown for documentation
 gem "markdown-rails"
 
 # Phone number validation
 gem "validates_phone_number"
+
+# Fancybox for Documentation
+gem "fancybox-rails"
 
 # Force Ruby 2.0.0
 group :production do
