@@ -6,4 +6,4 @@
 		have been created and
 		= pluralize(@sightings_today.length, "sighting")
 		have added to the system.
-	.btn.btn-primary.btn-lg Report a sighting
+	= link_to "Report a pest sighting", new_sighting_path, :class => "btn btn-primary btn-lg"
