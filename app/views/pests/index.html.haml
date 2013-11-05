@@ -8,6 +8,7 @@
 				%option
 					= type.name
 		= link_to "Create New Pest", new_pest_path, :class => "btn btn-primary"
+%hr
 .isotope
 	- @pests.each do |pest|
 		.col-md-3{ :class => " type-" + pest.pest_type.name.downcase.squish.gsub( /\s/, '_' ) }
