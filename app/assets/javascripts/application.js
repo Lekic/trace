@@ -52,11 +52,11 @@ $(document).ready(function() {
 
 		/* If it's already open, close it, otherwise, open it! */
 		if ($meta.hasClass("open")) {
-			$(".meta").hide().removeClass("open");
+			$(".meta").removeClass("open");
 		}
 		else {
-			$(".meta").hide().removeClass("open");
-			$meta.show().addClass("open");
+			$(".meta").removeClass("open");
+			$meta.addClass("open");
 		}
 
 		/* Relayout */

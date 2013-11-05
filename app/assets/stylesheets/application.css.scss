@@ -149,6 +149,9 @@ body.modal-open {
 		.meta {
 			display: none;
 		}
+		.meta.open {
+			display: block;
+		}
 	}
 }
 
