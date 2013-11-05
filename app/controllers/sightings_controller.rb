@@ -6,6 +6,7 @@ class SightingsController < ApplicationController
   # @return [Sighing] all the sightings in the system
   def index
 		@sightings = Sighting.all
+    @types = PestType.all
 	end
 
   # Handles a GET request to /sightings/new
