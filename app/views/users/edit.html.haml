@@ -1,6 +1,7 @@
 .row
 	.col-xs-10.col-xs-offset-1
-		%h2 Edit User
+		%header
+			%h2 Edit User
 		%hr
 		- if @user.errors.any?
 			.alert.alert-danger
@@ -30,4 +31,4 @@
 			= f.actions do
 				.pull-right
 					= f.action :cancel, :as => :link, :label => "Cancel", :button_html => { :class => "btn btn-default" }
-					= f.action :submit, :as => :button, :label => "Submit", :button_html => { :class => "btn btn-success" }
+					= f.action :submit, :as => :button, :label => "Update", :button_html => { :class => "btn btn-primary" }

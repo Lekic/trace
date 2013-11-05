@@ -1,21 +1,20 @@
-%h2
-  Edit #{resource_name.to_s.humanize}
-= semantic_form_for(resource, :as => resource_name, :url => registration_path(resource_name), :html => { :method => :put }) do |f|
-  = devise_error_messages!
-  %div
-    = f.inputs do
-      = f.input :username, autofocus: true
-      = f.input :name
-      = f.input :email
-      = f.input :password
-      = f.input :password_confirmation
-      = f.input :date_of_birth, { :include_blank => true, :start_year => 1960, :end_day => Time.now }
-      = f.input :current_password
-      %i (we need your current password to confirm your changes)
-    = f.actions do
-      = f.action :submit, label: "Update"
-      
-%h3 Cancel my account
-%p
-  Unhappy? #{button_to "Cancel my account", registration_path(resource_name), :data => { :confirm => "Are you sure?" }, :method => :delete}
-= link_to "Back", :back
+.row
+	.col-xs-10.col-xs-offset-1
+		%header
+			%h2 Edit User
+		%hr
+		= semantic_form_for(resource, :as => resource_name, :url => registration_path(resource_name), :html => { :method => :put }) do |f|
+			= devise_error_messages!
+			= f.inputs do
+				= f.input :username, autofocus: true, input_html: { :class => "form-control"}
+				= f.input :name, input_html: { :class => "form-control"}
+				= f.input :email, input_html: { :class => "form-control"}
+				= f.input :password, input_html: { :class => "form-control"}
+				= f.input :password_confirmation, input_html: { :class => "form-control"}
+				= f.input :date_of_birth, { :include_blank => true, :start_year => 1960, :end_day => Time.now, input_html: { :class => "chosen-select"} }
+				= f.input :current_password, input_html: { :class => "form-control"}
+				.remember (We need your current password to confirm your changes)
+			= f.actions do
+				.pull-right
+					= f.action :cancel, :as => :link, :label => "Cancel", :button_html => { :class => "btn btn-default" }
+					= f.action :submit, label: "Update", button_html: { :class => "btn btn-primary"}
