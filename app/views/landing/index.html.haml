@@ -33,11 +33,6 @@
 										- if devise_mapping.registerable? && controller_name != 'registrations'
 											= link_to "Don't have an account? Sign up!", new_registration_path(resource_name)
 					.modal-footer
-<<<<<<< HEAD
 						= f.actions do
 							%button.btn.btn-default{"data-dismiss" => "modal", type: "button"} Close
 							= f.action :submit, label: "Sign in", button_html: { :class => "btn btn-primary" }
-=======
-						%button.btn.btn-default{"data-dismiss" => "modal", type: "button"} Close
-						= f.submit "Sign in", :class => "btn btn-primary btn-success"
->>>>>>> 5edd5c735966f0a0a0a0ab85a57f8fca25fc274d
