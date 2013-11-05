@@ -29,7 +29,7 @@ class ApplicationController < ActionController::Base
 
   def configure_devise_params
     devise_parameter_sanitizer.for(:sign_up) do |u|
-      u.permit(:username, :name, :email, :password, :password_confirmation, :admin)
+      u.permit(:username, :name, :email, :password, :password_confirmation, :admin, :date_of_birth)
     end
     devise_parameter_sanitizer.for(:edit) do |u|
       u.permit(:username, :name, :email, :password, :password_confirmation, :admin, :date_of_birth, :current_password)
