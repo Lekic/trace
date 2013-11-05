@@ -12,7 +12,7 @@ Administrative or account-only functions (creating / deleting / updating entries
 
 The ability to log into the system is an essential feature of the system because without this feature, users will be unable to fully interact with our system. The system has been designed so that the majority of its functionality is only accessible to validated users with the appropriate user access level so.
 
-An unauthenticated user can use the system for general sighting information and potentially limited reporting. However to access any of the systems advanced functionality such as generating reports and performing other administrative or account-based functions, the user must authenticate against the system by performing a user login. This would entail a single-factor authentication (i.e. providing a username and password). 
+An unauthenticated user can use the system for general sighting information and potentially limited reporting. However to access any of the systems advanced functionality such as generating reports and performing other administrative or account-based functions, the user must authenticate against the system by performing a user login. This would entail a single-factor authentication (i.e. providing a username and password).
 
 If a person using the system wants to access their account, access anything other than the general information and potentially generate reports (depending on their permission level), they must log in to the system with a username and password. Once they are logged in, they will have access to functions preserved for their permission level (i.e. adding sightings, adding/editing existing pest information, generating detailed reports, etc.).
 
