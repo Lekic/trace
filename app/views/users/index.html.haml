@@ -1,28 +1,16 @@
-%table
+%table.table.table-striped
 	%tr
 		%th Name
 		%th Email
-		%th Date of Birth
 		%th Username
-		%th Phone
-		%th Occupation
 		%th Admin
 		%th Date Joined
 		%th Edit User
-		%th Delete
 	- @users.each do |user|
 		%tr
-			%td= link_to user.name, user_path(user)
+			%td= user.name
 			%td= user.email
-			%td= user.date_of_birth
-			%td= user.username
-			%td= user.contact_number
-			%td
-				- if !user.person_type.nil?
-					= user.person_type.name
-				- else
-					= "Not specified"
+			%td= "@" + user.username
 			%td= user.admin
 			%td= user.created_at
 			%td= link_to "Edit", edit_user_path(user)
-			%td= link_to "Delete", user_path(user), method: :delete, data: { confirm: "Are you sure you want to delete this entry?" }
