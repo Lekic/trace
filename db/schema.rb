@@ -119,8 +119,6 @@ ActiveRecord::Schema.define(version: 20131029043729) do
   create_table "sightings", force: true do |t|
     t.integer  "pest_id"
     t.integer  "quantity"
-    t.decimal  "latitude"
-    t.decimal  "longitude"
     t.integer  "park_id"
     t.datetime "time_sighted"
     t.string   "information"
