@@ -229,17 +229,14 @@ body.modal-open {
 				margin: 0;
 			}
 		}
-		.image-wrapper {
-			height: 160px;
-			background-position: center center;
-			background-size: cover;
-			background-repeat: no-repeat;
-		}
-		.meta {
-			display: none;
-		}
-		.meta.open {
-			display: block;
+		.image {
+			margin-bottom: 10px;
+			.image-wrapper {
+				height: 160px;
+				background-position: center center;
+				background-size: cover;
+				background-repeat: no-repeat;
+			}
 		}
 	}
 }

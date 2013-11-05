@@ -12,42 +12,42 @@
 	- @pests.each do |pest|
 		.col-md-3{ :class => " type-" + pest.pest_type.name.downcase.squish.gsub( /\s/, '_' ) }
 			.isotope-item-wrapper
-				.image-wrapper{:style => "background: " + image_path("temp-pest.jpg")}
-				.overlay
-					%h3= pest.name
-				.meta
-					%p
-						Pest type:
-						= pest.pest_type.name
-					%p
-						Source:
-						= pest.source.name
-					%p
-						Tracker ID:
+				.image
+					.image-wrapper{:style => "background: " + image_path("temp-pest.jpg")}
+					.overlay
+						%h3= pest.name
+				%table.meta.table.table-striped
+					%tr
+						%td Pest type
+						%td= pest.pest_type.name
+					%tr
+						%td Source
+						%td= pest.source.name
+					%tr
+						%td Tracker ID
 						- if !pest.tracker_id.nil?
-							= pest.tracker_id
+							%td= pest.tracker_id
 						- else
-							= "None"
-					%p
-						Size:
-						= pest.size
-					%p
-						Colour:
-						= pest.colour.name
-					%p
-						Markings:
+							%td None
+					%tr
+						%td Size
+						%td= pest.size
+					%tr
+						%td Colour
+						%td= pest.colour.name
+					%tr
+						%td Markings
 						- if !pest.markings.empty?
 							- pest.markings.each do |marking|
-								= Marking.find(marking).name
+								%td= Marking.find(marking).name
 						- else
-							= "None"
-					%p
-						Characteristics:
+							%td None
+					%tr
+						%td Characteristics
 						- if !pest.characteristics.nil?
-							= pest.characteristics
+							%td= pest.characteristics
 						- else
-							= "None"
-					%p
-						= link_to "Edit", edit_pest_path(pest)
-						- if current_user.try(:admin?)
-							= link_to "Delete", pest_path(pest), method: :delete, data: { confirm: "Are you sure you want to delete this entry?" }
+							%td None
+				= link_to "Edit", edit_pest_path(pest), :class => "btn btn-default"
+				- if current_user.try(:admin?)
+					= link_to "Delete", pest_path(pest), method: :delete, data: { confirm: "Are you sure you want to delete this entry?" }, :class => "btn btn-danger"
