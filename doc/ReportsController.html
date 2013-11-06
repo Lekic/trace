@@ -160,7 +160,9 @@
   
 
   
-    <span class="summary_desc"><div class='inline'></div></span>
+    <span class="summary_desc"><div class='inline'>
+<p>PUT /reports/new Access level: Administrator.</p>
+</div></span>
   
 </li>
 
@@ -182,7 +184,9 @@
   
 
   
-    <span class="summary_desc"><div class='inline'></div></span>
+    <span class="summary_desc"><div class='inline'>
+<p>DELETE /reports/:id Access level: Administrator.</p>
+</div></span>
   
 </li>
 
@@ -204,7 +208,9 @@
   
 
   
-    <span class="summary_desc"><div class='inline'></div></span>
+    <span class="summary_desc"><div class='inline'>
+<p>GET /reports Access level: Administrator.</p>
+</div></span>
   
 </li>
 
@@ -226,7 +232,9 @@
   
 
   
-    <span class="summary_desc"><div class='inline'></div></span>
+    <span class="summary_desc"><div class='inline'>
+<p>GET /reports/new Access level: Administrator.</p>
+</div></span>
   
 </li>
 
@@ -248,7 +256,9 @@
   
 
   
-    <span class="summary_desc"><div class='inline'></div></span>
+    <span class="summary_desc"><div class='inline'>
+<p>GET /reports/:id Access level: Administrator.</p>
+</div></span>
   
 </li>
 
@@ -270,7 +280,9 @@
   
 
   
-    <span class="summary_desc"><div class='inline'></div></span>
+    <span class="summary_desc"><div class='inline'>
+<p>PUT /reports/:id Access level: Administrator.</p>
+</div></span>
   
 </li>
 
@@ -305,31 +317,42 @@
   
 
   
-</h3><table class="source_code">
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>PUT /reports/new Access level: Administrator</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
   <tr>
     <td>
       <pre class="lines">
 
 
-21
-22
-23
-24
-25
-26
-27
 28
 29
-30</pre>
+30
+31
+32
+33
+34
+35
+36
+37</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'app/controllers/reports_controller.rb', line 21</span>
+      <pre class="code"><span class="info file"># File 'app/controllers/reports_controller.rb', line 28</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_create'>create</span>
 	<span class='ivar'>@report</span> <span class='op'>=</span> <span class='const'>Report</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='id identifier rubyid_report_params'>report_params</span><span class='rparen'>)</span>
 	<span class='ivar'>@report</span><span class='period'>.</span><span class='id identifier rubyid_user'>user</span> <span class='op'>=</span> <span class='id identifier rubyid_current_user'>current_user</span>
-   	<span class='kw'>if</span> <span class='ivar'>@report</span><span class='period'>.</span><span class='id identifier rubyid_save'>save</span>
-   		<span class='id identifier rubyid_flash'>flash</span><span class='lbracket'>[</span><span class='symbol'>:notice</span><span class='rbracket'>]</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Report successfully created.</span><span class='tstring_end'>&quot;</span></span>
+	<span class='kw'>if</span> <span class='ivar'>@report</span><span class='period'>.</span><span class='id identifier rubyid_save'>save</span>
+		<span class='id identifier rubyid_flash'>flash</span><span class='lbracket'>[</span><span class='symbol'>:notice</span><span class='rbracket'>]</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Report successfully created.</span><span class='tstring_end'>&quot;</span></span>
 		<span class='id identifier rubyid_redirect_to'>redirect_to</span> <span class='id identifier rubyid_reports_path'>reports_path</span>
 	<span class='kw'>else</span>
 		<span class='id identifier rubyid_render'>render</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>new</span><span class='tstring_end'>&#39;</span></span>
@@ -349,25 +372,36 @@
   
 
   
-</h3><table class="source_code">
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>DELETE /reports/:id Access level: Administrator</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
   <tr>
     <td>
       <pre class="lines">
 
 
-60
-61
-62
-63
-64
-65
-66
-67
-68
-69</pre>
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'app/controllers/reports_controller.rb', line 60</span>
+      <pre class="code"><span class="info file"># File 'app/controllers/reports_controller.rb', line 72</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_destroy'>destroy</span>
 	<span class='kw'>if</span> <span class='id identifier rubyid_current_user'>current_user</span><span class='period'>.</span><span class='id identifier rubyid_try'>try</span><span class='lparen'>(</span><span class='symbol'>:admin?</span><span class='rparen'>)</span>
@@ -393,31 +427,42 @@
   
 
   
-</h3><table class="source_code">
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>GET /reports Access level: Administrator</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
   <tr>
     <td>
       <pre class="lines">
 
 
-3
-4
-5
 6
 7
 8
 9
-10</pre>
+10
+11
+12
+13</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'app/controllers/reports_controller.rb', line 3</span>
+      <pre class="code"><span class="info file"># File 'app/controllers/reports_controller.rb', line 6</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_index'>index</span>
-    <span class='kw'>if</span> <span class='id identifier rubyid_current_user'>current_user</span><span class='period'>.</span><span class='id identifier rubyid_try'>try</span><span class='lparen'>(</span><span class='symbol'>:admin?</span><span class='rparen'>)</span>
+	<span class='kw'>if</span> <span class='id identifier rubyid_current_user'>current_user</span><span class='period'>.</span><span class='id identifier rubyid_try'>try</span><span class='lparen'>(</span><span class='symbol'>:admin?</span><span class='rparen'>)</span>
 		<span class='ivar'>@reports</span> <span class='op'>=</span> <span class='const'>Report</span><span class='period'>.</span><span class='id identifier rubyid_all'>all</span>
-    <span class='kw'>else</span>
+	<span class='kw'>else</span>
 		<span class='id identifier rubyid_flash'>flash</span><span class='lbracket'>[</span><span class='symbol'>:alert</span><span class='rbracket'>]</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Sorry, no can do. Come back when you&#39;re a system administrator!</span><span class='tstring_end'>&quot;</span></span>
 		<span class='id identifier rubyid_redirect_to'>redirect_to</span> <span class='id identifier rubyid_index_path'>index_path</span>
-    <span class='kw'>end</span>
+	<span class='kw'>end</span>
 <span class='kw'>end</span></pre>
     </td>
   </tr>
@@ -433,23 +478,34 @@
   
 
   
-</h3><table class="source_code">
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>GET /reports/new Access level: Administrator</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
   <tr>
     <td>
       <pre class="lines">
 
 
-12
-13
-14
-15
-16
 17
 18
-19</pre>
+19
+20
+21
+22
+23
+24</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'app/controllers/reports_controller.rb', line 12</span>
+      <pre class="code"><span class="info file"># File 'app/controllers/reports_controller.rb', line 17</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_new'>new</span>
 	<span class='kw'>if</span> <span class='id identifier rubyid_current_user'>current_user</span><span class='period'>.</span><span class='id identifier rubyid_try'>try</span><span class='lparen'>(</span><span class='symbol'>:admin?</span><span class='rparen'>)</span>
@@ -473,21 +529,23 @@
   
 
   
-</h3><table class="source_code">
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>GET /reports/:id Access level: Administrator</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
   <tr>
     <td>
       <pre class="lines">
 
 
-32
-33
-34
-35
-36
-37
-38
-39
-40
 41
 42
 43
@@ -495,17 +553,24 @@
 45
 46
 47
-48</pre>
+48
+49
+50
+51
+52
+53
+54
+55
+56</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'app/controllers/reports_controller.rb', line 32</span>
+      <pre class="code"><span class="info file"># File 'app/controllers/reports_controller.rb', line 41</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_show'>show</span>
 	<span class='kw'>if</span> <span class='id identifier rubyid_current_user'>current_user</span><span class='period'>.</span><span class='id identifier rubyid_try'>try</span><span class='lparen'>(</span><span class='symbol'>:admin?</span><span class='rparen'>)</span>
 		<span class='ivar'>@report</span> <span class='op'>=</span> <span class='const'>Report</span><span class='period'>.</span><span class='id identifier rubyid_find'>find</span><span class='lparen'>(</span><span class='id identifier rubyid_params'>params</span><span class='lbracket'>[</span><span class='symbol'>:id</span><span class='rbracket'>]</span><span class='rparen'>)</span>
 		<span class='ivar'>@types</span> <span class='op'>=</span> <span class='const'>PestType</span><span class='period'>.</span><span class='id identifier rubyid_all'>all</span>
-		<span class='ivar'>@sightings</span> <span class='op'>=</span> <span class='const'>Sighting</span><span class='period'>.</span><span class='id identifier rubyid_find'>find</span><span class='lparen'>(</span><span class='symbol'>:all</span><span class='comma'>,</span> <span class='symbol'>:conditions</span> <span class='op'>=&gt;</span> <span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>created_at between ? and ?</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span>
-         <span class='ivar'>@report</span><span class='period'>.</span><span class='id identifier rubyid_start_date'>start_date</span><span class='op'>-</span><span class='int'>1</span><span class='comma'>,</span> <span class='ivar'>@report</span><span class='period'>.</span><span class='id identifier rubyid_end_date'>end_date</span><span class='op'>+</span><span class='int'>1</span><span class='rbracket'>]</span><span class='rparen'>)</span>
+		<span class='ivar'>@sightings</span> <span class='op'>=</span> <span class='const'>Sighting</span><span class='period'>.</span><span class='id identifier rubyid_find'>find</span><span class='lparen'>(</span><span class='symbol'>:all</span><span class='comma'>,</span> <span class='symbol'>:conditions</span> <span class='op'>=&gt;</span> <span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>created_at between ? and ?</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='ivar'>@report</span><span class='period'>.</span><span class='id identifier rubyid_start_date'>start_date</span><span class='op'>-</span><span class='int'>1</span><span class='comma'>,</span> <span class='ivar'>@report</span><span class='period'>.</span><span class='id identifier rubyid_end_date'>end_date</span><span class='op'>+</span><span class='int'>1</span><span class='rbracket'>]</span><span class='rparen'>)</span>
 		<span class='ivar'>@final</span> <span class='op'>=</span> <span class='lbracket'>[</span><span class='rbracket'>]</span>
 		<span class='ivar'>@sightings</span><span class='period'>.</span><span class='id identifier rubyid_each'>each</span> <span class='kw'>do</span> <span class='op'>|</span><span class='id identifier rubyid_sighting'>sighting</span><span class='op'>|</span>
 			<span class='ivar'>@report</span><span class='period'>.</span><span class='id identifier rubyid_area_ids'>area_ids</span><span class='period'>.</span><span class='id identifier rubyid_each'>each</span> <span class='kw'>do</span> <span class='op'>|</span><span class='id identifier rubyid_area'>area</span><span class='op'>|</span>
@@ -531,27 +596,38 @@
   
 
   
-</h3><table class="source_code">
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>PUT /reports/:id Access level: Administrator</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
   <tr>
     <td>
       <pre class="lines">
 
 
-50
-51
-52
-53
-54
-55
-56
-57
-58</pre>
+60
+61
+62
+63
+64
+65
+66
+67
+68</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'app/controllers/reports_controller.rb', line 50</span>
+      <pre class="code"><span class="info file"># File 'app/controllers/reports_controller.rb', line 60</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_update'>update</span>
-   	<span class='ivar'>@report</span> <span class='op'>=</span> <span class='const'>Report</span><span class='period'>.</span><span class='id identifier rubyid_find'>find</span><span class='lparen'>(</span><span class='id identifier rubyid_params'>params</span><span class='lbracket'>[</span><span class='symbol'>:id</span><span class='rbracket'>]</span><span class='rparen'>)</span>
+	<span class='ivar'>@report</span> <span class='op'>=</span> <span class='const'>Report</span><span class='period'>.</span><span class='id identifier rubyid_find'>find</span><span class='lparen'>(</span><span class='id identifier rubyid_params'>params</span><span class='lbracket'>[</span><span class='symbol'>:id</span><span class='rbracket'>]</span><span class='rparen'>)</span>
 	<span class='kw'>if</span> <span class='ivar'>@report</span><span class='period'>.</span><span class='id identifier rubyid_update'>update</span><span class='lparen'>(</span><span class='id identifier rubyid_params'>params</span><span class='lbracket'>[</span><span class='symbol'>:report</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_permit'>permit</span><span class='lparen'>(</span><span class='symbol'>:name</span><span class='comma'>,</span> <span class='symbol'>:start_date</span><span class='comma'>,</span> <span class='symbol'>:end_date</span><span class='comma'>,</span> <span class='lbrace'>{</span><span class='symbol'>:area_ids</span> <span class='op'>=&gt;</span> <span class='lbracket'>[</span><span class='rbracket'>]</span><span class='rbrace'>}</span><span class='rparen'>)</span><span class='rparen'>)</span>
 		<span class='id identifier rubyid_flash'>flash</span><span class='lbracket'>[</span><span class='symbol'>:notice</span><span class='rbracket'>]</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Report Successfuly Updated.</span><span class='tstring_end'>&quot;</span></span>
 		<span class='id identifier rubyid_redirect_to'>redirect_to</span> <span class='id identifier rubyid_reports_path'>reports_path</span>
@@ -569,7 +645,7 @@
 </div>
 
     <div id="footer">
-  Generated on Thu Nov  7 00:18:53 2013 by
+  Generated on Thu Nov  7 00:40:17 2013 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.8.7.3 (ruby-2.0.0).
 </div>

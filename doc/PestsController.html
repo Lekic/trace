@@ -160,7 +160,9 @@
   
 
   
-    <span class="summary_desc"><div class='inline'></div></span>
+    <span class="summary_desc"><div class='inline'>
+<p>PUT /pests/new Access level: User.</p>
+</div></span>
   
 </li>
 
@@ -182,7 +184,9 @@
   
 
   
-    <span class="summary_desc"><div class='inline'></div></span>
+    <span class="summary_desc"><div class='inline'>
+<p>DELETE /pests/:id Access level: Administrator.</p>
+</div></span>
   
 </li>
 
@@ -204,7 +208,9 @@
   
 
   
-    <span class="summary_desc"><div class='inline'></div></span>
+    <span class="summary_desc"><div class='inline'>
+<p>GET /pests/:id/edit Access level: Administrator.</p>
+</div></span>
   
 </li>
 
@@ -227,7 +233,7 @@
 
   
     <span class="summary_desc"><div class='inline'>
-<p>Access level: Anyone (no sign-in).</p>
+<p>GET /pests Access level: All.</p>
 </div></span>
   
 </li>
@@ -251,7 +257,7 @@
 
   
     <span class="summary_desc"><div class='inline'>
-<p>Access level: Signed-in user.</p>
+<p>GET /pests/new Access level: User.</p>
 </div></span>
   
 </li>
@@ -274,7 +280,9 @@
   
 
   
-    <span class="summary_desc"><div class='inline'></div></span>
+    <span class="summary_desc"><div class='inline'>
+<p>PUT /pests/:id Access level: Administrator.</p>
+</div></span>
   
 </li>
 
@@ -309,33 +317,44 @@
   
 
   
-</h3><table class="source_code">
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>PUT /pests/new Access level: User</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
   <tr>
     <td>
       <pre class="lines">
 
 
-24
-25
 26
 27
 28
 29
 30
 31
-32</pre>
+32
+33
+34</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'app/controllers/pests_controller.rb', line 24</span>
+      <pre class="code"><span class="info file"># File 'app/controllers/pests_controller.rb', line 26</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_create'>create</span>
-		<span class='ivar'>@pest</span> <span class='op'>=</span> <span class='const'>Pest</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='id identifier rubyid_pest_params'>pest_params</span><span class='rparen'>)</span>
+	<span class='ivar'>@pest</span> <span class='op'>=</span> <span class='const'>Pest</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='id identifier rubyid_pest_params'>pest_params</span><span class='rparen'>)</span>
 	<span class='kw'>if</span> <span class='ivar'>@pest</span><span class='period'>.</span><span class='id identifier rubyid_save'>save</span>
 		<span class='id identifier rubyid_flash'>flash</span><span class='lbracket'>[</span><span class='symbol'>:notice</span><span class='rbracket'>]</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Yay - pest successfully created!</span><span class='tstring_end'>&quot;</span></span>	
- 			<span class='id identifier rubyid_redirect_to'>redirect_to</span> <span class='id identifier rubyid_pests_path'>pests_path</span>
- 		<span class='kw'>else</span>
- 			<span class='id identifier rubyid_render'>render</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>new</span><span class='tstring_end'>&#39;</span></span>
- 		<span class='kw'>end</span>
+		<span class='id identifier rubyid_redirect_to'>redirect_to</span> <span class='id identifier rubyid_pests_path'>pests_path</span>
+	<span class='kw'>else</span>
+		<span class='id identifier rubyid_render'>render</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>new</span><span class='tstring_end'>&#39;</span></span>
+	<span class='kw'>end</span>
 <span class='kw'>end</span></pre>
     </td>
   </tr>
@@ -351,25 +370,36 @@
   
 
   
-</h3><table class="source_code">
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>DELETE /pests/:id Access level: Administrator</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
   <tr>
     <td>
       <pre class="lines">
 
 
-54
-55
-56
-57
-58
-59
-60
 61
 62
-63</pre>
+63
+64
+65
+66
+67
+68
+69
+70</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'app/controllers/pests_controller.rb', line 54</span>
+      <pre class="code"><span class="info file"># File 'app/controllers/pests_controller.rb', line 61</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_destroy'>destroy</span>
 	<span class='kw'>if</span> <span class='id identifier rubyid_current_user'>current_user</span><span class='period'>.</span><span class='id identifier rubyid_try'>try</span><span class='lparen'>(</span><span class='symbol'>:admin?</span><span class='rparen'>)</span>
@@ -395,23 +425,34 @@
   
 
   
-</h3><table class="source_code">
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>GET /pests/:id/edit Access level: Administrator</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
   <tr>
     <td>
       <pre class="lines">
 
 
-34
-35
-36
-37
 38
 39
 40
-41</pre>
+41
+42
+43
+44
+45</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'app/controllers/pests_controller.rb', line 34</span>
+      <pre class="code"><span class="info file"># File 'app/controllers/pests_controller.rb', line 38</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_edit'>edit</span>
 	<span class='kw'>if</span> <span class='id identifier rubyid_current_user'>current_user</span><span class='period'>.</span><span class='id identifier rubyid_try'>try</span><span class='lparen'>(</span><span class='symbol'>:admin?</span><span class='rparen'>)</span>
@@ -438,7 +479,7 @@
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>Access level: Anyone (no sign-in)</p>
+<p>GET /pests Access level: All</p>
 
 
   </div>
@@ -485,7 +526,7 @@
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>Access level: Signed-in user</p>
+<p>GET /pests/new Access level: User</p>
 
 
   </div>
@@ -513,11 +554,11 @@
 
 <span class='kw'>def</span> <span class='id identifier rubyid_new'>new</span>
 	<span class='kw'>if</span> <span class='id identifier rubyid_user_signed_in?'>user_signed_in?</span>
-	  <span class='ivar'>@pest</span> <span class='op'>=</span> <span class='const'>Pest</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span>
-    <span class='kw'>else</span>
-      <span class='id identifier rubyid_flash'>flash</span><span class='lbracket'>[</span><span class='symbol'>:alert</span><span class='rbracket'>]</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Sorry, you have to sign in to register pests!</span><span class='tstring_end'>&quot;</span></span>
-      <span class='id identifier rubyid_redirect_to'>redirect_to</span> <span class='id identifier rubyid_pests_path'>pests_path</span>
-    <span class='kw'>end</span>
+		<span class='ivar'>@pest</span> <span class='op'>=</span> <span class='const'>Pest</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span>
+	<span class='kw'>else</span>
+		<span class='id identifier rubyid_flash'>flash</span><span class='lbracket'>[</span><span class='symbol'>:alert</span><span class='rbracket'>]</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Sorry, you have to sign in to register pests!</span><span class='tstring_end'>&quot;</span></span>
+		<span class='id identifier rubyid_redirect_to'>redirect_to</span> <span class='id identifier rubyid_pests_path'>pests_path</span>
+	<span class='kw'>end</span>
 <span class='kw'>end</span></pre>
     </td>
   </tr>
@@ -533,29 +574,38 @@
   
 
   
-</h3><table class="source_code">
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>PUT /pests/:id Access level: Administrator</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
   <tr>
     <td>
       <pre class="lines">
 
 
-43
-44
-45
-46
-47
-48
 49
 50
 51
-52</pre>
+52
+53
+54
+55
+56
+57</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'app/controllers/pests_controller.rb', line 43</span>
+      <pre class="code"><span class="info file"># File 'app/controllers/pests_controller.rb', line 49</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_update'>update</span>
 	<span class='ivar'>@pest</span> <span class='op'>=</span> <span class='const'>Pest</span><span class='period'>.</span><span class='id identifier rubyid_find'>find</span><span class='lparen'>(</span><span class='id identifier rubyid_params'>params</span><span class='lbracket'>[</span><span class='symbol'>:id</span><span class='rbracket'>]</span><span class='rparen'>)</span>
-
 	<span class='kw'>if</span> <span class='ivar'>@pest</span><span class='period'>.</span><span class='id identifier rubyid_update'>update</span><span class='lparen'>(</span><span class='id identifier rubyid_params'>params</span><span class='lbracket'>[</span><span class='symbol'>:pest</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_permit'>permit</span><span class='lparen'>(</span><span class='symbol'>:name</span><span class='comma'>,</span> <span class='symbol'>:source_id</span><span class='comma'>,</span> <span class='symbol'>:tracker_id</span><span class='comma'>,</span> <span class='symbol'>:pest_type_id</span><span class='comma'>,</span> <span class='symbol'>:characteristics</span><span class='comma'>,</span> <span class='lbrace'>{</span><span class='symbol'>:marking_ids</span> <span class='op'>=&gt;</span> <span class='lbracket'>[</span><span class='rbracket'>]</span><span class='rbrace'>}</span><span class='comma'>,</span> <span class='symbol'>:colour_id</span><span class='comma'>,</span> <span class='symbol'>:size</span><span class='rparen'>)</span><span class='rparen'>)</span>
 		<span class='id identifier rubyid_flash'>flash</span><span class='lbracket'>[</span><span class='symbol'>:notice</span><span class='rbracket'>]</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Yay - pest successfully updated!</span><span class='tstring_end'>&quot;</span></span>
 		<span class='id identifier rubyid_redirect_to'>redirect_to</span> <span class='id identifier rubyid_pests_path'>pests_path</span>
@@ -573,7 +623,7 @@
 </div>
 
     <div id="footer">
-  Generated on Thu Nov  7 00:18:53 2013 by
+  Generated on Thu Nov  7 00:40:17 2013 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.8.7.3 (ruby-2.0.0).
 </div>
