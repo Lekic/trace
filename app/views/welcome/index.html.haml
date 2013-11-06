@@ -2,8 +2,8 @@
 	%h1= "Welcome back @" + current_user.username + "!"
 	%p
 		So far today,
-		= pluralize(@pests_today.length, "pest")
-		have been created and
-		= pluralize(@sightings_today.length, "sighting")
-		have added to the system.
+		= pluralize(@pests_today.length, "pest has", "pests have")
+		been created and
+		= pluralize(@sightings_today.length, "sighting has", "sightings have")
+		been added to the system.
 	= link_to "Report a pest sighting", new_sighting_path, :class => "btn btn-primary btn-lg"
