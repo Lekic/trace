@@ -1,8 +1,7 @@
 - if @sighting.errors.any?
 	.alert.alert-danger
-		%h2
-			=pluralize(@sighting.errors.count, "error")
-			prohibited this post from being saved:
+		=pluralize(@sighting.errors.count, "error")
+		prohibited this post from being saved:
 		%ul
 			- @sighting.errors.full_messages.each do |msg|
 				%li= msg
