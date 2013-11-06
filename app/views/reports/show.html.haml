@@ -1,7 +1,13 @@
-%header
-	%h2 Report Details
+%header.clearfix
+	.pull-left
+		%h2 Report Detail
+	.pull-right
+		%select#pest-filter.chosen-select
+			%option All
+			- @types.each do |type|
+				%option
+					= type.name
 %hr
-
 %p
 	There were
 	= @final.length

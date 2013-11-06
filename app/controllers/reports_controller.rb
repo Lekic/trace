@@ -31,6 +31,7 @@ class ReportsController < ApplicationController
 	def show
 		if current_user.try(:admin?)
 			@report = Report.find(params[:id])
+			@types = PestType.all
 			@sightings = Sighting.find(:all, :conditions => ["created_at between ? and ?",
 	         @report.start_date-1, @report.end_date+1])
 			@final = []
