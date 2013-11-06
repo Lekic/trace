@@ -7,22 +7,18 @@
 			- @types.each do |type|
 				%option
 					= type.name
-%hr
-%p
-	There were
-	= @final.length
-	sightings reported within this time range:
 
-	- if !@final.empty?
-		- @final.each do |sighting|
-			%li= link_to sighting.pest.name + " seen at " + sighting.park.name, sighting_path(sighting)
-%p
-	They were sighted throughout
-	= @report.area_ids.length
-	different areas:
-	
-	- if !@report.areas.empty?
+%hr
+
+%h3
+	= pluralize(@final.length, "sighting was", "sightings were")
+	reported within this time range in the following
+	= pluralize(@report.area_ids.length, "area") + ":"
+%h4
+	%ul
 		- @report.areas.each do |area|
 			%li= area.name
+
+%hr
 
 = render :partial => 'sightings/sighting_feed'
