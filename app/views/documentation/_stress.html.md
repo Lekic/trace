@@ -1,3 +1,3 @@
 ## Stress
 
-The final form of testing is an overall tests on the system: stress testing. To stress test the system we used simulation software to mimic the system being used by hundreds of users at a single time, performing some simple tasks, seeing if the system could handle the load.
+The final form of testing is an overall tests on the system: stress testing. To stress test the system we used simulation software to mimic the system being used by hundreds of users at a single time, performing some simple tasks, seeing if the system could handle the load. Stress Tests for the deployed Heroku application can be done using the Blitz addon, simulating up to 5000 concurrent users to test load capacity.
