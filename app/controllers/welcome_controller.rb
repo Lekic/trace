@@ -1,3 +1,4 @@
+# @author Daniel Lekic and Hayden Bleasel
 class WelcomeController < ApplicationController
   def index
   	if !user_signed_in?

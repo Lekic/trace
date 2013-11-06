@@ -1,3 +1,4 @@
+# @author Daniel Lekic and Hayden Bleasel
 class ReportsController < ApplicationController
 	def index
 	    if current_user.try(:admin?)

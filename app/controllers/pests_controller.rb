@@ -1,4 +1,4 @@
-# @author Daniel Lekic
+# @author Daniel Lekic and Hayden Bleasel
 class PestsController < ApplicationController
 	
 	# GET /pests

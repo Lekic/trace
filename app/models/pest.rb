@@ -1,3 +1,4 @@
+# @author Daniel Lekic and Hayden Bleasel
 class Pest < ActiveRecord::Base
   belongs_to :colour, inverse_of: :pests
   belongs_to :pest_type, inverse_of: :pests

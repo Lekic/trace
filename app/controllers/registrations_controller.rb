@@ -1,3 +1,4 @@
+# @author Daniel Lekic and Hayden Bleasel
 class RegistrationsController < Devise::RegistrationsController
 
   protected

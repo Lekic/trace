@@ -1,4 +1,4 @@
-# @author Daniel Lekic
+# @author Daniel Lekic and Hayden Bleasel
 class SightingsController < ApplicationController
 	
   # Handles a GET request to /sightings
@@ -11,7 +11,7 @@ class SightingsController < ApplicationController
 
   # Handles a GET request to /sightings/new
   # Accessible to signed-in users
-  # @returns [Sighting] a new sighting object
+  # @return [Sighting] a new sighting object
 	def new
     if user_signed_in?
 		  @sighting = Sighting.new
@@ -23,7 +23,7 @@ class SightingsController < ApplicationController
 
   # Handles a POST request to /sightings/new
   # Accessible to signed-in users
-  # @returns [Path] to the following page (sighting or new form)
+  # @return [Path] to the following page (sighting or new form)
 	def create
 		@sighting = Sighting.new(sighting_params)
     @sighting.user = current_user
@@ -35,9 +35,9 @@ class SightingsController < ApplicationController
 		end
 	end
 
-  # Handles a GET request to /sightings/{id}/edit
+  # Handles a GET request to /sightings/:id/edit
   # Accessible to administrators or sighting creators
-  # @returns [Path] to the sighting page
+  # @return [Path] to the sighting page
 	def edit
 		@sighting = Sighting.find(params[:id])
     if !current_user.try(:admin?) && !current_user.id == @sighting.user_id
@@ -46,9 +46,9 @@ class SightingsController < ApplicationController
     end
 	end
 
-  # Handles a PUT request to /sightings/{id}
+  # Handles a PUT request to /sightings/:id
   # Accessible to administrators and sighting creators
-  # @returns [Path] to the following page (sighting or edit form)
+  # @return [Path] to the following page (sighting or edit form)
 	def update
 	@sighting = Sighting.find(params[:id])
   	if @sighting.update(params[:sighting].permit(:pest_id, :park_id, :quantity, :time_sighted, :information))
@@ -59,9 +59,9 @@ class SightingsController < ApplicationController
   	end
 	end
 
-  # Handles a DELETE request to /sightings/{id}
+  # Handles a DELETE request to /sightings/:id
   # Accessible to administrators and sighting creators
-  # @returns [Path] to the sightings page
+  # @return [Path] to the sightings page
 	def destroy
 		@sighting = Sighting.find(params[:id])
     if current_user.try(:admin?) || current_user.id == @sighting.user_id

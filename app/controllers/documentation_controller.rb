@@ -1,3 +1,4 @@
+# @author Daniel Lekic and Hayden Bleasel
 class DocumentationController < ApplicationController
   def index
   	if !current_user.try(:admin?)
