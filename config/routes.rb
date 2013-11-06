@@ -29,13 +29,7 @@ Trace::Application.routes.draw do
   root 'landing#index'
 
 
-  devise_for :users do
-    get 'users', to: 'welcome#index', as: user_root
-  end
-
-  # do
-  #  get 'users', :to => 'welcome#index', :as => :user_root
-  #end
+  devise_for :users, :controllers => { :registrations => :registrations }
 
   resources :users, :pests, :sightings, :reports, :welcome, :landing
 
