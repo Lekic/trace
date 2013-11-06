@@ -334,50 +334,32 @@ h2 {
 
 .table {
 	@media (max-width: 768px) {
-
-	display: block;
-
-	/* Force table to not be like tables anymore */
-	tbody, th, td, tr { 
-		display: block; 
+		display: block;
+		tbody, th, td, tr { 
+			display: block; 
+		}
+		thead tr { 
+			position: absolute;
+			top: -9999px;
+			left: -9999px;
+		}
+		td { 
+			border: none;
+			position: relative;
+			padding-left: 50%; 
+			white-space: normal;
+			text-align:left;
+		}
+		td:before {
+			position: absolute;
+			top: 6px;
+			left: 6px;
+			width: 45%; 
+			padding-right: 10px; 
+			white-space: nowrap;
+			text-align:left;
+			font-weight: bold;
+		}
+		td:before { content: attr(data-title); }
 	}
- 
-	/* Hide table headers (but not display: none;, for accessibility) */
-	thead tr { 
-		position: absolute;
-		top: -9999px;
-		left: -9999px;
-	}
- 
-	tr { border: 1px solid #ccc; }
- 
-	td { 
-		/* Behave  like a "row" */
-		border: none;
-		border-bottom: 1px solid #eee; 
-		position: relative;
-		padding-left: 50%; 
-		white-space: normal;
-		text-align:left;
-	}
- 
-	td:before { 
-		/* Now like a table header */
-		position: absolute;
-		/* Top/left values mimic padding */
-		top: 6px;
-		left: 6px;
-		width: 45%; 
-		padding-right: 10px; 
-		white-space: nowrap;
-		text-align:left;
-		font-weight: bold;
-	}
- 
-	/*
-	Label the data
-	*/
-	td:before { content: attr(data-title); }
-}
-
 }
