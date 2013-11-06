@@ -62,10 +62,7 @@
 						- if user_signed_in?
 							%li.dropdown
 								%a.dropdown-toggle{"data-toggle" => "dropdown", href: "#"}
-									- if current_user.avatar.exists?
-										= image_tag current_user.avatar.url(:thumb), :class => "user-image"
-									- else
-										= image_tag("/assets/temp-user.jpg", :class => "user-image")
+									= image_tag current_user.avatar.url(:thumb), :class => "user-image"
 									= "@" + current_user.username
 									%b.caret
 								%ul.dropdown-menu
