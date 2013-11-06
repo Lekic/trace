@@ -310,7 +310,10 @@
 
 		%h1 Database Design
 		#database= render 'database'
-		#dictionary= render 'dictionary'
+		#dictionary
+			%h2 Data Dictionary
+			= image_tag "documentation/dictionary.png", :href => image_path("documentation/dictionary.png")
+			.caption Data Dictionary
 		#schema=render 'schema'
 		#dependencies=render 'dependencies'
 		#normalisation=render 'normalisation'
