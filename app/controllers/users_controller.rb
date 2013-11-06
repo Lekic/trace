@@ -1,9 +1,8 @@
 # @author Daniel Lekic and Hayden Bleasel
 class UsersController < ApplicationController
 
-	# Handles a GET request to /users
-	# Administrator access level
-	# @return [User] all the users in the system
+	# GET /users
+	# Access level: Administrator
 	def index
 		if current_user.try(:admin?)
 			@users = User.all.order(:name)
@@ -13,38 +12,34 @@ class UsersController < ApplicationController
 		end
 	end
 	
-	# Handles a GET request to /users/new
-	# Accessible to anyone (no sign-in)
-	# @return [User] a a new user
+	# GET /users/new
+	# Access level: All
 	def new
 		@user = User.new
 	end
 
-	# Handles a POST request to /users/new
- 	# Accessible to anyone (no sign-in)
-  	# @return [Path] to the following page (user or new form)
+	# PUT /users/new
+	# Access level: All
 	def create
- 		@user = User.new(user_params)
- 		@user.admin = false
+		@user = User.new(user_params)
+		@user.admin = false
 		if @user.save
-  			redirect_to @users_path
-  		else
-  			render 'new'
-  		end
+			redirect_to @users_path
+		else
+			render 'new'
+		end
 	end
 
-	# Handles a GET request to /users/:id
-  	# Accessible to anyone (no sign-in)
-  	# @return [User] a single user
+	# GET /users/:id
+	# Access level: All
 	def show
 		@user = User.find(params[:id])
 		@types = PestType.all
 		@sightings = Sighting.where(:user_id => params[:id])
 	end
 
-	# Handles a GET request to /sightings/:id/edit
-  	# Accessible to administrator or account holder
-  	# @return [Path] to the users page
+	# GET /users/:id/edit
+	# Access level: Administrator
 	def edit
 		if current_user.try(:admin?)
 			@user = User.find(params[:id])
@@ -54,12 +49,10 @@ class UsersController < ApplicationController
 		end
 	end
 
-	# Handles a PUT request to /users/:id
-  	# Accessible to administrators and account holder
-  	# @return [Path] to the following page (user or edit form)
+	# PUT /users/:id/edit
+	# Access level: Administrator
 	def update
 		@user = User.find(params[:id])
-
 		if @user.update(params[:user].permit(:employee_id, :name, :email, :date_of_birth, :username, :password, :date_joined, :park_id, :contact_number, :person_type_id, :admin, :street_number, :street_name, :suburb, :state, :postcode, :avatar))
 			flash[:notice] = "Yay - profile successfully updated!"
 			redirect_to @users_path
@@ -68,9 +61,8 @@ class UsersController < ApplicationController
 		end
 	end
 
-	# Handles a DELETE request to /users/:id
-  	# Accessible to administrators and account holder
-  	# @return [Path] to the users page
+	# DELETE /users/:id
+	# Access level: Administrator
 	def destroy
 		if current_user.try(:admin?)
 			@user = User.find(params[:id])
@@ -82,19 +74,16 @@ class UsersController < ApplicationController
 		redirect_to users_path
 	end
 
-	# Retrieves all phones owned by the user
-	# Accessible to everyone
-	# @return [Phone] all phones owned by the user
-	def phones
-		@phones = Phone.where(:user_id => @user.id).order('id').all
-	end
-
-	# Permitted parameters when creating a user
 	private
-  		def user_params
-    		params.require(:user).permit(:employee_id, :name, :email, :date_of_birth, :username, :password, :date_joined, :park_id, :contact_number, :person_type_id, :admin, :street_number, :street_name, :suburb, :state, :postcode, :avatar)
-  		end
+
+		# Permitted parameters when creating a user
+		def user_params
+			params.require(:user).permit(:employee_id, :name, :email, :date_of_birth, :username, :password, :date_joined, :park_id, :contact_number, :person_type_id, :admin, :street_number, :street_name, :suburb, :state, :postcode, :avatar)
+		end
+
+		# Admin verification method
 		def verify_is_admin
 			(current_user.nil?) ? redirect_to(root_path) : (redirect_to(root_path) unless current_user.admin?)
 		end
+
 end
