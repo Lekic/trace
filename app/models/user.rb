@@ -25,9 +25,14 @@ class User < ActiveRecord::Base
   
   # add any other characters you'd like to disallow inside the [ brackets ]
   # metacharacters [, \, ^, $, ., |, ?, *, +, (, and ) need to be escaped with a \
+
+  # Name can contain everything except symbols and numbers.
   NAME_CASE_REGEX = /\A[^0-9`!@#\$%\^&*+_=]+\z/
+
+  # Username can only contain alphanumeric characters.
   USERNAME_REGEX = /\A[a-zA-Z0-9]+\z/
 
+  # Devise - Warden method.
   def self.find_first_by_auth_conditions(warden_conditions)
       conditions = warden_conditions.dup
       if login = conditions.delete(:login)
