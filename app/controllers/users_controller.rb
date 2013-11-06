@@ -11,7 +11,7 @@ class UsersController < ApplicationController
 			redirect_to index_path
 		end
 	end
-	
+
 	# GET /users/new
 	# Access level: All
 	def new
@@ -85,5 +85,7 @@ class UsersController < ApplicationController
 		def verify_is_admin
 			(current_user.nil?) ? redirect_to(root_path) : (redirect_to(root_path) unless current_user.admin?)
 		end
+
+	#conflicted
 
 end
