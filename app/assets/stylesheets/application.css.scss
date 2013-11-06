@@ -110,6 +110,12 @@ img {
 			}
 		}
 	}
+	@media (max-width: 1199px) {
+		width: 212px;
+	}
+	@media (max-width: 991px) {
+		display: none;
+	}
 }
 
 .formtastic {
@@ -293,6 +299,17 @@ header {
 	padding: 10px 0;
 	.chosen-container {
 		width: 160px;
+		@media (max-width:768px) {
+			display: none;
+		}
+	}
+	@media (max-width: 768px) {
+		.pull-left, .pull-right {
+			float: none !important
+		}
+		.pull-right {
+			margin-top: 10px;
+		}
 	}
 }
 
@@ -332,7 +349,7 @@ h2 {
 	background-color: #428bca;
 }
 .users, .reports {
-	.table {
+	.container > .table {
 		@media (max-width: 768px) {
 			display: block;
 			tbody, th, td, tr { 
