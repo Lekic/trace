@@ -1,4 +1,4 @@
-# @author Daniel Lekic
+# @author Daniel Lekic and Hayden Bleasel
 class UsersController < ApplicationController
 
 	# Handles a GET request to /users
@@ -15,14 +15,14 @@ class UsersController < ApplicationController
 	
 	# Handles a GET request to /users/new
 	# Accessible to anyone (no sign-in)
-	# @returns [User] a a new user
+	# @return [User] a a new user
 	def new
 		@user = User.new
 	end
 
 	# Handles a POST request to /users/new
  	# Accessible to anyone (no sign-in)
-  	# @returns [Path] to the following page (user or new form)
+  	# @return [Path] to the following page (user or new form)
 	def create
  		@user = User.new(user_params)
  		@user.admin = false
@@ -33,18 +33,18 @@ class UsersController < ApplicationController
   		end
 	end
 
-	# Handles a GET request to /users/{id}
+	# Handles a GET request to /users/:id
   	# Accessible to anyone (no sign-in)
-  	# @returns [User] a single user
+  	# @return [User] a single user
 	def show
 		@user = User.find(params[:id])
 		@types = PestType.all
 		@sightings = Sighting.where(:user_id => params[:id])
 	end
 
-	# Handles a GET request to /sightings/{id}/edit
+	# Handles a GET request to /sightings/:id/edit
   	# Accessible to administrator or account holder
-  	# @returns [Path] to the users page
+  	# @return [Path] to the users page
 	def edit
 		if current_user.try(:admin?)
 			@user = User.find(params[:id])
@@ -54,9 +54,9 @@ class UsersController < ApplicationController
 		end
 	end
 
-	# Handles a PUT request to /users/{id}
+	# Handles a PUT request to /users/:id
   	# Accessible to administrators and account holder
-  	# @returns [Path] to the following page (user or edit form)
+  	# @return [Path] to the following page (user or edit form)
 	def update
 		@user = User.find(params[:id])
 
@@ -68,9 +68,9 @@ class UsersController < ApplicationController
 		end
 	end
 
-	# Handles a DELETE request to /users/{id}
+	# Handles a DELETE request to /users/:id
   	# Accessible to administrators and account holder
-  	# @returns [Path] to the users page
+  	# @return [Path] to the users page
 	def destroy
 		if current_user.try(:admin?)
 			@user = User.find(params[:id])
@@ -84,7 +84,7 @@ class UsersController < ApplicationController
 
 	# Retrieves all phones owned by the user
 	# Accessible to everyone
-	# @returns [Phone] all phones owned by the user
+	# @return [Phone] all phones owned by the user
 	def phones
 		@phones = Phone.where(:user_id => @user.id).order('id').all
 	end

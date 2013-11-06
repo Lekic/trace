@@ -1,3 +1,4 @@
+# @author Daniel Lekic and Hayden Bleasel
 class Report < ActiveRecord::Base
   belongs_to :user, inverse_of: :reports
   has_and_belongs_to_many :sightings

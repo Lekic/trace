@@ -1,20 +1,20 @@
 %header.clearfix
 	.pull-left
-		%h2 Reports
+		%h2 Generated Reports
 	.pull-right
 		= link_to "Generate Report", new_report_path, :class => "btn btn-primary"
 %hr
 %table.table.table-striped
-	%tr
-		%th Report ID
-		%th Name
-		%th Created by
-		%th Created on
-		%th.text-center Edit
-	- @reports.each do |report|
+	%thead
 		%tr
-			%td= link_to report.id, report_path(report)
-			%td= report.name
-			%td= report.user.name
-			%td= report.created_at.strftime("%m/%d/%Y")
-			%td.text-center= link_to "Edit", edit_report_path(report)
+			%th Report ID
+			%th Name
+			%th Created by
+			%th Created on
+	%tbody
+		- @reports.each do |report|
+			%tr
+				%td= link_to report.id, report_path(report)
+				%td= report.name
+				%td= report.user.name
+				%td= report.created_at.strftime("%m/%d/%Y")

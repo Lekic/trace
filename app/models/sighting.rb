@@ -1,3 +1,4 @@
+# @author Daniel Lekic and Hayden Bleasel
 class Sighting < ActiveRecord::Base
   belongs_to :pest, inverse_of: :sightings
   has_and_belongs_to_many :reports

@@ -54,4 +54,8 @@ $(document).ready(function() {
 		$isotope.isotope({ filter: selector });
 		return false;
 	});
+
+	$(window).on('resize', function() {
+  		$isotope.isotope("reLayout");
+	});
 });

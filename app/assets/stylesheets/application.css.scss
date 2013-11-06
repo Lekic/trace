@@ -46,6 +46,7 @@ img {
 
 .jumbotron h1 {
 	overflow: hidden;
+	text-overflow: ellipsis;
 }
 
 .container {
@@ -108,6 +109,12 @@ img {
 				background-color: #428bca;
 			}
 		}
+	}
+	@media (max-width: 1199px) {
+		width: 212px;
+	}
+	@media (max-width: 991px) {
+		display: none;
 	}
 }
 
@@ -272,6 +279,12 @@ body.modal-open {
 					border-radius: 0 0 4px 0;
 				}
 			}
+			td {
+				max-width: 0;
+				overflow: hidden;
+				text-overflow: ellipsis;
+				white-space: nowrap;
+			}
 		}
 	}
 	&:hover {
@@ -286,6 +299,17 @@ header {
 	padding: 10px 0;
 	.chosen-container {
 		width: 160px;
+		@media (max-width:768px) {
+			display: none;
+		}
+	}
+	@media (max-width: 768px) {
+		.pull-left, .pull-right {
+			float: none !important
+		}
+		.pull-right {
+			margin-top: 10px;
+		}
 	}
 }
 
@@ -323,4 +347,35 @@ h2 {
 .dropdown-menu > li > a:hover, .dropdown-menu > li > a:focus {
 	color: #fff;
 	background-color: #428bca;
+}
+.users, .reports {
+	.container > .table {
+		@media (max-width: 768px) {
+			display: block;
+			tbody, th, td, tr { 
+				display: block; 
+			}
+			thead tr { 
+				position: absolute;
+				top: -9999px;
+				left: -9999px;
+			}
+			td { 
+				position: relative;
+				white-space: normal;
+				text-align:left;
+			}
+			td:before {
+				position: absolute;
+				top: 6px;
+				left: 6px;
+				width: 45%; 
+				padding-right: 10px; 
+				white-space: nowrap;
+				text-align:left;
+				font-weight: bold;
+			}
+			td:before { content: attr(data-title); }
+		}
+	}
 }

@@ -1,8 +1,8 @@
-# @author Daniel Lekic
+# @author Daniel Lekic and Hayden Bleasel
 class PestsController < ApplicationController
-	
+
 	# GET /pests
- 	# Access level: Anyone (no sign-in)
+	# Access level: All
 	def index
 		@pests = Pest.all
 		@types = PestType.all
@@ -11,26 +11,30 @@ class PestsController < ApplicationController
 	end
 
 	# GET /pests/new
-  	# Access level: Signed-in user
+	# Access level: User
 	def new
 		if user_signed_in?
-		  @pest = Pest.new
-	    else
-	      flash[:alert] = "Sorry, you have to sign in to register pests!"
-	      redirect_to pests_path
-	    end
+			@pest = Pest.new
+		else
+			flash[:alert] = "Sorry, you have to sign in to register pests!"
+			redirect_to pests_path
+		end
 	end
 
+	# PUT /pests/new
+	# Access level: User
 	def create
- 		@pest = Pest.new(pest_params)
+		@pest = Pest.new(pest_params)
 		if @pest.save
 			flash[:notice] = "Yay - pest successfully created!"	
-  			redirect_to pests_path
-  		else
-  			render 'new'
-  		end
+			redirect_to pests_path
+		else
+			render 'new'
+		end
 	end
 
+	# GET /pests/:id/edit
+	# Access level: Administrator
 	def edit
 		if current_user.try(:admin?)
 			@pest = Pest.find(params[:id])
@@ -40,9 +44,10 @@ class PestsController < ApplicationController
 		end
 	end
 
+	# PUT /pests/:id
+	# Access level: Administrator
 	def update
 		@pest = Pest.find(params[:id])
-
 		if @pest.update(params[:pest].permit(:name, :source_id, :tracker_id, :pest_type_id, :characteristics, {:marking_ids => []}, :colour_id, :size))
 			flash[:notice] = "Yay - pest successfully updated!"
 			redirect_to pests_path
@@ -51,6 +56,8 @@ class PestsController < ApplicationController
 		end
 	end
 
+	# DELETE /pests/:id
+	# Access level: Administrator
 	def destroy
 		if current_user.try(:admin?)
 			@pest = Pest.find(params[:id])
@@ -63,7 +70,9 @@ class PestsController < ApplicationController
 	end
 
 	private
-  		def pest_params
-    		params.require(:pest).permit(:name, :source_id, :tracker_id, :pest_type_id, :characteristics, {:marking_ids => []}, :colour_id, :size)
-  		end
+	
+		# Permitted parameters when creating a pest
+		def pest_params
+			params.require(:pest).permit(:name, :source_id, :tracker_id, :pest_type_id, :characteristics, {:marking_ids => []}, :colour_id, :size)
+		end
 end
