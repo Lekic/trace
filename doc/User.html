@@ -151,9 +151,7 @@
           <div class="docstring">
   <div class="discussion">
     
-<p>add any other characters you&#39;d like to disallow inside the [ brackets ]
-metacharacters [, , ^, $, ., |, ?, *, +, (, and ) need to be escaped with a
-\</p>
+<p>Name can contain everything except symbols and numbers.</p>
 
 
   </div>
@@ -166,7 +164,18 @@ metacharacters [, , ^, $, ., |, ?, *, +, (, and ) need to be escaped with a
         <dd><pre class="code"><span class='tstring'><span class='regexp_beg'>/</span><span class='tstring_content'>\A[^0-9`!@#\$%\^&amp;*+_=]+\z</span><span class='regexp_end'>/</span></span></pre></dd>
       
         <dt id="USERNAME_REGEX-constant" class="">USERNAME_REGEX =
-          
+          <div class="docstring">
+  <div class="discussion">
+    
+<p>Username can only contain alphanumeric characters.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div>
         </dt>
         <dd><pre class="code"><span class='tstring'><span class='regexp_beg'>/</span><span class='tstring_content'>\A[a-zA-Z0-9]+\z</span><span class='regexp_end'>/</span></span></pre></dd>
       
@@ -237,7 +246,9 @@ addition to a real persisted field like &#39;username&#39;.</p>
   
 
   
-    <span class="summary_desc"><div class='inline'></div></span>
+    <span class="summary_desc"><div class='inline'>
+<p>Devise - Warden method.</p>
+</div></span>
   
 </li>
 
@@ -310,23 +321,34 @@ addition to a real persisted field like &#39;username&#39;</p>
   
 
   
-</h3><table class="source_code">
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Devise - Warden method.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
   <tr>
     <td>
       <pre class="lines">
 
 
-31
-32
-33
-34
-35
 36
 37
-38</pre>
+38
+39
+40
+41
+42
+43</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'app/models/user.rb', line 31</span>
+      <pre class="code"><span class="info file"># File 'app/models/user.rb', line 36</span>
 
 <span class='kw'>def</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_find_first_by_auth_conditions'>find_first_by_auth_conditions</span><span class='lparen'>(</span><span class='id identifier rubyid_warden_conditions'>warden_conditions</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_conditions'>conditions</span> <span class='op'>=</span> <span class='id identifier rubyid_warden_conditions'>warden_conditions</span><span class='period'>.</span><span class='id identifier rubyid_dup'>dup</span>
@@ -346,7 +368,7 @@ addition to a real persisted field like &#39;username&#39;</p>
 </div>
 
     <div id="footer">
-  Generated on Thu Nov  7 01:22:58 2013 by
+  Generated on Thu Nov  7 01:34:08 2013 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.8.7.3 (ruby-2.0.0).
 </div>
