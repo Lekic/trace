@@ -42,11 +42,12 @@
 						%td= pest.colour.name
 					%tr
 						%td Markings
-						- if !pest.markings.empty?
-							- pest.markings.each do |marking|
-								%td= Marking.find(marking).name
-						- else
-							%td None
+						%td
+							- if !pest.markings.empty?
+								- pest.markings.each do |marking|
+									%span= Marking.find(marking).name
+							- else
+								None
 					%tr
 						%td Characteristics
 						- if !pest.characteristics.nil?

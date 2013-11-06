@@ -255,6 +255,9 @@ body.modal-open {
 		}
 		.table {
 			margin-bottom: 0;
+			span {
+				display: block;
+			}
 			tr:last-child {
 				border-radius: 0 0 4px 4px;
 				td:first-child {
