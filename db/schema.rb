@@ -157,7 +157,7 @@ ActiveRecord::Schema.define(version: 20131105144446) do
     t.integer  "employee_id"
     t.string   "name"
     t.date     "date_of_birth"
-    t.date     "date_joined"
+    t.date     "date_joined",            default: '2013-11-07'
     t.integer  "person_type_id"
     t.integer  "park_id"
     t.string   "contact_number"
@@ -168,13 +168,13 @@ ActiveRecord::Schema.define(version: 20131105144446) do
     t.integer  "postcode"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "username",               default: "",    null: false
-    t.string   "email",                  default: "",    null: false
-    t.string   "encrypted_password",     default: "",    null: false
+    t.string   "username",               default: "",           null: false
+    t.string   "email",                  default: "",           null: false
+    t.string   "encrypted_password",     default: "",           null: false
     t.string   "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
-    t.integer  "sign_in_count",          default: 0,     null: false
+    t.integer  "sign_in_count",          default: 0,            null: false
     t.datetime "current_sign_in_at"
     t.datetime "last_sign_in_at"
     t.string   "current_sign_in_ip"

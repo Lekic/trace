@@ -4,7 +4,7 @@ class CreateUsers < ActiveRecord::Migration
       t.integer :employee_id, unique: true
       t.string :name
       t.date :date_of_birth
-      t.date :date_joined
+      t.date :date_joined, default: Date.today
       t.references :person_type, index: true
       t.references :park, index: true
       t.string :contact_number, phone_number: true
