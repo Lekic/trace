@@ -3,22 +3,23 @@ class ApplicationController < ActionController::Base
   # For APIs, you may want to use :null_session instead.
   protect_from_forgery with: :exception
 
+  # Redirects user to specified page after sign in
+  # Access level: User
   def after_sign_in_path_for(resource)
     index_path
   end
 
-  def after_update_path_for(resource)
-    index_path
-  end
-
+  # Defines the resource referred to by devise
   def resource_name
     :user
   end
 
+  # Creates a new instance of the resource for devise
   def resource
     @resource ||= User.new
   end
 
+  # Maps the devise resource to devise mapping
   def devise_mapping
     @devise_mapping ||= Devise.mappings[:user]
   end
@@ -29,6 +30,7 @@ class ApplicationController < ActionController::Base
 
   protected
 
+  # Configures permitted parameters in devise sign up and edit registration
   def configure_devise_params
     devise_parameter_sanitizer.for(:sign_up) do |u|
       u.permit(:username, :name, :email, :password, :password_confirmation, :admin, :date_of_birth)
