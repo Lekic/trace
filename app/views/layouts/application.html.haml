@@ -65,7 +65,7 @@
 									- if !current_user.avatar.nil?
 										= image_tag current_user.avatar.url(:thumb)
 									- else
-										= image_tag("temp-user.jpg", :class => "user-image")
+										= image_tag("/assets/temp-user.jpg", :class => "user-image")
 									= "@" + current_user.username
 									%b.caret
 								%ul.dropdown-menu

@@ -37,5 +37,4 @@ class ApplicationController < ActionController::Base
       u.permit(:username, :name, :email, :password, :password_confirmation, :admin, :date_of_birth, :current_password)
     end
   end
-  before_filter :configure_devise_params, if: :devise_controller?
 end
