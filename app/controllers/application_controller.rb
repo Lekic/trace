@@ -1,43 +1,42 @@
-# @author Daniel Lekic and Hayden Bleasel
 class ApplicationController < ActionController::Base
+  # Prevent CSRF attacks by raising an exception.
+  # For APIs, you may want to use :null_session instead.
+  protect_from_forgery with: :exception
 
-	# Prevent CSRF attacks by raising an exception.
-	# For APIs, you may want to use :null_session instead.
-	protect_from_forgery with: :exception
+  # Redirects user to specified page after sign in
+  # Access level: User
+  def after_sign_in_path_for(resource)
+    index_path
+  end
 
-	def after_sign_in_path_for(resource)
-		index_path
-	end
+  # Defines the resource referred to by devise
+  def resource_name
+    :user
+  end
 
-	def after_update_path_for(resource)
-		index_path
-	end
+  # Creates a new instance of the resource for devise
+  def resource
+    @resource ||= User.new
+  end
 
-	def resource_name
-		:user
-	end
+  # Maps the devise resource to devise mapping
+  def devise_mapping
+    @devise_mapping ||= Devise.mappings[:user]
+  end
 
-	def resource
-		@resource ||= User.new
-	end
+  helper_method :resource, :resource_name, :devise_mapping
 
-	def devise_mapping
-		@devise_mapping ||= Devise.mappings[:user]
-	end
+  before_filter :configure_devise_params, if: :devise_controller?
 
-	helper_method :resource, :resource_name, :devise_mapping
+  protected
 
-	before_filter :configure_devise_params, if: :devise_controller?
-
-	protected
-
-		def configure_devise_params
-			devise_parameter_sanitizer.for(:sign_up) do |u|
-				u.permit(:username, :name, :email, :password, :password_confirmation, :admin, :date_of_birth)
-			end
-			devise_parameter_sanitizer.for(:edit) do |u|
-				u.permit(:username, :name, :email, :password, :password_confirmation, :admin, :date_of_birth, :current_password)
-			end
-		end
-		before_filter :configure_devise_params, if: :devise_controller?
+  # Configures permitted parameters in devise sign up and edit registration
+  def configure_devise_params
+    devise_parameter_sanitizer.for(:sign_up) do |u|
+      u.permit(:username, :name, :email, :password, :password_confirmation, :admin, :date_of_birth)
+    end
+    devise_parameter_sanitizer.for(:edit) do |u|
+      u.permit(:username, :name, :email, :password, :password_confirmation, :admin, :date_of_birth, :current_password)
+    end
+  end
 end
