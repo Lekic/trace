@@ -45,7 +45,7 @@
 						%td
 							- if !pest.markings.empty?
 								- pest.markings.each do |marking|
-									%span= Marking.find(marking).name
+									%span= marking.name
 							- else
 								None
 					%tr
