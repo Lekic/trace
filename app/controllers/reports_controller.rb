@@ -45,15 +45,6 @@ class ReportsController < ApplicationController
 		end
 	end
 
-	def edit
-		if current_user.try(:admin?)
-			@report = Report.find(params[:id])
-		else
-			flash[:alert] = "Sorry, no can do. Come back when you're a system administrator!"
-			redirect_to index_path
-		end
-	end
-
 	def update
     	@report = Report.find(params[:id])
 		if @report.update(params[:report].permit(:name, :start_date, :end_date, {:area_ids => []}))
