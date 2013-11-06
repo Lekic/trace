@@ -101,32 +101,7 @@
 </dl>
 <div class="clear"></div>
 
-<h2>Overview</h2><div class="docstring">
-  <div class="discussion">
-    
-
-  </div>
-</div>
-<div class="tags">
-  
-<p class="tag_title">Author:</p>
-<ul class="author">
-  
-    <li>
-      
-      
-      
-      
-        
-        <div class='inline'>
-<p>Daniel Lekic and Hayden Bleasel</p>
-</div>
-      
-    </li>
-  
-</ul>
-
-</div><div id="subclasses">
+<div id="subclasses">
   <h2>Direct Known Subclasses</h2>
   <p class="children"><span class='object_link'><a href="DocumentationController.html" title="DocumentationController (class)">DocumentationController</a></span>, <span class='object_link'><a href="LandingController.html" title="LandingController (class)">LandingController</a></span>, <span class='object_link'><a href="PestsController.html" title="PestsController (class)">PestsController</a></span>, <span class='object_link'><a href="ReportsController.html" title="ReportsController (class)">ReportsController</a></span>, <span class='object_link'><a href="SightingsController.html" title="SightingsController (class)">SightingsController</a></span>, <span class='object_link'><a href="UsersController.html" title="UsersController (class)">UsersController</a></span>, <span class='object_link'><a href="WelcomeController.html" title="WelcomeController (class)">WelcomeController</a></span></p>
 </div>
@@ -162,29 +137,9 @@
   
 
   
-    <span class="summary_desc"><div class='inline'></div></span>
-  
-</li>
-
-      
-        <li class="public ">
-  <span class="summary_signature">
-    
-      <a href="#after_update_path_for-instance_method" title="#after_update_path_for (instance method)">- (Object) <strong>after_update_path_for</strong>(resource) </a>
-    
-
-    
-  </span>
-  
-  
-  
-  
-  
-  
-  
-
-  
-    <span class="summary_desc"><div class='inline'></div></span>
+    <span class="summary_desc"><div class='inline'>
+<p>Redirects user to specified page after sign in Access level: User.</p>
+</div></span>
   
 </li>
 
@@ -206,7 +161,9 @@
   
 
   
-    <span class="summary_desc"><div class='inline'></div></span>
+    <span class="summary_desc"><div class='inline'>
+<p>Maps the devise resource to devise mapping.</p>
+</div></span>
   
 </li>
 
@@ -228,7 +185,9 @@
   
 
   
-    <span class="summary_desc"><div class='inline'></div></span>
+    <span class="summary_desc"><div class='inline'>
+<p>Creates a new instance of the resource for devise.</p>
+</div></span>
   
 </li>
 
@@ -250,7 +209,9 @@
   
 
   
-    <span class="summary_desc"><div class='inline'></div></span>
+    <span class="summary_desc"><div class='inline'>
+<p>Defines the resource referred to by devise.</p>
+</div></span>
   
 </li>
 
@@ -274,50 +235,31 @@
   
 
   
-</h3><table class="source_code">
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Redirects user to specified page after sign in Access level: User</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
   <tr>
     <td>
       <pre class="lines">
 
 
-8
 9
-10</pre>
+10
+11</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'app/controllers/application_controller.rb', line 8</span>
+      <pre class="code"><span class="info file"># File 'app/controllers/application_controller.rb', line 9</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_after_sign_in_path_for'>after_sign_in_path_for</span><span class='lparen'>(</span><span class='id identifier rubyid_resource'>resource</span><span class='rparen'>)</span>
-	<span class='id identifier rubyid_index_path'>index_path</span>
-<span class='kw'>end</span></pre>
-    </td>
-  </tr>
-</table>
-</div>
-    
-      <div class="method_details ">
-  <h3 class="signature " id="after_update_path_for-instance_method">
-  
-    - (<tt>Object</tt>) <strong>after_update_path_for</strong>(resource) 
-  
-
-  
-
-  
-</h3><table class="source_code">
-  <tr>
-    <td>
-      <pre class="lines">
-
-
-12
-13
-14</pre>
-    </td>
-    <td>
-      <pre class="code"><span class="info file"># File 'app/controllers/application_controller.rb', line 12</span>
-
-<span class='kw'>def</span> <span class='id identifier rubyid_after_update_path_for'>after_update_path_for</span><span class='lparen'>(</span><span class='id identifier rubyid_resource'>resource</span><span class='rparen'>)</span>
 	<span class='id identifier rubyid_index_path'>index_path</span>
 <span class='kw'>end</span></pre>
     </td>
@@ -334,7 +276,18 @@
   
 
   
-</h3><table class="source_code">
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Maps the devise resource to devise mapping</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
   <tr>
     <td>
       <pre class="lines">
@@ -364,18 +317,29 @@
   
 
   
-</h3><table class="source_code">
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Creates a new instance of the resource for devise</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
   <tr>
     <td>
       <pre class="lines">
 
 
+19
 20
-21
-22</pre>
+21</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'app/controllers/application_controller.rb', line 20</span>
+      <pre class="code"><span class="info file"># File 'app/controllers/application_controller.rb', line 19</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_resource'>resource</span>
 	<span class='ivar'>@resource</span> <span class='op'>||=</span> <span class='const'>User</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span>
@@ -394,18 +358,29 @@
   
 
   
-</h3><table class="source_code">
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Defines the resource referred to by devise</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
   <tr>
     <td>
       <pre class="lines">
 
 
-16
-17
-18</pre>
+14
+15
+16</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'app/controllers/application_controller.rb', line 16</span>
+      <pre class="code"><span class="info file"># File 'app/controllers/application_controller.rb', line 14</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_resource_name'>resource_name</span>
 	<span class='symbol'>:user</span>
@@ -420,7 +395,7 @@
 </div>
 
     <div id="footer">
-  Generated on Thu Nov  7 00:40:17 2013 by
+  Generated on Thu Nov  7 01:22:59 2013 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.8.7.3 (ruby-2.0.0).
 </div>
