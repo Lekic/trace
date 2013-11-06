@@ -1,5 +1,9 @@
 # @author Daniel Lekic and Hayden Bleasel
 class LandingController < ApplicationController
-  def index
-  end
+
+	# GET /landing
+	# Access level: All
+	def index
+	end
+
 end
