@@ -46,6 +46,7 @@ img {
 
 .jumbotron h1 {
 	overflow: hidden;
+	text-overflow: ellipsis;
 }
 
 .container {
@@ -271,6 +272,12 @@ body.modal-open {
 				td:last-child {
 					border-radius: 0 0 4px 0;
 				}
+			}
+			td {
+				max-width: 0;
+				overflow: hidden;
+				text-overflow: ellipsis;
+				white-space: nowrap;
 			}
 		}
 	}
