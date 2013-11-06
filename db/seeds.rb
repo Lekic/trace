@@ -79,7 +79,7 @@ User.create(name: 'Daniel Lekic', username: 'lekic', email: 'daniel@lekic.net', 
 User.create(name: 'Hayden Bleasel', username: 'haydenbleasel', email: 'haydenbleasel@gmail.com', password: 'hayden123', password_confirmation: 'hayden123', admin: 'true')
 User.create(name: 'Angelo Echevarria', username: 'giknows', email: 'angelo.echevarria@live.com', password: 'gino1234', password_confirmation: 'gino1234', admin: 'false')
 
-User.create(employee_id: '10827', name: 'Loree Basnett', date_joined: '2004-01-08', person_type_id: '4')
+User.create(employee_id: '10827', name: 'Loree Basnett', username: 'lbasnett', email: 'lbasnett@nswpaws.gov.au', password: 'lbasnett', password_confirmation: 'lbasnett', admin: 'false', date_joined: '2004-01-08', person_type_id: '4')
 User.create(employee_id: '10162', name: 'Elvera Hunley', date_joined: '2001-11-22', person_type_id: '4')
 User.create(employee_id: '10064', name: 'Abe Bhakta', date_joined: '1999-09-29', person_type_id: '2')
 User.create(employee_id: '10957', name: 'Lorita Schartz', date_joined: '2001-07-25', person_type_id: '1')
