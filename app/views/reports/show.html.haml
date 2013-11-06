@@ -7,15 +7,16 @@
 	= @final.length
 	sightings reported within this time range:
 
-- if !@final.empty?
-	- @final.each do |sighting|
-		%li= link_to sighting.pest.name + " seen at " + sighting.park.name, sighting_path(sighting)
-%p
+	- if !@final.empty?
+		- @final.each do |sighting|
+			%li= link_to sighting.pest.name + " seen at " + sighting.park.name, sighting_path(sighting)
 %p
 	They were sighted throughout
 	= @report.area_ids.length
 	different areas:
 	
-- if !@report.areas.empty?
-	- @report.areas.each do |area|
-		%li= area.name
+	- if !@report.areas.empty?
+		- @report.areas.each do |area|
+			%li= area.name
+
+= render :partial => 'sightings/sighting_feed'
