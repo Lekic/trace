@@ -86,6 +86,4 @@ class UsersController < ApplicationController
 			(current_user.nil?) ? redirect_to(root_path) : (redirect_to(root_path) unless current_user.admin?)
 		end
 
-	#conflicted
-
 end
