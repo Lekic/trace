@@ -1,3 +1,4 @@
+# Helper for the Devise controller
 module DeviseHelper
   # A simple way to show error messages for the current devise resource. If you need
   # to customize this method, you can either overwrite it in your application helpers or
