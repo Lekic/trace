@@ -7,7 +7,7 @@ class Pest < ActiveRecord::Base
   has_many :sightings, inverse_of: :pest
   has_many :reports, through: :sightings
 
-  has_attached_file :avatar, styles: { medium: "300x300>", thumb: "100x100>" }, default_irl: "/images/:style/missing.png"
+  has_attached_file :avatar, styles: { medium: "300x300>" }, default_url: "temp-pest.jpg"
 
   # add any other characters you'd like to disallow inside the [ brackets ]
   # metacharacters [, \, ^, $, ., |, ?, *, +, (, and ) need to be escaped with a \

@@ -48,7 +48,7 @@ class PestsController < ApplicationController
 	# Access level: Administrator
 	def update
 		@pest = Pest.find(params[:id])
-		if @pest.update(params[:pest].permit(:name, :source_id, :tracker_id, :pest_type_id, :characteristics, {:marking_ids => []}, :colour_id, :size))
+		if @pest.update(params[:pest].permit(:name, :source_id, :tracker_id, :pest_type_id, :characteristics, {:marking_ids => []}, :colour_id, :size, :avatar))
 			flash[:notice] = "Yay - pest successfully updated!"
 			redirect_to pests_path
 		else
@@ -73,6 +73,6 @@ class PestsController < ApplicationController
 	
 		# Permitted parameters when creating a pest
 		def pest_params
-			params.require(:pest).permit(:name, :source_id, :tracker_id, :pest_type_id, :characteristics, {:marking_ids => []}, :colour_id, :size)
+			params.require(:pest).permit(:name, :source_id, :tracker_id, :pest_type_id, :characteristics, {:marking_ids => []}, :colour_id, :size, :avatar)
 		end
 end
