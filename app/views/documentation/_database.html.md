@@ -1,6 +1,6 @@
 ## Database Thesis
 
-For the database, we have implemented the original schema as supplied by the Parks and Wildlife Service and expanded on it. We wanted to ensure that we did not affect the original system, as we cannot guarantee that the tables present in the supplied schema do not possess relations with other out-of-scope system components. The expanded version can be seen on the screen (explain it). The expansion on the provided schema ensures that pre existing systems will not be broken by the implementation of the new Pest Tracking System.
+For the database, we have implemented the original schema as supplied by the Parks and Wildlife Service and expanded on it. We wanted to ensure that we did not affect the original system, as we cannot guarantee that the tables present in the supplied schema do not possess relations with other out-of-scope system components. The expansion on the provided schema ensures that pre existing systems will not be broken by the implementation of the new Pest Tracking System.
 
 The system will continuously grow with the new information added by each user. We believe the current Parks and Wildlife data centre would be suffice for original storage. In terms of bandwidth, we believe it would be best to cater for a high volume of users, and the processing speeds of the proposed system would make this possible without delays.
 
