@@ -89,9 +89,9 @@
 				%ul.dropdown-menu
 					%li= link_to 'Database Thesis', '#database'
 					%li= link_to 'Data Dictionary', '#dictionary'
-					%li= link_to 'Functional Dependencies', '#dependencies'
-					%li= link_to 'Normalisation', '#normalisation'
 					%li= link_to 'Relational Model', '#relational'
+					%li= link_to 'Normalisation', '#normalisation'
+					%li= link_to 'Functional Dependencies', '#dependencies'
 			%li.dropdown
 				= link_to 'Testing and Implementation', "#", "data-toggle" => "dropdown", :class => "dropdown-toggle"
 				%ul.dropdown-menu
@@ -313,9 +313,10 @@
 			%h2 Data Dictionary
 			= image_tag "documentation/dictionary.png", :href => image_path("documentation/dictionary.png")
 			.caption Data Dictionary
-		#dependencies=render 'dependencies'
-		#normalisation=render 'normalisation'
 		#relational=render 'relational'
+		#normalisation=render 'normalisation'
+		#dependencies=render 'dependencies'
+		
 
 		%hr
 
