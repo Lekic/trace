@@ -35,8 +35,9 @@ class SightingsController < ApplicationController
 	# GET /sightings/:id/edit
 	# Access level: User
 	def edit
-		@sighting = Sighting.find(params[:id])
-		if !current_user.try(:admin?) && !current_user.id == @sighting.user_id
+		if current_user.try(:admin?) || current_user.id == Sighting.find(params[:id]).user_id
+			@sighting = Sighting.find(params[:id])
+		else
 			flash[:alert] = "Oi, edit your own sightings!"
 			redirect_to sightings_path
 		end

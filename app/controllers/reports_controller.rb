@@ -28,6 +28,9 @@ class ReportsController < ApplicationController
 	def create
 		@report = Report.new(report_params)
 		@report.user = current_user
+		if @report.areas.empty?
+			@report.areas = Area.all
+		end
 		if @report.save
 			flash[:notice] = "Report successfully created."
 			redirect_to reports_path

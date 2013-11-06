@@ -6,9 +6,9 @@ class Sighting < ActiveRecord::Base
   belongs_to :user, inverse_of: :sightings
   
   validates :pest, presence: true
-  validates :quantity, inclusion: { :in => 1..100 }, allow_nil: true
+  validates :quantity, inclusion: { :in => 1..100, message: "must be less than 100." }, allow_nil: true
   validates :park, presence: true
-  validates :information, length: { maximum: 1000 }
+  validates :information, length: { maximum: 1000, message: "cannot exceed 1000 characters." }
   validates :user, presence: true
 
 end

@@ -47,7 +47,7 @@ class User < ActiveRecord::Base
                        format: { with: USERNAME_REGEX}
 
   validates :contact_number, phone_number: {ten_digits: true, message: "must be 10 digits", allow_nil: true, allow_blank: true}
-  validates :name, presence: true, length: { minimum: 5, maximum: 30 }, format: { with: NAME_CASE_REGEX}
+  validates :name, presence: true, length: { minimum: 1, maximum: 30 }, format: { with: NAME_CASE_REGEX}
   #validates :date_of_birth, presence: true
 
 end
