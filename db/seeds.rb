@@ -78,6 +78,7 @@ User.delete_all
 User.create(name: 'Daniel Lekic', username: 'lekic', email: 'daniel@lekic.net', password: 'daniel123', password_confirmation: 'daniel123', admin: 'true')
 User.create(name: 'Hayden Bleasel', username: 'haydenbleasel', email: 'haydenbleasel@gmail.com', password: 'hayden123', password_confirmation: 'hayden123', admin: 'true')
 User.create(name: 'Angelo Echevarria', username: 'giknows', email: 'angelo.echevarria@live.com', password: 'gino1234', password_confirmation: 'gino1234', admin: 'false')
+User.create(name: 'Farookh Hussain', username: 'farookh', email: 'farookh.hussain@uts.edu.au', password: 'farookh123', password_confirmation: 'farookh123', admin: 'true')
 
 User.create(employee_id: '10827', name: 'Loree Basnett', username: 'lbasnett', email: 'lbasnett@nswpaws.gov.au', password: 'lbasnett', password_confirmation: 'lbasnett', admin: 'false', date_joined: '2004-01-08', person_type_id: '4')
 User.create(employee_id: '10162', name: 'Elvera Hunley', username: 'ehunley', email: 'ehunley@nswpaws.gov.au', password: 'ehunley1', password_confirmation: 'ehunley1', admin: 'false', date_joined: '2001-11-22', person_type_id: '4')
