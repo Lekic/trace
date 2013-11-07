@@ -2,14 +2,14 @@
 
 When deciding on a model to be used on the database, as always, we had to consider our requirements. In regards to the database model, a few aspects were considered:
 
-- The database should segragate key data objects
+- The database should segregate key data objects
 - Repetition in data should be minimised, if not eliminated
 
 We considered the two physical database structures to see which we believed best fit the requirements. These are the flat-file and relational database model.
 
 ### Flat-file Model
 
-The flat-file model works on a single tabling storing all the data about everything within the system. Though it may be the simplest to set up, it has zero relations; meaning that key data components are not segragated. Due to the lack in segregation, the duplication of data is substantially higher as the same data will be input over and over again. This raises issues in data redundancy, integrity and even validity.
+The flat-file model works on a single tabling storing all the data about everything within the system. Though it may be the simplest to set up, it has zero relations; meaning that key data components are not segregated. Due to the lack in segregation, the duplication of data is substantially higher as the same data will be input over and over again. This raises issues in data redundancy, integrity and even validity.
 
 ### Relational Model
 
@@ -18,4 +18,4 @@ The relational model implements the concept of objects and relations. It allows 
 
 ### Recommendation and justification
 
-The implementation of a relational model is recommended as it covers all requirements, as well as providing that extra flexibility to create a tailored solution for the project. Relational models also better accomodate for growth of the system by reducing anomalies within the data; ultimately reducing storage clutter and increasing performance speed. We believe this is the most viable option and will be implemented in the system provided.
+The implementation of a relational model is recommended as it covers all requirements, as well as providing that extra flexibility to create a tailored solution for the project. Relational models also better accommodate for growth of the system by reducing anomalies within the data; ultimately reducing storage clutter and increasing performance speed. We believe this is the most viable option and will be implemented in the system provided.

@@ -9,7 +9,7 @@ Determining the optimal normalisation solution for the NSW Parks and Wildlife Pe
 - Update anomalies should not be able to occur within the database
 
 
-When considering these requirements, three paticular normal forms fit best:
+When considering these requirements, three particular normal forms fit best:
 
 - Second normal form (2NF)
 - Third normal form (3NF)
@@ -37,6 +37,6 @@ Consider a table detailing the shops nearest to you with fields user, shop type 
 
 ### Recommendation and justification
 
-For the system at hand, it was deemed best to use the Boyce-Codd Normal Form (BCNF) for the reason that it provides the most reduced update anomalies, meaning it maintains the highest data integrity and lowest redundancy of the three options. Eliminating update anomalies means that as the system grows, there is a much lower risk of any issues with the data, and if a change needs to be made on a specific component (for example, chaning the pest type of 'Dog' to 'Canine'), it would be as simple as changing one entry in a specific table, and all occurences will update accordingly. BCNF also ensures that all tables only have one primary key, and all fields in the table detail only that single key (this is inherited from 3NF).
+For the system at hand, it was deemed best to use the Boyce-Codd Normal Form (BCNF) for the reason that it provides the most reduced update anomalies, meaning it maintains the highest data integrity and lowest redundancy of the three options. Eliminating update anomalies means that as the system grows, there is a much lower risk of any issues with the data, and if a change needs to be made on a specific component (for example, changing the pest type of 'Dog' to 'Canine'), it would be as simple as changing one entry in a specific table, and all occurrences will update accordingly. BCNF also ensures that all tables only have one primary key, and all fields in the table detail only that single key (this is inherited from 3NF).
 
 Normal forms go all the way to sixth normal form (6NF), but we believe BCNF is sufficient as anything beyond it focuses more on statistical analysis and intricate data mining. As this system does not hold a purpose to crunch the intricacies of the data input by users, the higher levels are not required. BCNF meets all the requirements of the system completely.
