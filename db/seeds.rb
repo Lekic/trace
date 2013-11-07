@@ -18,6 +18,8 @@ Colour.create(name: 'Purple')
 Colour.create(name: 'Brown')
 Colour.create(name: 'Beige')
 Colour.create(name: 'Black')
+Colour.create(name: 'Grey')
+Colour.create(name: 'White')
 
 # Pest Marking Types
 Marking.delete_all
@@ -36,6 +38,7 @@ PestType.create(name: 'Rat')
 PestType.create(name: 'Rabbit')
 PestType.create(name: 'Fish')
 PestType.create(name: 'Frog')
+PestType.create(name: 'Bear')
 
 # Pest Sources
 Source.delete_all
@@ -45,21 +48,23 @@ Source.create(name: 'Visual Sighting')
 
 # Test pests
 Pest.delete_all
-Pest.create(name: 'Brown Fox', pest_type_id: '3', source_id: '1', tracker_id: '1927', characteristics: 'Tall, brown unit.', colour_id: '8', size:'84')
-Pest.create(name: 'Border Collie', pest_type_id: '1', source_id: '3', tracker_id: '1291', characteristics: 'This bloke hurt. Characteristic field', colour_id: '9', size:'92')
-Pest.create(name: 'Brown Fox', pest_type_id: '3', source_id: '1', tracker_id: '8041', characteristics: 'Tall, brown unit.', colour_id: '8', size:'84')
-Pest.create(name: 'Red Dog #1291', pest_type_id: '1', source_id: '3', tracker_id: '58402', characteristics: 'This bloke hurt. Characteristic field', colour_id: '1', size:'92')
-Pest.create(name: 'Garfield', pest_type_id: '2', source_id: '2', tracker_id: '481', characteristics: 'Mint as fuck cat.', colour_id: '5', size:'104')
-Pest.create(name: 'Bugs Bunny', pest_type_id: '5', source_id: '3', tracker_id: '1337', characteristics: 'Ermmmm, whats up doc?', colour_id: '4', size:'128')
-Pest.create(name: 'Snoop doggy dog', pest_type_id: '1', source_id: '2', tracker_id: '420', characteristics: 'Rapper come reggaeton come dj flop.', colour_id: '10', size:'185')
-Pest.create(name: 'Hayden', pest_type_id: '2', source_id: '2', tracker_id: '69', characteristics: 'Swagginnnn collared pussy ;)', colour_id: '3', size:'178')
-Pest.create(name: 'Ratata', pest_type_id: '4', source_id: '3', tracker_id: '283', colour_id: '7', size: '10')
+Pest.create(name: 'Brown Fox', pest_type_id: '3', source_id: '1', tracker_id: '1927', characteristics: 'Broken leg', colour_id: '8', size:'108')
+Pest.create(name: 'Border Collie', pest_type_id: '1', source_id: '2', tracker_id: '1291', characteristics: 'This bloke hurt. Characteristic field', colour_id: '9', size:'92')
+Pest.create(name: 'Red Fox', pest_type_id: '3', source_id: '1', tracker_id: '8041', characteristics: 'Potentially hostile', colour_id: '1', size:'104')
+Pest.create(name: 'Labradour', pest_type_id: '1', source_id: '3', tracker_id: '58402', characteristics: 'This bloke hurt. Characteristic field', colour_id: '12', size:'120')
+Pest.create(name: 'Garfield', pest_type_id: '2', source_id: '2', tracker_id: '481', characteristics: 'Will eat your food', colour_id: '5', size:'104')
+Pest.create(name: 'Grey Rabbit', pest_type_id: '5', source_id: '3', tracker_id: '1337', characteristics: 'Tendencies of a miniature bugs bunny', colour_id: '11', size:'14')
+Pest.create(name: 'Golden Retriever', pest_type_id: '1', source_id: '2', tracker_id: '420', characteristics: 'Obetiant', colour_id: '9', size:'114')
+Pest.create(name: 'Persian Ragdoll', pest_type_id: '2', source_id: '2', tracker_id: '69', characteristics: 'Domestic house cat', colour_id: '9', size:'42')
+Pest.create(name: 'Sewer Rat', pest_type_id: '4', source_id: '3', tracker_id: '283', colour_id: '7', size: '10')
 Pest.create(name: 'Greninja', pest_type_id: '7', source_id: '2', tracker_id: '104', characteristics: 'Final evolution of Frogadier', colour_id: '2', size: '194')
+Pest.create(name: 'German Shepherd', pest_type_id: '1', source_id: '1', characteristics: 'Tentative, loyal species', colour_id: '8', size: '120')
+Pest.create(name: 'Yogi Bear', pest_type_id: '8', source_id: '3', characteristics: 'Smarter than the average bear!', colour_id: '8', size: '165')
 
 
 # Test sightings
 Sighting.delete_all
-Sighting.create(pest_id: '1', quantity: '5', park_id: '4', time_sighted: '2013-11-01 09:04:04', information: 'Bro they were running at me, but I bashed them.', user_id: '1')
+Sighting.create(pest_id: '1', quantity: '5', park_id: '4', information: 'Bro they were running at me, but I bashed them.', user_id: '1')
 
 # Test reports
 Report.delete_all
