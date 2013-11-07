@@ -2,8 +2,8 @@
 
 When deciding on a model to be used on the database, as always, we had to consider our requirements. In regards to the database model, a few aspects were considered:
 
-- The database should segregate key data objects
-- Repetition in data should be minimised, if not eliminated
+* The database should segregate key data objects
+* Repetition in data should be minimised, if not eliminated
 
 We considered the two physical database structures to see which we believed best fit the requirements. These are the flat-file and relational database model.
 

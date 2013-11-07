@@ -2,18 +2,18 @@
 
 Determining the optimal normalisation solution for the NSW Parks and Wildlife Pest Tracking System depends on a few key factors. To decide on the most suitable degree of normalisation, all levels have to be assessed in regards to how they fit our system requirements. For the proposed system, we deemed the following requirements to be most appropriate.
 
-- The system must be maintainable
-- Data should be stored in the simplest form
-- The database should not hold redundant data
-- Defining data should not rely on non-defiant data in other tables
-- Update anomalies should not be able to occur within the database
+* The system must be maintainable
+* Data should be stored in the simplest form
+* The database should not hold redundant data
+* Defining data should not rely on non-defiant data in other tables
+* Update anomalies should not be able to occur within the database
 
 
 When considering these requirements, three particular normal forms fit best:
 
-- Second normal form (2NF)
-- Third normal form (3NF)
-- Boyce-Codd normal form (BCNF)
+* Second normal form (2NF)
+* Third normal form (3NF)
+* Boyce-Codd normal form (BCNF)
 
 These three options fit well as they all occur after first normal form (1NF), at which stage all data is already stored as atomic values, meaning the data cannot be derived to a more primitive attribute. Though 1NF could be a viable option for normalisation, we believe that the system would benefit from being normalised further. To decide which option is best, we have to understand what benefits each level of normalisation offers.
 
