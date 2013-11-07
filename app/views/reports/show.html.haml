@@ -11,7 +11,7 @@
 %hr
 
 %h3
-	= pluralize(@final.length, "sighting was", "sightings were")
+	= pluralize(@sightings.length, "sighting was", "sightings were")
 	reported within this time range in the following
 	= pluralize(@report.area_ids.length, "area") + ":"
 %h4

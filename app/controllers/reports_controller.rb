@@ -45,11 +45,11 @@ class ReportsController < ApplicationController
 		if current_user.try(:admin?)
 			@report = Report.find(params[:id])
 			@types = PestType.all
-			@sightings = Sighting.find(:all, :conditions => ["created_at between ? and ?", @report.start_date-1, @report.end_date+1])
-			@final = []
-			@sightings.each do |sighting|
+			@all_sightings = Sighting.find(:all, :conditions => ["created_at between ? and ?", @report.start_date-1, @report.end_date+1])
+			@sightings = []
+			@all_sightings.each do |sighting|
 				@report.area_ids.each do |area|
-					@final << sighting if sighting.park.area_id == area
+					@sightings << sighting if sighting.park.area_id == area
 				end
 			end
 		else
