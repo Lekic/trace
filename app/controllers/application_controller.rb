@@ -35,10 +35,10 @@ class ApplicationController < ActionController::Base
 		# Configures permitted parameters in devise sign up and edit registration
 		def configure_devise_params
 			devise_parameter_sanitizer.for(:sign_up) do |u|
-				u.permit(:username, :name, :email, :password, :password_confirmation, :admin, :date_of_birth)
+				u.permit(:username, :name, :email, :password, :password_confirmation, :admin, :date_of_birth, :avatar)
 			end
-			devise_parameter_sanitizer.for(:edit) do |u|
-				u.permit(:username, :name, :email, :password, :password_confirmation, :admin, :date_of_birth, :current_password)
+			devise_parameter_sanitizer.for(:account_update) do |u|
+				u.permit(:username, :name, :email, :password, :password_confirmation, :admin, :date_of_birth, :current_password, :avatar)
 			end
 		end
 end
