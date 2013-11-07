@@ -41,7 +41,7 @@ class UsersController < ApplicationController
 	# GET /users/:id/edit
 	# Access level: Administrator
 	def edit
-		if current_user.try(:admin?)
+		if current_user.try(:admin?) || User.find(params[:id]).id == current_user.id
 			@user = User.find(params[:id])
 		else
 			flash[:alert] = "Sorry, you don't have the right privileges to edit a pest."
