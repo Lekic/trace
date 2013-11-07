@@ -62,7 +62,7 @@
 						- if user_signed_in?
 							%li.dropdown
 								%a.dropdown-toggle{"data-toggle" => "dropdown", href: "#"}
-									= image_tag current_user.avatar.url(:thumb), :class => "user-image"
+									.user-image{:style => "background-image: url(" + image_path(current_user.avatar.url) + ")" }
 									= "@" + current_user.username
 									%b.caret
 								%ul.dropdown-menu

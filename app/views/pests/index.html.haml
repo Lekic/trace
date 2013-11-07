@@ -14,7 +14,7 @@
 		.col-xs-12.col-sm-6.col-md-4.col-lg-3{ :class => " type-" + pest.pest_type.name.downcase.squish.gsub( /\s/, '_' ) }
 			.isotope-item-wrapper
 				.image
-					.image-wrapper{:style => "background-image: url(" + image_path(pest.avatar.url(:medium)) + ")" }
+					.image-wrapper{:style => "background-image: url(" + image_path(pest.avatar.url) + ")" }
 					.overlay
 						%h3= pest.name
 					.text-right.button-container
