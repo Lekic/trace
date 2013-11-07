@@ -12,8 +12,8 @@
 				= f.input :password, input_html: { :class => "form-control"}
 				= f.input :password_confirmation, input_html: { :class => "form-control"}
 				= f.input :date_of_birth, { :include_blank => true, :start_year => 1960, :end_day => Time.now, input_html: { :class => "chosen-select"} }
-				= f.input :current_password, input_html: { :class => "form-control"}
-				.remember (We need your current password to confirm your changes)
+				-#= f.input :current_password, input_html: { :class => "form-control"}
+				-#.remember (We need your current password to confirm your changes)
 			= f.actions do
 				.pull-right
 					= f.action :cancel, :as => :link, :label => "Cancel", :button_html => { :class => "btn btn-default" }
