@@ -177,7 +177,7 @@ GEM
       timeliness (~> 0.3.6)
     warden (1.2.3)
       rack (>= 1.0)
-    yard (0.8.7.3)
+    yard (0.9.24)
 
 PLATFORMS
   ruby
